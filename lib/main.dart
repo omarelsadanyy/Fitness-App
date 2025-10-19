@@ -12,6 +12,8 @@ void main() async {
   ///ensure engine is Oky
   WidgetsFlutterBinding.ensureInitialized();
   await configureDependencies();
+
+
   await getIt.get<AppLanguageConfig>().setSelectedLocal();
 
 
