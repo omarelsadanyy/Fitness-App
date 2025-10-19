@@ -16,7 +16,6 @@ class ServerFailure extends Failure{
       case DioExceptionType.receiveTimeout:
         return ServerFailure("receiveTimeout with Api Server");
       case DioExceptionType.badCertificate:
-      // TODO: Handle this case.
       case DioExceptionType.badResponse:
         return ServerFailure.fromResponse(dioException.response!.statusCode,
             dioException.response!.data);
@@ -29,8 +28,6 @@ class ServerFailure extends Failure{
           return ServerFailure('No Internet Connection');
         }
         return ServerFailure('Unexpected Error, Please try again!');
-
-
       }
   }
   factory ServerFailure.fromResponse(int? statusCode, dynamic response) {

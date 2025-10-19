@@ -3,4 +3,7 @@ abstract class Constants {
   static const String arLocal = "ar";
   static const String contentType = "content-Type";
   static const String appJson = "application/json";
+  static const String noResponseReceivedMessage = "noResponseReceivedMessage";
+  static const String anUnknownErrorOccurred = "anUnknownErrorOccurred";
+
 }
