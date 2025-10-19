@@ -1,4 +1,5 @@
 import 'package:fitness/core/constants/json_serializable_constants.dart';
+import 'package:fitness/features/auth/domain/entity/auth/personal_info_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'personal_info.g.dart';
@@ -40,4 +41,16 @@ class PersonalInfo {
       _$PersonalInfoFromJson(json);
 
   Map<String, dynamic> toJson() => _$PersonalInfoToJson(this);
+
+  PersonalInfoEntity toEntity(){
+    return PersonalInfoEntity(
+      id: id,
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      gender: gender,
+      age: age,
+      photo: photo
+    );
+  }
 }

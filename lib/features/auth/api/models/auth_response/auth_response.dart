@@ -1,5 +1,6 @@
 import 'package:fitness/core/constants/json_serializable_constants.dart';
 import 'package:fitness/features/auth/api/models/auth_response/user_response.dart';
+import 'package:fitness/features/auth/domain/entity/auth/auth_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'auth_response.g.dart';
@@ -21,5 +22,12 @@ class AuthResponse {
 
   Map<String, dynamic> toJson() {
     return _$AuthResponseToJson(this);
+  }
+
+  AuthEntity toEntity(){
+    return AuthEntity(
+      token: token,
+      user: user!.toEntity()
+    );
   }
 }

@@ -6,13 +6,11 @@ class UserEntity {
   final BodyInfoEntity? bodyInfo;
   final String? activityLevel;
   final String? goal;
-  final String? createdAt;
 
   const UserEntity({
     this.personalInfo,
     this.bodyInfo,
     this.activityLevel,
     this.goal,
-    this.createdAt,
   });
 }
