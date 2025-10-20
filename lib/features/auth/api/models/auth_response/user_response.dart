@@ -1,6 +1,7 @@
 import 'package:fitness/core/constants/json_serializable_constants.dart';
 import 'package:fitness/features/auth/api/models/auth_response/body_info.dart';
 import 'package:fitness/features/auth/api/models/auth_response/personal_info.dart';
+import 'package:fitness/features/auth/domain/entity/auth/user_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user_response.g.dart';
@@ -31,4 +32,13 @@ class UserResponse {
       _$UserResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserResponseToJson(this);
+
+  UserEntity toEntity(){
+    return UserEntity(
+      personalInfo: personalInfo!.toEntity(),
+      bodyInfo: bodyInfo!.toEntity(),
+      activityLevel: activityLevel,
+      goal: goal,
+    );
+  }
 }

@@ -1,4 +1,5 @@
 import 'package:fitness/core/constants/json_serializable_constants.dart';
+import 'package:fitness/features/auth/domain/entity/auth/body_info_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'body_info.g.dart';
@@ -17,4 +18,11 @@ class BodyInfo {
       _$BodyInfoFromJson(json);
 
   Map<String, dynamic> toJson() => _$BodyInfoToJson(this);
+
+  BodyInfoEntity toEntity(){
+    return BodyInfoEntity(
+      weight: weight,
+      height: height
+    );
+  }
 }
