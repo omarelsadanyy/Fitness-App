@@ -1,0 +1,29 @@
+import 'package:fitness/core/responsive/size_helper.dart';
+import 'package:fitness/core/widget/app_background.dart';
+import 'package:flutter/material.dart';
+
+import '../../widgets/compelete_register/page_view.dart';
+
+
+class CompeleteRegisterScreen extends StatelessWidget {
+  const CompeleteRegisterScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: AppBackground(child:
+    Column(
+      children: [
+SizedBox(height: context.setHight(60),),
+Expanded(child: PageView.builder(
+    itemCount: 2,
+    itemBuilder: (context,index){
+  return PageViewCompeleteRegister(index: index+1,
+
+  );
+}))
+      ],
+    )),
+    );
+  }
+}

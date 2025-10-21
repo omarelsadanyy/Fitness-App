@@ -1,5 +1,8 @@
+import 'package:fitness/core/result/result.dart';
+import 'package:fitness/features/auth/api/models/register/request/register_request.dart';
 import 'package:fitness/features/auth/data/data_source/local/auth_local_ds.dart';
 import 'package:fitness/features/auth/data/data_source/remote/auth_remote_ds.dart';
+import 'package:fitness/features/auth/domain/entity/auth/user_entity.dart';
 import 'package:fitness/features/auth/domain/repository/auth_repo.dart';
 import 'package:injectable/injectable.dart';
 
@@ -12,4 +15,9 @@ class AuthRepoImpl implements AuthRepo{
       this._authRemoteDs,
       this._authLocalDs
       );
+
+  @override
+  Future<Result<UserEntity>> register(RegisterRequest request)async {
+   return await _authRemoteDs.register(request);
+  }
 }
