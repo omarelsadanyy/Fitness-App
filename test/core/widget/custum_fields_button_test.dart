@@ -44,7 +44,7 @@ void main() {
             (widget) =>
                 widget is ElevatedButton &&
                 widget.style ==
-                    ButtonStyle().copyWith(
+                   const  ButtonStyle().copyWith(
                       backgroundColor: WidgetStatePropertyAll(
                         AppColors.gray[70],
                       ),
