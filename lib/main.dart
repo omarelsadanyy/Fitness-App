@@ -11,6 +11,7 @@ import 'config/app_language/app_language_config.dart';
 import 'config/di/di.dart';
 import 'package:device_preview/device_preview.dart';
 
+import 'core/routes/app_routes.dart';
 import 'core/theme/app_theme.dart';
 
 
@@ -50,6 +51,7 @@ class FitnessApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           onGenerateRoute: Routes.onGenerate,
           navigatorKey: Routes.navigatorKey,
+          initialRoute: AppRoutes.onBoarding,
         
         ));
   }

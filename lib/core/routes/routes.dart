@@ -2,12 +2,18 @@ import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
+import '../../features/on_boarding/view/on_boarding_view.dart';
+
 abstract class Routes {
   static final GlobalKey<NavigatorState> navigatorKey =
       GlobalKey<NavigatorState>();
   static Route onGenerate(RouteSettings setting) {
     final url = Uri.parse(setting.name ?? "");
     switch (url.path) {
+      case AppRoutes.onBoarding:
+        return MaterialPageRoute(
+          builder: (context) => const OnBoardingView(),
+        );
       case AppRoutes.registerScreen:
       default:
         return MaterialPageRoute(
