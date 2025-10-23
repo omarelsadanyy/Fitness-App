@@ -1,3 +1,27 @@
 {
-  "@@locale": "ar"
+  "@@locale": "ar",
+  "tellUsAboutYourself": "احكِ لنا عن نفسك!",
+  "weNeedToKnowYourGender": "نحتاج إلى معرفة نوع جنسك",
+  "howOldAreYou": "كم عمرك؟",
+  "thisHelpsUsCreateYourPersonalizedPlan": "يساعدنا هذا في إنشاء خطتك الشخصية",
+  "whatIsYourWeight": "ما هو وزنك؟",
+  "whatIsYourHeight": "ما هو طولك؟",
+  "whatIsYourGoal": "ما هو هدفك؟",
+  "gainWeight": "زيادة الوزن",
+  "loseWeight": "فقدان الوزن",
+  "getFitter": "أن أصبح أكثر لياقة",
+  "gainMoreFlexible": "زيادة المرونة",
+  "learnTheBasic": "تعلم الأساسيات",
+  "male": "ذكر",
+  "female": "انثى",
+  "year": "عام",
+  "kg": "كجم",
+  "cm": "سم",
+  "rookie": "مبتدئ جدًا",
+  "beginner": "مبتدئ",
+  "intermediate": "متوسط",
+  "advance": "متقدم",
+  "trueBeast": "محترف قوي",
+  "yourRegularPhysical": "ما هو مستوى نشاطك البدني المعتاد؟",
+  "next": "التالى"
 }

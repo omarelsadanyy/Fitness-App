@@ -61,6 +61,9 @@ dependencies:
   firebase_core: ^4.2.0
   mockito: ^5.4.4
   connectivity_plus: ^7.0.0
+  animate_do: ^4.2.0
+  percent_indicator: ^4.2.5
+  numberpicker: ^2.1.2
 
 
 
@@ -86,12 +89,10 @@ flutter:
   generate: true
 
   assets:
-    - images/
+    - assets/images/
 
   fonts:
-    - family: Cairo
-      fonts:
-        - asset: assets/fonts/Cairo-Regular.ttf
+
 
     - family: BalooThambi2
       fonts:
@@ -103,3 +104,5 @@ flutter:
           weight: 600
         - asset: assets/fonts/BalooThambi2-Bold.ttf
           weight: 700
+        - asset: assets/fonts/BalooThambi2-ExtraBold.ttf
+          weight: 800

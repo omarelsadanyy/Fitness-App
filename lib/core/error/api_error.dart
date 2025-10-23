@@ -37,12 +37,12 @@ class ServerFailure extends Failure {
     }
   }
 
-  factory ServerFailure.fromResponse(int? statusCode, dynamic response) {
-    if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
+  factory ServerFailure.fromResponse(dynamic statusCode, dynamic response) {
+    if (statusCode == "400" || statusCode == "401" || statusCode == "403") {
       return ServerFailure(response['error']['message']);
-    } else if (statusCode == 404) {
+    } else if (statusCode == "404") {
       return ServerFailure(ExceptionConstants.notFound);
-    } else if (statusCode == 500) {
+    } else if (statusCode == "500") {
       return ServerFailure(ExceptionConstants.internalServer);
     } else {
       return ServerFailure(ExceptionConstants.generalError);
