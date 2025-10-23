@@ -4,12 +4,12 @@ import 'package:fitness/core/theme/font_style.dart';
 import 'package:flutter/material.dart';
 
 class GenderWidget extends StatelessWidget {
-   GenderWidget({super.key, this.isSelected=false
+ const  GenderWidget({super.key, this.isSelected=false
     ,required this.iconData, required this.title,this.onTap});
 
   final IconData iconData;
-  final String title;void Function()? onTap;
-bool isSelected;
+  final String title;final void Function()? onTap;
+final bool isSelected;
   @override
   Widget build(BuildContext context) {
     return
@@ -26,7 +26,8 @@ bool isSelected;
           ),
           child: Column(
             children: [
-              Icon(iconData, color: AppColors.white, size: context.setMinSize(44)),
+              Icon(iconData, color: AppColors.white,
+                  size: context.setMinSize(44)),
               SizedBox(height: context.setHight(8)),
               Text(title, style: getMediumStyle(color: AppColors.white,fontSize:
               context.setSp(16))),
