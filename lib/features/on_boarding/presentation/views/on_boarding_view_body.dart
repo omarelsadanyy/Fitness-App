@@ -10,6 +10,7 @@ import '../cubit/on_boarding_cubit.dart';
 import '../cubit/on_boarding_intent.dart';
 import '../cubit/on_boarding_state.dart';
 
+
 class OnBoardingViewBody extends StatelessWidget {
   const OnBoardingViewBody({super.key});
 
