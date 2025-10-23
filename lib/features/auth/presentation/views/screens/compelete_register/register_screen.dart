@@ -15,13 +15,10 @@ class CompeleteRegisterScreen extends StatelessWidget {
     Column(
       children: [
 SizedBox(height: context.setHight(60),),
-Expanded(child: PageView.builder(
-    itemCount: 2,
-    itemBuilder: (context,index){
-  return PageViewCompeleteRegister(index: index+1,
+const Expanded(child:
+PageViewCompeleteRegister()
 
-  );
-}))
+)
       ],
     )),
     );

@@ -35,8 +35,8 @@ class UserResponse {
 
   UserEntity toEntity(){
     return UserEntity(
-      personalInfo: personalInfo!.toEntity(),
-      bodyInfo: bodyInfo!.toEntity(),
+      personalInfo: personalInfo?.toEntity(),
+      bodyInfo: bodyInfo?.toEntity(),
       activityLevel: activityLevel,
       goal: goal,
     );
