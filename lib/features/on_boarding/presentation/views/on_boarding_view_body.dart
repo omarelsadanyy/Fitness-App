@@ -2,10 +2,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../../../core/constants/assets_maneger.dart';
+import '../../../../core/constants/assets_manager.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../core/theme/app_colors.dart';
-import '../../../../core/widget/custom_fitness_buttton.dart';
+import '../../../../core/widget/custom_fitness_button.dart';
 import '../cubit/on_boarding_cubit.dart';
 import '../cubit/on_boarding_intent.dart';
 import '../cubit/on_boarding_state.dart';
@@ -172,7 +172,7 @@ class OnBoardingViewBody extends StatelessWidget {
                                       ),
                                       onPressed: () {
                                         if (isLastPage) {
-                                          // TODO: Navigate to your home or login screen
+                                          ///////////////////////
                                         } else {
                                           cubit.intent(
                                             NextPageIntent(),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../presentation/cubit/on_boarding_cubit.dart';
 import '../presentation/views/on_boarding_view_body.dart';
 class OnBoardingView extends StatelessWidget {
