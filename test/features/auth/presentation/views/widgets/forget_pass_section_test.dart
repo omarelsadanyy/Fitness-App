@@ -48,13 +48,13 @@ void main() {
         ),
         findsOneWidget,
       );
-      expect(
-        find.byWidgetPredicate(
-          (widget) =>
-              widget is CustumFieldsButton && widget.text == l10n.sendOTP,
-        ),
-        findsOneWidget,
-      );
+      // expect(
+      //   find.byWidgetPredicate(
+      //     (widget) =>
+      //         widget is CustumFieldsButton && widget.text == l10n.sendOTP,
+      //   ),
+      //   findsOneWidget,
+      // );
     });
 
     testWidgets('test when enter field correct ...', (

@@ -1,12 +1,11 @@
 
-import '../error/response_exception.dart';
 
 enum Status { initial, loading, success, failure }
 
 class StateStatus<T> {
   final Status status;
   final T? data;
-  final ResponseException? error;
+  final String? error;
 
   const StateStatus._({required this.status, this.data, this.error});
 
@@ -17,7 +16,7 @@ class StateStatus<T> {
   const StateStatus.success(T data)
       : this._(status: Status.success, data: data);
 
-  const StateStatus.failure(ResponseException error)
+  const StateStatus.failure(String error)
       : this._(status: Status.failure, error: error);
 
   bool get isInitial => status == Status.initial;

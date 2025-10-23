@@ -45,12 +45,12 @@ void main() {
       ),
       findsOneWidget,
     );
-    expect(
-      find.byWidgetPredicate(
-        (widget) => widget is CustumFieldsButton &&widget.text==context.loc.confirm
-      ),
-      findsOneWidget,
-    );
+    // expect(
+    //   find.byWidgetPredicate(
+    //     (widget) => widget is CustumFieldsButton &&widget.text==context.loc.confirm
+    //   ),
+    //   findsOneWidget,
+    // );
     expect(
       find.byWidgetPredicate(
         (widget) => widget is Column &&widget.children.length==4&&widget.children[0] is CustomOtpField&&

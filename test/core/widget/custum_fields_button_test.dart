@@ -22,7 +22,8 @@ void main() {
               width: 375,
               child: Scaffold(
                 body: CustumFieldsButton(
-                  text: "click",
+                  isLoading: false,
+                  child:const Text( "click"),
                   valueNotify: valueNotify,
                   onPress: null,
                 ),
@@ -70,7 +71,8 @@ void main() {
               width: 375,
               child: Scaffold(
                 body: CustumFieldsButton(
-                  text: "click",
+                  isLoading: false,
+                  child:Text( "click") ,
                   valueNotify: valueNotify,
                   onPress: null,
                 ),

@@ -97,6 +97,198 @@ abstract class AppLocalizations {
     Locale('ar'),
     Locale('en'),
   ];
+
+  /// No description provided for @noRouteFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No Route Found'**
+  String get noRouteFound;
+
+  /// No description provided for @sendOTP.
+  ///
+  /// In en, this message translates to:
+  /// **'Send OTP'**
+  String get sendOTP;
+
+  /// No description provided for @forgetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forget Password'**
+  String get forgetPassword;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @enterYourEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter Your Email'**
+  String get enterYourEmail;
+
+  /// No description provided for @oTPCode.
+  ///
+  /// In en, this message translates to:
+  /// **'OTP CODE'**
+  String get oTPCode;
+
+  /// No description provided for @enterYourOtp.
+  ///
+  /// In en, this message translates to:
+  /// **'Eneter Your OTP Check your Email'**
+  String get enterYourOtp;
+
+  /// No description provided for @confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get confirm;
+
+  /// No description provided for @didnotReciveCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Didnt Recieve Verification Code?'**
+  String get didnotReciveCode;
+
+  /// No description provided for @resendCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend Code?'**
+  String get resendCode;
+
+  /// No description provided for @makeSure8Char.
+  ///
+  /// In en, this message translates to:
+  /// **'Make Sure Its 8 Characters Or More'**
+  String get makeSure8Char;
+
+  /// No description provided for @createNewPass.
+  ///
+  /// In en, this message translates to:
+  /// **'Create New Password'**
+  String get createNewPass;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @confirmPass.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirmPass;
+
+  /// No description provided for @done.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get done;
+
+  /// No description provided for @fieldRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'This field is required'**
+  String get fieldRequired;
+
+  /// No description provided for @emailRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Email is required'**
+  String get emailRequired;
+
+  /// No description provided for @emailNotValid.
+  ///
+  /// In en, this message translates to:
+  /// **'This email is not valid'**
+  String get emailNotValid;
+
+  /// No description provided for @passwordRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is required'**
+  String get passwordRequired;
+
+  /// No description provided for @passwordMinLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least 6 characters'**
+  String get passwordMinLength;
+
+  /// No description provided for @passwordUppercase.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one uppercase letter'**
+  String get passwordUppercase;
+
+  /// No description provided for @passwordNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must contain at least one number'**
+  String get passwordNumber;
+
+  /// No description provided for @passwordsNotMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords do not match'**
+  String get passwordsNotMatch;
+
+  /// No description provided for @usernameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Username is required'**
+  String get usernameRequired;
+
+  /// No description provided for @usernameNotValid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid username'**
+  String get usernameNotValid;
+
+  /// No description provided for @fullnameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Full name is required'**
+  String get fullnameRequired;
+
+  /// No description provided for @fullnameMinLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Full name must be at least 3 characters long'**
+  String get fullnameMinLength;
+
+  /// No description provided for @phoneRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone number is required'**
+  String get phoneRequired;
+
+  /// No description provided for @phoneNumbersOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter numbers only'**
+  String get phoneNumbersOnly;
+
+  /// No description provided for @phoneLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Value must be 11 digits after country code'**
+  String get phoneLength;
+
+  /// No description provided for @numberRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'This field is required'**
+  String get numberRequired;
+
+  /// No description provided for @numberOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter numbers only'**
+  String get numberOnly;
 }
 
 class _AppLocalizationsDelegate

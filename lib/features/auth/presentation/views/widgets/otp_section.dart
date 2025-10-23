@@ -19,7 +19,7 @@ class OtpSection extends StatelessWidget {
 
          SizedBox(height: context.setHight(30)),
         //button
-        CustumFieldsButton(valueNotify: isOtpCompleted, text: context.loc.confirm),
+        CustumFieldsButton(valueNotify: isOtpCompleted, myChild: Text(context.loc.confirm),isLoading: false,),
         
 
         //endSection
