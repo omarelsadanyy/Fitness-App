@@ -5,14 +5,18 @@ abstract class Constants {
   static const String appJson = "application/json";
   static const String noResponseReceivedMessage = "noResponseReceivedMessage";
   static const String anUnknownErrorOccurred = "anUnknownErrorOccurred";
+  static const String email = "email";
+  static const String password = "password";
+  static const String error = "error";
+  static const String message = "message";
 
-
-    // 🔸 Validation patterns
+  // 🔸 Validation patterns
   static const String emailPattern =
       r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
   static const String usernamePattern = r'^[a-zA-Z0-9,.-]+$';
   static const String uppercasePattern = r'[A-Z]';
   static const String numberPattern = r'\d';
 
-
+  static const String invalidResponse =
+      "Invalid response: missing token or user";
 }
