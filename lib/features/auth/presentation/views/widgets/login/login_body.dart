@@ -82,7 +82,7 @@ class LoginBody extends StatelessWidget {
                     const SocialSection(),
                     SizedBox(
                       height: context.setHight(40),
-                      child: CustumFieldsButton(
+                      child: CustomFieldsButton(
                         valueNotify: ValueNotifier(state.isLoginValid),
                         isLoading: state.loginStatus.isLoading,
                         myChild: Text(
