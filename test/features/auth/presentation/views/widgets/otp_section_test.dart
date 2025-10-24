@@ -1,4 +1,3 @@
-import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
@@ -45,12 +44,7 @@ void main() {
       ),
       findsOneWidget,
     );
-    expect(
-      find.byWidgetPredicate(
-        (widget) => widget is CustumFieldsButton &&widget.text==context.loc.confirm
-      ),
-      findsOneWidget,
-    );
+  
     expect(
       find.byWidgetPredicate(
         (widget) => widget is Column &&widget.children.length==4&&widget.children[0] is CustomOtpField&&

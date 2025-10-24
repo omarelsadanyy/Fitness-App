@@ -22,8 +22,9 @@ void main() {
               width: 375,
               child: Scaffold(
                 body: CustumFieldsButton(
-                  text: "click",
+                  myChild: const Text("click"),
                   valueNotify: valueNotify,
+                  isLoading:false,
                   onPress: null,
                 ),
               ),
@@ -70,9 +71,10 @@ void main() {
               width: 375,
               child: Scaffold(
                 body: CustumFieldsButton(
-                  text: "click",
+                  myChild: const Text("Click"),
                   valueNotify: valueNotify,
                   onPress: null,
+                  isLoading: false,
                 ),
               ),
             ),
