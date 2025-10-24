@@ -1,5 +1,6 @@
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/routes/app_routes.dart';
+import 'package:fitness/features/home/presentation/view/screens/home_tab.dart';
 import 'package:flutter/material.dart';
 
 import '../../features/on_boarding/view/on_boarding_view.dart';
@@ -13,6 +14,10 @@ abstract class Routes {
       case AppRoutes.onBoarding:
         return MaterialPageRoute(
           builder: (context) => const OnBoardingView(),
+        );
+      case AppRoutes.home:
+        return MaterialPageRoute(
+          builder: (context) => const HomeTab(),
         );
       case AppRoutes.registerScreen:
       default:
