@@ -43,8 +43,11 @@ class ServerFailure extends Failure {
     if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
       return ServerFailure(response['error']);
     } else if (statusCode == 404) {
-      return ServerFailure(response['message']);
-    } else if (statusCode == 500) {
+  final errorMessage =
+      response['message'] ?? response['error'] ?? 'Unknown error occurred';
+  return ServerFailure(errorMessage);
+}
+ else if (statusCode == 500) {
       return ServerFailure(ExceptionConstants.internalServer);
     } else {
       return ServerFailure(ExceptionConstants.generalError);
