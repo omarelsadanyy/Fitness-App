@@ -73,7 +73,7 @@ class _CreateNewPassSectionState extends State<CreateNewPassSection> {
       ),
         SizedBox(height: context.setHight(35)),
     
-        CustumFieldsButton(valueNotify: isFormValid, text: context.loc.done,)
+        CustumFieldsButton(valueNotify: isFormValid, myChild: Text(context.loc.done), isLoading: false,)
       ],
     );
   }
