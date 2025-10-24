@@ -4,8 +4,8 @@ import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/widget/loading_circle.dart';
 import 'package:flutter/material.dart';
 
-class CustumFieldsButton extends StatelessWidget {
-  const CustumFieldsButton({
+class CustomFieldsButton extends StatelessWidget {
+  const CustomFieldsButton({
     super.key,
     required this.valueNotify,
     this.onPress,

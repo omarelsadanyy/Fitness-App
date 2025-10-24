@@ -1,7 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:fitness/core/constants/assets_maneger.dart';
 import 'package:fitness/core/theme/app_colors.dart';
+
+import '../constants/assets_manager.dart';
 
 class AppBackground extends StatelessWidget {
   final Widget child;
@@ -20,7 +21,7 @@ class AppBackground extends StatelessWidget {
     return Stack(
       fit: StackFit.expand,
       children: [
-        Image.asset(AssetsManeger.backGroundImage, fit: BoxFit.cover),
+        Image.asset(AssetsManager.backGroundImage, fit: BoxFit.cover),
         BackdropFilter(
           filter: ImageFilter.blur(sigmaX: blur, sigmaY: blur),
           child: Container(color: AppColors.black.withValues(alpha: opacity)),
