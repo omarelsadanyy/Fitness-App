@@ -1,8 +1,10 @@
+import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/widget/app_background.dart';
 import 'package:fitness/core/widget/blur_container.dart';
 import 'package:fitness/core/widget/logo.dart';
+import 'package:fitness/features/auth/presentation/view_model/forget_pass_cubit/forget_pass_cubit.dart';
 import 'package:fitness/features/auth/presentation/views/screens/create_password_screen.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/create_new_pass_section.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/text_section.dart';
@@ -10,7 +12,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('test create password screen structure ...', (WidgetTester tester) async {
+
+  setUpAll(() async {
+    await configureDependencies(); 
+  });
+  testWidgets('test create password screen structure ...', (
+    WidgetTester tester,
+  ) async {
+   getIt.get<ForgetPassCubit>();
     await tester.pumpWidget(
       const MaterialApp(
         localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -19,7 +28,7 @@ void main() {
           baseSize: Size(375, 812),
           height: 812,
           width: 375,
-          child: CreatePasswordScreen(),
+          child: CreatePasswordScreen(email: ''),
         ),
       ),
     );
@@ -48,37 +57,29 @@ void main() {
             widget.children[1] is Spacer &&
             widget.children[2] is TextSection &&
             widget.children[3] is BlurContainer &&
-            widget.children[4] is Spacer&&
+            widget.children[4] is Spacer &&
             widget.children[5] is Spacer,
       ),
       findsOneWidget,
     );
     expect(
       find.byWidgetPredicate(
-        (widget) =>
-            widget is SafeArea &&
-            widget.child is Column
+        (widget) => widget is SafeArea && widget.child is Column,
+      ),
+      findsOneWidget,
+    );
+    expect(
+      find.byWidgetPredicate(
+        (widget) => widget is AppBackground && widget.child is SafeArea,
       ),
       findsOneWidget,
     );
     expect(
       find.byWidgetPredicate(
         (widget) =>
-            widget is AppBackground && widget.child is SafeArea
-           
+            widget is BlurContainer && widget.blurChild is CreateNewPassSection,
       ),
       findsOneWidget,
     );
-    expect(
-      find.byWidgetPredicate(
-        (widget) =>
-            widget is BlurContainer && widget.blurChild is CreateNewPassSection
-           
-      ),
-      findsOneWidget,
-    );
-   
-
-   
   });
 }

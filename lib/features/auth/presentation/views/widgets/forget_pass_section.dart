@@ -2,14 +2,15 @@ import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/constants/assets_maneger.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
+import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/core/validator/validator.dart';
 import 'package:fitness/core/widget/custum_fields_button.dart';
 import 'package:fitness/core/widget/custum_text_field.dart';
 import 'package:fitness/core/widget/cusum_scaffold_messanger.dart';
 import 'package:fitness/features/auth/domain/entity/auth/forgetPassEntity/forget_pass_request.dart';
-import 'package:fitness/features/auth/presentation/view_model/forget_pass_bloc/forget_pass_bloc.dart';
-import 'package:fitness/features/auth/presentation/view_model/forget_pass_bloc/forget_pass_event.dart';
-import 'package:fitness/features/auth/presentation/view_model/forget_pass_bloc/forget_pass_state.dart';
+import 'package:fitness/features/auth/presentation/view_model/forget_pass_cubit/forget_pass_cubit.dart';
+import 'package:fitness/features/auth/presentation/view_model/forget_pass_cubit/forget_pass_event.dart';
+import 'package:fitness/features/auth/presentation/view_model/forget_pass_cubit/forget_pass_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,7 +26,7 @@ class _ForgetPassSectionState extends State<ForgetPassSection> {
   final ValueNotifier<bool> isEmailCorrect = ValueNotifier<bool>(false);
   final ValueNotifier<bool> isLoading = ValueNotifier<bool>(false);
 
-  final ForgetPassBloc _forgetPassBloc = getIt.get<ForgetPassBloc>();
+  final ForgetPassCubit _forgetPassBloc = getIt.get<ForgetPassCubit>();
 
   @override
   void dispose() {
@@ -38,14 +39,18 @@ class _ForgetPassSectionState extends State<ForgetPassSection> {
     return BlocProvider.value(
       value: _forgetPassBloc,
 
-      child: BlocListener<ForgetPassBloc, ForgetPasswordState>(
+      child: BlocListener<ForgetPassCubit, ForgetPasswordState>(
         listener: (context, state) {
           if (state.forgetPasswordState.isSuccess) {
-            print("sended otp yaya");
-             isLoading.value = false;
+            isLoading.value = false;
+            Navigator.pushNamed(
+              context,
+              AppRoutes.otpScreen,
+              arguments: _emailController.text.trim(),
+            );
           } else if (state.forgetPasswordState.isFailure) {
-             isLoading.value = false;
-            showCustomSnackBar(context, state.forgetPasswordState.error!);
+            isLoading.value = false;
+            showCustomSnackBar(context, state.forgetPasswordState.error!.message);
           } else if (state.forgetPasswordState.isLoading) {
             isLoading.value = true;
           }
@@ -70,7 +75,7 @@ class _ForgetPassSectionState extends State<ForgetPassSection> {
               valueListenable: isLoading,
               builder: (context, value, child) {
                 return CustumFieldsButton(
-                  isLoading:isLoading.value,
+                  isLoading: isLoading.value,
                   valueNotify: isEmailCorrect,
                   myChild: Text(context.loc.sendOTP),
                   onPress: () {

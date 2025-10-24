@@ -1,11 +1,13 @@
 
 
+import 'package:fitness/core/error/response_exception.dart';
+
 enum Status { initial, loading, success, failure }
 
 class StateStatus<T> {
   final Status status;
   final T? data;
-  final String? error;
+  final ResponseException? error;
 
   const StateStatus._({required this.status, this.data, this.error});
 
@@ -16,7 +18,7 @@ class StateStatus<T> {
   const StateStatus.success(T data)
       : this._(status: Status.success, data: data);
 
-  const StateStatus.failure(String error)
+  const StateStatus.failure(ResponseException error)
       : this._(status: Status.failure, error: error);
 
   bool get isInitial => status == Status.initial;
