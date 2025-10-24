@@ -75,4 +75,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get profile => 'Profile';
+
+  @override
+  String get loginSuccess => 'Login successful ✔︎';
+
+  @override
+  String get login => 'Login';
+
+  @override
+  String get forgetPass => 'Forget Password?';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get password => 'Password';
+
+  @override
+  String get heyThere => 'Hey There';
+
+  @override
+  String get welcomeBack => 'WELCOME BACK';
+
+  @override
+  String get doNotHaveAccount => 'Don’t have an account? ';
+
+  @override
+  String get register => 'Register';
+
+  @override
+  String get or => 'Or';
 }

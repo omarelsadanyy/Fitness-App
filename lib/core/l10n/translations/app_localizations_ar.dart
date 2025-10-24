@@ -76,4 +76,34 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get profile => 'الملف الشخصي';
+
+  @override
+  String get loginSuccess => 'تم تسجيل الدخول بنجاح ✔︎';
+
+  @override
+  String get login => 'تسجيل الدخول';
+
+  @override
+  String get forgetPass => 'نسيت كلمة المرور؟';
+
+  @override
+  String get email => 'البريد الإلكتروني';
+
+  @override
+  String get password => 'كلمة المرور';
+
+  @override
+  String get heyThere => 'مرحبًا';
+
+  @override
+  String get welcomeBack => 'مرحبًا بعودتك';
+
+  @override
+  String get doNotHaveAccount => 'ليس لديك حساب؟ ';
+
+  @override
+  String get register => 'إنشاء حساب جديد';
+
+  @override
+  String get or => 'أو';
 }

@@ -24,7 +24,7 @@
 
   "chatAi": "chat bot",
   "gym": "Gym",
-  "profile": "Profile"
+  "profile": "Profile",
   "numberOnly": "Enter numbers only",
   "loginSuccess":"Login successful ✔︎",
   "login":"Login",

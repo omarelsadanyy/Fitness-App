@@ -28,7 +28,7 @@ void main() async {
       enabled: false,
       builder: (context) => ChangeNotifierProvider.value(
         value: appLanguageConfig, // Use the instance here
-        child: const FitnessApp(),
+        child: const FitnessApp(isLoggedIn: true,),
       ),
     ),
   );

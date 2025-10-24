@@ -229,6 +229,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Profile'**
   String get profile;
+
+  /// No description provided for @loginSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Login successful ✔︎'**
+  String get loginSuccess;
+
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get login;
+
+  /// No description provided for @forgetPass.
+  ///
+  /// In en, this message translates to:
+  /// **'Forget Password?'**
+  String get forgetPass;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @heyThere.
+  ///
+  /// In en, this message translates to:
+  /// **'Hey There'**
+  String get heyThere;
+
+  /// No description provided for @welcomeBack.
+  ///
+  /// In en, this message translates to:
+  /// **'WELCOME BACK'**
+  String get welcomeBack;
+
+  /// No description provided for @doNotHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don’t have an account? '**
+  String get doNotHaveAccount;
+
+  /// No description provided for @register.
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
+  String get register;
+
+  /// No description provided for @or.
+  ///
+  /// In en, this message translates to:
+  /// **'Or'**
+  String get or;
 }
 
 class _AppLocalizationsDelegate
