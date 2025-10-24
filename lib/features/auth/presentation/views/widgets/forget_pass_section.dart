@@ -43,7 +43,8 @@ class _ForgetPassSectionState extends State<ForgetPassSection> {
         SizedBox(height: context.setHight(20)),
         CustumFieldsButton(
           valueNotify: isEmailCorrect,
-          text: context.loc.sendOTP,
+          myChild: Text(context.loc.sendOTP),
+          isLoading: false,
         ),
       ],
     );
