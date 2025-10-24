@@ -49,6 +49,7 @@ void main() {
   );
 
   setUp(() {
+    provideDummy<Result<AuthEntity>>(FailedResult("Dummy Error"));
     mockAuthRemoteDsImpl = MockAuthRemoteDsImpl();
     authRepoImpl = AuthRepoImpl(mockAuthRemoteDsImpl);
 

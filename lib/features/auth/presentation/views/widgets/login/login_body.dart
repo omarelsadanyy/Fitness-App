@@ -1,5 +1,6 @@
 import 'package:fitness/core/constants/app_widgets_key.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
+import 'package:fitness/core/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fitness/core/theme/app_colors.dart';
@@ -64,7 +65,10 @@ class LoginBody extends StatelessWidget {
                     GestureDetector(
                       key: const Key(WidgetKey.forgetPasswordKey),
                       onTap: () {
-                        // navigate to forgetPass
+                        Navigator.pushNamed(
+                          context,
+                          AppRoutes.forgetPassScreen,
+                        );
                       },
                       child: Align(
                         alignment: Alignment.centerRight,

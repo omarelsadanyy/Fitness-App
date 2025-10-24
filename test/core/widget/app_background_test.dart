@@ -21,12 +21,11 @@ void main() {
     expect(find.byType(BackdropFilter), findsOneWidget);
     expect(find.byType(Container), findsOneWidget);
 
-
     expect(
       find.byWidgetPredicate(
         (widget) =>
             widget is Container &&
-           widget.color == AppColors.black.withValues(alpha: 0.2)
+            widget.color == AppColors.black.withValues(alpha: 0.2),
       ),
       findsOneWidget,
     );
@@ -34,7 +33,7 @@ void main() {
       find.byWidgetPredicate(
         (widget) =>
             widget is BackdropFilter &&
-           widget.filter == ImageFilter.blur(sigmaX: 8, sigmaY: 8)
+            widget.filter == ImageFilter.blur(sigmaX: 8, sigmaY: 8),
       ),
       findsOneWidget,
     );
@@ -42,7 +41,10 @@ void main() {
       find.byWidgetPredicate(
         (widget) =>
             widget is Stack &&
-           widget.children.length == 3&&widget.children[0] is Image&&widget.children[1] is BackdropFilter && widget.children[2] is Text
+            widget.children.length == 3 &&
+            widget.children[0] is Image &&
+            widget.children[1] is BackdropFilter &&
+            widget.children[2] is Text,
       ),
       findsOneWidget,
     );
@@ -52,8 +54,5 @@ void main() {
     final Image imageWidget = tester.widget(imageFinder);
     final AssetImage assetImage = imageWidget.image as AssetImage;
     expect(assetImage.assetName, AssetsManeger.backGroundImage);
-  
-
-
   });
 }

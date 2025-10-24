@@ -2,6 +2,7 @@ import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/features/auth/presentation/views/screens/create_password_screen.dart';
+import 'package:fitness/features/auth/presentation/views/screens/forget_password_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/otp_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/home_tab.dart';
 import 'package:fitness/features/auth/presentation/view_model/login_view_model/login_cubit.dart';
@@ -20,9 +21,17 @@ abstract class Routes {
     switch (url.path) {
       case AppRoutes.onBoarding:
         return MaterialPageRoute(builder: (context) => const OnBoardingView());
+
       case AppRoutes.home:
         return MaterialPageRoute(builder: (context) => const HomeTab());
-      case AppRoutes.registerScreen:
+
+      case AppRoutes.forgetPassScreen:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const ForgetPasswordScreen();
+          },
+        );
+
       case AppRoutes.loginRoute:
         return MaterialPageRoute(
           builder: (context) {
@@ -33,8 +42,8 @@ abstract class Routes {
           },
         );
 
-      case AppRoutes.home:
-        return MaterialPageRoute(builder: (context) => const HomeScreen());
+      // case AppRoutes.home:
+      //   return MaterialPageRoute(builder: (context) => const HomeScreen());
 
       case AppRoutes.otpScreen:
         final email = setting.arguments as String;

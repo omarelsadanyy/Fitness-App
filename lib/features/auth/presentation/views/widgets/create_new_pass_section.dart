@@ -2,6 +2,7 @@ import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/constants/assets_maneger.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
+import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/core/validator/validator.dart';
 import 'package:fitness/core/widget/custum_fields_button.dart';
 import 'package:fitness/core/widget/custum_text_field.dart';
@@ -50,7 +51,7 @@ class _CreateNewPassSectionState extends State<CreateNewPassSection> {
         listener: (context, state) {
           if (state.forgetPasswordState.isSuccess) {
             isLoading.value = false;
-            // go to login page
+            Navigator.pushReplacementNamed(context, AppRoutes.loginRoute);
           } else if (state.forgetPasswordState.isFailure) {
             isLoading.value = false;
             showCustomSnackBar(
@@ -119,7 +120,6 @@ class _CreateNewPassSectionState extends State<CreateNewPassSection> {
                           ),
                         ),
                       );
-                      //navigtor to login
                     }
                   },
                 );
