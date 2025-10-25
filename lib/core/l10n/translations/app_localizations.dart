@@ -338,6 +338,96 @@ abstract class AppLocalizations {
   /// **'This field is required'**
   String get fieldRequired;
 
+  /// No description provided for @noRouteFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No Route Found'**
+  String get noRouteFound;
+
+  /// No description provided for @sendOTP.
+  ///
+  /// In en, this message translates to:
+  /// **'Send OTP'**
+  String get sendOTP;
+
+  /// No description provided for @forgetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forget Password'**
+  String get forgetPassword;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @enterYourEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter Your Email'**
+  String get enterYourEmail;
+
+  /// No description provided for @oTPCode.
+  ///
+  /// In en, this message translates to:
+  /// **'OTP CODE'**
+  String get oTPCode;
+
+  /// No description provided for @enterYourOtp.
+  ///
+  /// In en, this message translates to:
+  /// **'Eneter Your OTP Check your Email'**
+  String get enterYourOtp;
+
+  /// No description provided for @confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get confirm;
+
+  /// No description provided for @didnotReciveCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Didnt Recieve Verification Code?'**
+  String get didnotReciveCode;
+
+  /// No description provided for @resendCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend Code?'**
+  String get resendCode;
+
+  /// No description provided for @makeSure8Char.
+  ///
+  /// In en, this message translates to:
+  /// **'Make Sure Its 8 Characters Or More'**
+  String get makeSure8Char;
+
+  /// No description provided for @createNewPass.
+  ///
+  /// In en, this message translates to:
+  /// **'Create New Password'**
+  String get createNewPass;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @confirmPass.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirmPass;
+
+  /// No description provided for @done.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get done;
+
   /// No description provided for @emailRequired.
   ///
   /// In en, this message translates to:
@@ -433,6 +523,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter numbers only'**
   String get numberOnly;
+
+  /// No description provided for @explore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get explore;
+
+  /// No description provided for @chatAi.
+  ///
+  /// In en, this message translates to:
+  /// **'chat bot'**
+  String get chatAi;
+
+  /// No description provided for @gym.
+  ///
+  /// In en, this message translates to:
+  /// **'Gym'**
+  String get gym;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// No description provided for @loginSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Login successful ✔︎'**
+  String get loginSuccess;
+
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get login;
+
+  /// No description provided for @forgetPass.
+  ///
+  /// In en, this message translates to:
+  /// **'Forget Password?'**
+  String get forgetPass;
+
+  /// No description provided for @welcomeBack.
+  ///
+  /// In en, this message translates to:
+  /// **'WELCOME BACK'**
+  String get welcomeBack;
+
+  /// No description provided for @doNotHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don’t have an account? '**
+  String get doNotHaveAccount;
 }
 
 class _AppLocalizationsDelegate

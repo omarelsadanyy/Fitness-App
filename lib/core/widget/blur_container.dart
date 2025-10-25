@@ -3,7 +3,7 @@ import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:flutter/material.dart';
 
 class BlurContainer extends StatelessWidget {
-  final  Widget blurChild;
+ final  Widget blurChild;
   const BlurContainer({super.key,required this.blurChild});
 
   @override
@@ -12,7 +12,7 @@ class BlurContainer extends StatelessWidget {
       borderRadius: BorderRadius.circular(context.setWidth(50)),
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: context.setHight(25), horizontal: context.setWidth(30)),
+        padding: EdgeInsets.symmetric(vertical: context.setHight(25), horizontal: context.setWidth(18)),
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
           child: blurChild,

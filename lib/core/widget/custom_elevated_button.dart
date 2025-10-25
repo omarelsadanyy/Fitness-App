@@ -32,24 +32,30 @@ class CustomElevatedButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         elevation: 0,
         backgroundColor:
-        backgroundColor ?? Theme.of(context).colorScheme.primary,
+            backgroundColor ?? Theme.of(context).colorScheme.primary,
         shadowColor: Colors.transparent,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(context.setMinSize(100)),
         ),
-        minimumSize: Size(width ?? MediaQuery.of(context).size.width, height ?? context.setHight(38)),
+        minimumSize: Size(
+          width ?? MediaQuery.of(context).size.width,
+          height ?? context.setHight(38),
+        ),
         side: borderColor != null ? BorderSide(color: borderColor!) : null,
       ),
       onPressed: onPressed,
       child: isText
           ? FittedBox(
-        child: Text(
-            buttonTitle,
-            style: titleStyle ??getExtraBoldStyle(
-              color: AppColors.white,
-              fontSize: context.setSp(FontSize.s14),)
-        ),
-      )
+              child: Text(
+                buttonTitle,
+                style:
+                    titleStyle ??
+                    getExtraBoldStyle(
+                      color: AppColors.white,
+                      fontSize: context.setSp(FontSize.s14),
+                    ),
+              ),
+            )
           : child,
     );
   }

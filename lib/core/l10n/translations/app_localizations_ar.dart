@@ -49,7 +49,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get male => 'ذكر';
 
   @override
-  String get female => 'انثى';
+  String get female => 'أنثى';
 
   @override
   String get year => 'عام';
@@ -79,7 +79,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get yourRegularPhysical => 'ما هو مستوى نشاطك البدني المعتاد؟';
 
   @override
-  String get next => 'التالى';
+  String get next => 'التالي';
 
   @override
   String get level1 => 'level1';
@@ -97,7 +97,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get level5 => 'level5';
 
   @override
-  String get heyThere => 'مرحبًا بك';
+  String get heyThere => 'مرحبًا';
 
   @override
   String get createAnAccount => 'إنشاء حساب';
@@ -115,10 +115,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get loginRegister => 'سجل الدخول';
 
   @override
-  String get firtNameRegister => 'الإسم الأول';
+  String get firtNameRegister => 'الاسم الأول';
 
   @override
-  String get lastNameRegister => 'الإسم الأخير';
+  String get lastNameRegister => 'الاسم الأخير';
 
   @override
   String get emailRegister => 'البريد الإلكتروني';
@@ -128,6 +128,51 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get fieldRequired => 'هذا الحقل مطلوب';
+
+  @override
+  String get noRouteFound => 'لا يوجد صفحة';
+
+  @override
+  String get sendOTP => 'إرسال الكود';
+
+  @override
+  String get forgetPassword => 'استعادة كلمة المرور';
+
+  @override
+  String get email => 'البريد الإلكتروني';
+
+  @override
+  String get enterYourEmail => 'أدخل البريد الإلكتروني الخاص بك';
+
+  @override
+  String get oTPCode => 'رمز التحقق';
+
+  @override
+  String get enterYourOtp => 'أدخل رمز التحقق الذي وصلك على البريد الإلكتروني';
+
+  @override
+  String get confirm => 'تأكيد';
+
+  @override
+  String get didnotReciveCode => 'ما وصلكش رمز التحقق؟';
+
+  @override
+  String get resendCode => 'إعادة إرسال الرمز؟';
+
+  @override
+  String get makeSure8Char => 'تأكد أن كلمة المرور 8 أحرف أو أكثر';
+
+  @override
+  String get createNewPass => 'إنشاء كلمة مرور جديدة';
+
+  @override
+  String get password => 'كلمة المرور';
+
+  @override
+  String get confirmPass => 'تأكيد كلمة المرور';
+
+  @override
+  String get done => 'تأكيد';
 
   @override
   String get emailRequired => 'البريد الإلكتروني مطلوب';
@@ -179,4 +224,31 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get numberOnly => 'يُسمح بالأرقام فقط';
+
+  @override
+  String get explore => 'استكشف';
+
+  @override
+  String get chatAi => 'الدردشة الذكية';
+
+  @override
+  String get gym => 'النادي الرياضي';
+
+  @override
+  String get profile => 'الملف الشخصي';
+
+  @override
+  String get loginSuccess => 'تم تسجيل الدخول بنجاح ✔︎';
+
+  @override
+  String get login => 'تسجيل الدخول';
+
+  @override
+  String get forgetPass => 'نسيت كلمة المرور؟';
+
+  @override
+  String get welcomeBack => 'مرحبًا بعودتك';
+
+  @override
+  String get doNotHaveAccount => 'ليس لديك حساب؟ ';
 }

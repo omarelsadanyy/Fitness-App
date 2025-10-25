@@ -21,7 +21,7 @@ class AppBackground extends StatelessWidget {
     return Stack(
       fit: StackFit.expand,
       children: [
-        Image.asset(AssetsManeger.backGroundImage, fit: BoxFit.cover),
+        Image.asset(AssetsManager.backGroundImage, fit: BoxFit.cover),
         BackdropFilter(
           filter: ImageFilter.blur(sigmaX: blur, sigmaY: blur),
           child: Container(color: AppColors.black.withValues(alpha: opacity)),

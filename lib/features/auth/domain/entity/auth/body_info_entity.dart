@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class BodyInfoEntity extends  Equatable{
+class BodyInfoEntity extends Equatable {
   final int? weight;
   final int? height;
 

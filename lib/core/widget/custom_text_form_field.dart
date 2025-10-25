@@ -65,7 +65,7 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
       onTap: onTap,
       style:
-      style ??
+          style ??
           getRegularStyle(
             color: AppColors.white,
             fontSize: context.setSp(FontSize.s16),
@@ -78,21 +78,31 @@ class CustomTextFormField extends StatelessWidget {
       readOnly: isReadOnly ?? false,
       decoration: InputDecoration(
         floatingLabelBehavior: floatingLabelBehavior,
-        contentPadding: contentPadding ?? EdgeInsets.symmetric(horizontal: context.setMinSize(16), vertical: context.setMinSize(4)),
+        contentPadding:
+            contentPadding ??
+            EdgeInsets.symmetric(
+              horizontal: context.setMinSize(16),
+              vertical: context.setMinSize(4),
+            ),
         filled: false,
         label: FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
             label,
             style:
-            labelStyle ??
-                getRegularStyle(color: AppColors.gray[AppColors.colorCode10]!
-                  ,fontSize: context.setSp(FontSize.s12),),
+                labelStyle ??
+                getRegularStyle(
+                  color: AppColors.gray[AppColors.colorCode10]!,
+                  fontSize: context.setSp(FontSize.s12),
+                ),
           ),
         ),
         hintStyle:
-        hintStyle ?? getRegularStyle(color: AppColors.gray[AppColors.colorCode10]!
-          ,fontSize: context.setSp(FontSize.s12),),
+            hintStyle ??
+            getRegularStyle(
+              color: AppColors.gray[AppColors.colorCode10]!,
+              fontSize: context.setSp(FontSize.s12),
+            ),
         hintText: hintText,
 
         focusedBorder: buildOutlinedBorder(
@@ -118,21 +128,27 @@ class CustomTextFormField extends StatelessWidget {
         disabledBorder: buildOutlinedBorder(
           context: context,
           borderColor:
-          disabledBorderColor ?? Theme.of(context).colorScheme.onSecondary,
+              disabledBorderColor ?? Theme.of(context).colorScheme.onSecondary,
           borderRadius: borderRadius,
         ),
         prefixIcon: Padding(
-          padding: const EdgeInsets.only(left: 16,right:8),
+          padding: const EdgeInsets.only(left: 16, right: 8),
           child: prefixIcon,
         ),
         prefixIconConstraints:
-        prefixIconConstraints ??
-            BoxConstraints(maxWidth: context.setWidth(60), maxHeight: context.setHight(60)),
+            prefixIconConstraints ??
+            BoxConstraints(
+              maxWidth: context.setWidth(60),
+              maxHeight: context.setHight(60),
+            ),
         suffixIconConstraints:
-        suffixIconConstraints ??
-            BoxConstraints(maxWidth: context.setWidth(60), maxHeight: context.setHight(60)),
+            suffixIconConstraints ??
+            BoxConstraints(
+              maxWidth: context.setWidth(60),
+              maxHeight: context.setHight(60),
+            ),
         suffixIcon: Padding(
-          padding: const EdgeInsets.only(left: 16,right:8),
+          padding: const EdgeInsets.only(left: 16, right: 8),
           child: suffixIcon,
         ),
         errorStyle: getRegularStyle(color: AppColors.red),

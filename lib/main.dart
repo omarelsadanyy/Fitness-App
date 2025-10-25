@@ -1,3 +1,4 @@
+// main file
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
@@ -23,33 +24,35 @@ void main() async {
   runApp(
     DevicePreview(
       enabled: true,
-      builder: (context) =>
-          ChangeNotifierProvider.value(
-        value: appLanguageConfig,
-        child: const FitnessApp(),
+      builder: (context) => ChangeNotifierProvider.value(
+        value: appLanguageConfig, // Use the instance here
+        child: const FitnessApp(isLoggedIn: true),
       ),
     ),
   );
 }
 
 class FitnessApp extends StatelessWidget {
-  const FitnessApp({super.key});
+  final bool isLoggedIn;
+  const FitnessApp({required this.isLoggedIn, super.key});
   @override
   Widget build(BuildContext context) {
     final appLanguageConfig = Provider.of<AppLanguageConfig>(context);
     return SizeProvider(
-        baseSize: const Size(375, 812),
-        height: context.screenHight,
-        width: context.screenWidth,
-        child: MaterialApp(
-          supportedLocales: AppLocalizations.supportedLocales,
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          locale: Locale(appLanguageConfig.selectedLocal),
-          theme: AppTheme.darkTheme,
-          debugShowCheckedModeBanner: false,
-          onGenerateRoute: Routes.onGenerate,
-          navigatorKey: Routes.navigatorKey,
-         initialRoute: AppRoutes.registerScreen,
-        ));
+      baseSize: const Size(375, 812),
+      height: context.screenHight,
+      width: context.screenWidth,
+      child: MaterialApp(
+        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        locale: Locale(appLanguageConfig.selectedLocal),
+        theme: AppTheme.darkTheme,
+        debugShowCheckedModeBanner: false,
+        onGenerateRoute: Routes.onGenerate,
+        initialRoute: AppRoutes.onBoarding,
+        // initialRoute: isLoggedIn ? AppRoutes.home : AppRoutes.onBoarding,
+        navigatorKey: Routes.navigatorKey,
+      ),
+    );
   }
 }

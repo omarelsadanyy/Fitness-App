@@ -130,6 +130,51 @@ class AppLocalizationsEn extends AppLocalizations {
   String get fieldRequired => 'This field is required';
 
   @override
+  String get noRouteFound => 'No Route Found';
+
+  @override
+  String get sendOTP => 'Send OTP';
+
+  @override
+  String get forgetPassword => 'Forget Password';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get enterYourEmail => 'Enter Your Email';
+
+  @override
+  String get oTPCode => 'OTP CODE';
+
+  @override
+  String get enterYourOtp => 'Eneter Your OTP Check your Email';
+
+  @override
+  String get confirm => 'Confirm';
+
+  @override
+  String get didnotReciveCode => 'Didnt Recieve Verification Code?';
+
+  @override
+  String get resendCode => 'Resend Code?';
+
+  @override
+  String get makeSure8Char => 'Make Sure Its 8 Characters Or More';
+
+  @override
+  String get createNewPass => 'Create New Password';
+
+  @override
+  String get password => 'Password';
+
+  @override
+  String get confirmPass => 'Confirm Password';
+
+  @override
+  String get done => 'Done';
+
+  @override
   String get emailRequired => 'Email is required';
 
   @override
@@ -178,4 +223,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get numberOnly => 'Enter numbers only';
+
+  @override
+  String get explore => 'Explore';
+
+  @override
+  String get chatAi => 'chat bot';
+
+  @override
+  String get gym => 'Gym';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get loginSuccess => 'Login successful ✔︎';
+
+  @override
+  String get login => 'Login';
+
+  @override
+  String get forgetPass => 'Forget Password?';
+
+  @override
+  String get welcomeBack => 'WELCOME BACK';
+
+  @override
+  String get doNotHaveAccount => 'Don’t have an account? ';
 }

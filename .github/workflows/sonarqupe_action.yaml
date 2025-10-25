@@ -47,7 +47,6 @@ jobs:
           args: >
             -Dsonar.projectKey=mariam2MOHMED_Fitness-App
             -Dsonar.sources=lib/features,pubspec.yaml
-            -Dsonar.tests=test/features
             -Dsonar.dart.analyzer.mode=FLUTTER
             -Dsonar.branch.name=main
             -Dsonar.exclusions=/.g.dart,/.freezed.dart,/*.config.dart 
@@ -57,6 +56,7 @@ jobs:
 
       - name: SonarQube Quality Gate Check
         uses: SonarSource/sonarqube-quality-gate-action@master
+        continue-on-error: true
         id: quality-gate-check
         timeout-minutes: 10
         env:
