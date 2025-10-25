@@ -23,7 +23,6 @@ import 'auth_repo_impl_test.mocks.dart';
 void main() {
   late AuthRepoImpl authRepoImpl;
   late MockAuthRemoteDsImpl mockAuthRemoteDsImpl;
-  late MockAuthRemoteDs mockAuthRemoteDs;
 
   // Forget password variables
   late ForgetPassRequest forgetPassRequest;
@@ -89,7 +88,6 @@ void main() {
 
   setUp(() {
     mockAuthRemoteDsImpl = MockAuthRemoteDsImpl();
-    mockAuthRemoteDs = MockAuthRemoteDs();
     authRepoImpl = AuthRepoImpl(mockAuthRemoteDsImpl);
 
     provideDummy<Result<UserEntity>>(FailedResult("Dummy"));

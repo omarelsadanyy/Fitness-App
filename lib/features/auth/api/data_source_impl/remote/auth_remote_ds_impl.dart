@@ -3,8 +3,6 @@ import 'package:fitness/core/error/response_exception.dart';
 import 'package:fitness/core/result/result.dart';
 import 'package:fitness/core/safe_api_call/safe_api_call.dart';
 import 'package:fitness/core/user/user_manager.dart';
-import 'package:fitness/core/result/result.dart';
-import 'package:fitness/core/safe_api_call/safe_api_call.dart';
 import 'package:fitness/features/auth/api/client/auth_api_services.dart';
 import 'package:fitness/core/storage/secure_storage_service.dart';
 import 'package:fitness/features/auth/api/models/forget_pass_models/forget_pass_request_model.dart';

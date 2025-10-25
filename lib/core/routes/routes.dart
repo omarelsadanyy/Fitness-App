@@ -8,16 +8,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/auth/presentation/views/screens/compelete_register/complete_register_screen.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
-import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/features/auth/presentation/views/screens/create_password_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/forget_password_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/otp_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/home_tab.dart';
 import 'package:fitness/features/auth/presentation/view_model/login_view_model/login_cubit.dart';
-import 'package:fitness/features/auth/presentation/views/screens/home_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/login_screen.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/on_boarding/view/on_boarding_view.dart';
 

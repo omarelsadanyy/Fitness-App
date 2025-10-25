@@ -11,7 +11,6 @@ import 'package:fitness/features/auth/api/models/forget_pass_models/send_code_re
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
-import '../models/auth_response/auth_response.dart';
 
 part 'auth_api_services.g.dart';
 
