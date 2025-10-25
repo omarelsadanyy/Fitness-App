@@ -9,24 +9,24 @@ part 'auth_response.g.dart';
 class AuthResponse {
   @JsonKey(name: JsonSerializableConstants.message)
   final String? message;
+
   @JsonKey(name: JsonSerializableConstants.user)
   final UserResponse? user;
+
   @JsonKey(name: JsonSerializableConstants.token)
   final String? token;
+
   @JsonKey(name: JsonSerializableConstants.error)
   final String? error;
 
-  AuthResponse({this.message, this.user, this.token,this.error});
+  AuthResponse({this.message, this.user, this.token, this.error});
 
-  factory AuthResponse.fromJson(Map<String, dynamic> json) {
-    return _$AuthResponseFromJson(json);
-  }
+  factory AuthResponse.fromJson(Map<String, dynamic> json) =>
+      _$AuthResponseFromJson(json);
 
-  Map<String, dynamic> toJson() {
-    return _$AuthResponseToJson(this);
-  }
+  Map<String, dynamic> toJson() => _$AuthResponseToJson(this);
 
-  AuthEntity toEntity(){
+  AuthEntity toEntity() {
     return AuthEntity(
       message: message,
       token: token,
