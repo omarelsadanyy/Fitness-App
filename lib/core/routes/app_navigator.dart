@@ -1,8 +1,8 @@
+import 'package:fitness/features/auth/presentation/views/screens/compelete_register/screen/complete_register_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/features/auth/presentation/views/screens/register/register_screen.dart';
-import 'package:fitness/features/auth/presentation/views/screens/compelete_register/complete_register_screen.dart';
 
 class AppNavigator {
   //iOS-style navigation (Cupertino)

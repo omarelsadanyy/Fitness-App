@@ -9,7 +9,7 @@ class Logo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Image.asset(AssetsManager.logo, height: context.setHight(70)),
+      child: Image.asset(AssetsManager.logoPng, height: context.setHight(70)),
     );
   }
 }

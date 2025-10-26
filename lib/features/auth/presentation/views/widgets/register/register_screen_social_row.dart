@@ -4,6 +4,7 @@ import 'package:fitness/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+
 class RegisterScreenSocialRow extends StatelessWidget {
   const RegisterScreenSocialRow({
     super.key,
@@ -22,7 +23,7 @@ class RegisterScreenSocialRow extends StatelessWidget {
             color: AppColors.gray[AppColors.colorCode90],
           ),
           child: SvgPicture.asset(
-            AssetsManager.facebookIcon,
+            AssetsManager.facecbookSvg,
             fit: BoxFit.scaleDown,
           ),
         ),
@@ -35,7 +36,7 @@ class RegisterScreenSocialRow extends StatelessWidget {
             color: AppColors.gray[AppColors.colorCode90],
           ),
           child: SvgPicture.asset(
-            AssetsManager.googleIcon,
+            AssetsManager.gooleSvg,
             fit: BoxFit.scaleDown,
           ),
         ),
@@ -48,7 +49,7 @@ class RegisterScreenSocialRow extends StatelessWidget {
             color: AppColors.gray[AppColors.colorCode90],
           ),
           child: SvgPicture.asset(
-            AssetsManager.appleIcon,
+            AssetsManager.appleSvg,
             fit: BoxFit.scaleDown,
           ),
         ),

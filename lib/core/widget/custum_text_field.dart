@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_style.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
+import 'package:flutter_svg/svg.dart';
 
 class CustomTextField extends StatefulWidget {
   final TextEditingController controller;
@@ -43,7 +44,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             left: context.setWidth(20),
             right: context.setWidth(10),
           ),
-          child: Image.asset(
+          child: SvgPicture.asset(
             widget.icon,
             width: context.setWidth(20),
             height: context.setHight(20),

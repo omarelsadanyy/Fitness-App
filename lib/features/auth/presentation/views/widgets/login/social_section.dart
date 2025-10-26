@@ -51,11 +51,11 @@ class SocialSection extends StatelessWidget {
         const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SocialIconBuilder(icon: AssetsManager.facebookIcon),
+            SocialIconBuilder(icon: AssetsManager.facecbookSvg),
             SizedBox(width: 10),
-            SocialIconBuilder(icon: AssetsManager.googleIcon),
+            SocialIconBuilder(icon: AssetsManager.gooleSvg),
             SizedBox(width: 10),
-            SocialIconBuilder(icon: AssetsManager.appleIcon),
+            SocialIconBuilder(icon: AssetsManager.appleSvg),
           ],
         ),
 

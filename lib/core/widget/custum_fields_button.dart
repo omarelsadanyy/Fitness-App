@@ -1,5 +1,6 @@
 
 
+import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/widget/loading_circle.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class CustomFieldsButton extends StatelessWidget {
                   ),
                 ),
                 onPressed: onPress,
-                child: isLoading ? const LoadingCircle() : myChild,
+                child:Padding(padding: EdgeInsets.symmetric(vertical: context.setHight(5)),child:  isLoading ? const LoadingCircle() : myChild,),
               ),
             ),
           ],

@@ -35,7 +35,7 @@ void main() {
 
     final AssetImage assetImage = imageWidget.image as AssetImage;
 
-    expect(assetImage.assetName, AssetsManager.logo);
+    expect(assetImage.assetName, AssetsManager.logoPng);
 
     expect(imageWidget.height, context.setHight(70));
   });

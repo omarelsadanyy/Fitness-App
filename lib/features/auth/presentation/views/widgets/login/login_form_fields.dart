@@ -16,7 +16,7 @@ class LoginFormFields extends StatelessWidget {
     return Column(
       children: [
         CustomTextField(
-          icon: AssetsManager.mail,
+          icon: AssetsManager.mailSvg,
           onChanged: (val) {
             cubit.doIntent(intent: UpdateEmailIntent());
           },
@@ -26,7 +26,7 @@ class LoginFormFields extends StatelessWidget {
         ),
         SizedBox(height: context.setHight(16)),
         CustomTextField(
-          icon: AssetsManager.lock,
+          icon: AssetsManager.lockSvg,
           onChanged: (val) {
             cubit.doIntent(intent: UpdatePasswordIntent());
           },

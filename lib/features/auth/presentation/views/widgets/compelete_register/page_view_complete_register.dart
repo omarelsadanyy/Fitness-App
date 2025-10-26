@@ -12,7 +12,7 @@ import 'package:fitness/features/auth/presentation/views/screens/compelete_regis
 import 'package:fitness/features/auth/presentation/views/widgets/compelete_register/animate_text.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/compelete_register/container_detials_complete_register.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/compelete_register/custom_loading_circle_progress_indictor.dart';
-import 'package:fitness/features/auth/presentation/views/widgets/compelete_register/custom_pop_icon.dart';
+import 'package:fitness/core/widget/custom_pop_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../core/widget/logo.dart';
@@ -71,8 +71,8 @@ class _PageViewCompeleteRegisterState extends State<PageViewCompeleteRegister> {
 
     return BlocListener<RegisterCubit, RegisterState>(
       listenWhen: (previous, current) =>
-         current.registerStatus!.isSuccess||
-         current.registerStatus!.isFailure,
+         current.registerStatus.isSuccess||
+         current.registerStatus.isFailure,
       listener: (context, state) {
         if (state.registerStatus.isSuccess) {
           Loaders.showSuccessMessage(message: "Registerd Successfully!", context: context);

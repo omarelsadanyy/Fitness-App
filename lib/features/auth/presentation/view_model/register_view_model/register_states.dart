@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:fitness/core/enum/levels.dart';
-import 'package:fitness/features/auth/domain/entity/auth/auth_entity.dart';
 import 'package:fitness/features/auth/domain/entity/auth/user_entity.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/enum/request_state.dart';

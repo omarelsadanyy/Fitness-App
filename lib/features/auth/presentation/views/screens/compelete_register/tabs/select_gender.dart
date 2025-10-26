@@ -21,7 +21,7 @@ class SelectGender extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             GenderWidget(
-              iconData: AssetsManager.maleGenderIcon,
+              iconData: AssetsManager.mailSvg,
               title: context.loc.male,
               isSelected: context.loc.male == state.selectedGender,
               onTap: () {
@@ -34,7 +34,7 @@ class SelectGender extends StatelessWidget {
             GenderWidget(
               isSelected: context.loc.female == state.selectedGender,
 
-              iconData: AssetsManager.femaleGenderIcon,
+              iconData: AssetsManager.femaleSvg,
               title: context.loc.female,
 
               onTap: () {

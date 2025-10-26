@@ -1,24 +1,24 @@
 abstract class AssetsManager {
   static const String backGroundImage = "assets/images/background_image.png";
-  static const String logo = "assets/images/logo.png";
-  static const String popIcon = "assets/images/pop_icon.png";
-  static const String backGroundImageTwo = "assets/images/background_image_two.png";
-  static const String userIcon = "assets/images/user_register__icon.svg";
-  static const String emailIcon = "assets/images/mail_register__icon.svg";
-  static const String lockIcon = "assets/images/lock_register__icon.svg";
-  static const String maleGenderIcon = "assets/images/male_gender_icon.svg";
-  static const String femaleGenderIcon = "assets/images/female_gender_icon.svg";
-  static const String onBoardingImageOne = "assets/images/O15_31 (1).png";
-  static const String onBoardingImageTwo = "assets/images/O15_30.png";
-  static const String onBoardingImageThree = "assets/images/O15_29.png";
-  static const String backGround = "assets/images/On 1.png";
-  static const String homeIcon = "assets/icons/home_icon.png";
-  static const String gymIcon = "assets/icons/gym_icon.png";
-  static const String chatAiIcon = "assets/icons/chat_Ai_icon.png";
-  static const String profileIcon = "assets/icons/profile_icon.png";
-  static const String googleIcon = "assets/images/google_icon.svg";
-  static const String facebookIcon = "assets/images/facebook_icon.svg";
-  static const String appleIcon = "assets/images/apple_icon.svg";
-  static const String mail = "assets/icons/mail.png";
-  static const String lock = "assets/icons/lock.png";
+  static const String onBoardingBackGround ="assets/images/onBoarding_backGround.png";
+  static const String onBoardingOne = "assets/images/onBoardingOne.png";
+  static const String onBoardingTwo = "assets/images/onBoardingTwo.png";
+  static const String onBoardingThree = "assets/images/onBoardingThree.png";
+
+  static const String appleSvg = "assets/icons/apple.svg";
+  static const String chatSvg = "assets/icons/chat.svg";
+  // static const String eyeSvg = "assets/icons/eye.png";
+  static const String facecbookSvg = "assets/icons/facebook.svg";
+  static const String femaleSvg = "assets/icons/female.svg";
+  static const String gooleSvg = "assets/icons/google.svg";
+  static const String gymSvg = "assets/icons/gym.svg";
+  static const String homeSvg = "assets/icons/home.svg";
+  static const String lockSvg = "assets/icons/lock.svg";
+  static const String logoSvg = "assets/icons/fit1.svg";
+  static const String mailSvg = "assets/icons/mail.svg";
+  static const String maleSvg = "assets/icons/male.svg";
+  static const String popIconSvg = "assets/icons/back.svg";
+  static const String profileSvg = "assets/icons/profile.svg";
+  static const String userSvg = "assets/icons/user.svg";
+  static const String logoPng = "assets/icons/fitpng.png";
 }

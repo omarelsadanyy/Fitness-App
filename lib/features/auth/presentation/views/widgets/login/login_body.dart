@@ -15,7 +15,6 @@ import 'package:fitness/core/widget/custum_fields_button.dart';
 import 'package:fitness/features/auth/presentation/view_model/login_view_model/login_cubit.dart';
 import 'package:fitness/features/auth/presentation/view_model/login_view_model/login_intent.dart';
 import 'package:fitness/features/auth/presentation/view_model/login_view_model/login_state.dart';
-import 'package:fitness/features/auth/presentation/views/screens/home_screen.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/login/login_form_fields.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/login/login_header.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/login/register_text.dart';

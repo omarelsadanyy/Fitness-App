@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
+import 'package:fitness/core/widget/logo.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/register/register_screen_already_have_an_account.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/register/register_screen_button.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/register/register_screen_form.dart';
@@ -33,13 +34,8 @@ class RegisterScreenViewBody extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Center(
-                  child: Image(
-                    image: const AssetImage(AssetsManager.logo),
-                    height: context.setHight(70),
-                    width: context.setWidth(48),
-                  ),
-                ),
+               const Logo(),
+                 
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

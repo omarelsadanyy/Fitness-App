@@ -55,22 +55,22 @@ class _HomeTabState extends State<HomeTab> {
             BottomNavigationBarItem(
               label: context.loc.explore,
               backgroundColor: AppColors.gray[AppColors.colorCode90],
-              icon: const ImageIcon(AssetImage(AssetsManager.homeIcon)),
+              icon: const ImageIcon(AssetImage(AssetsManager.homeSvg)),
             ),
             BottomNavigationBarItem(
               label: context.loc.chatAi,
 
-              icon: const ImageIcon(AssetImage(AssetsManager.chatAiIcon)),
+              icon: const ImageIcon(AssetImage(AssetsManager.chatSvg)),
             ),
             BottomNavigationBarItem(
               label: context.loc.gym,
 
-              icon: const ImageIcon(AssetImage(AssetsManager.gymIcon)),
+              icon: const ImageIcon(AssetImage(AssetsManager.gymSvg)),
             ),
             BottomNavigationBarItem(
               label: context.loc.profile,
 
-              icon: const ImageIcon(AssetImage(AssetsManager.profileIcon)),
+              icon: const ImageIcon(AssetImage(AssetsManager.profileSvg)),
             ),
           ],
         ),

@@ -64,9 +64,9 @@ void main() {
       expect(
         socialIcons.map((e) => e.icon),
         equals([
-          AssetsManager.facebookIcon,
-          AssetsManager.googleIcon,
-          AssetsManager.appleIcon,
+          AssetsManager.facecbookSvg,
+          AssetsManager.gooleSvg,
+          AssetsManager.appleSvg,
         ]),
       );
     });

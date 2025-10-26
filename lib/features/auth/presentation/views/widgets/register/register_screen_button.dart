@@ -3,7 +3,7 @@ import 'package:fitness/core/widget/custom_elevated_button.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_cubit.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_intent.dart';
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_states.dart';
-import 'package:fitness/features/auth/presentation/views/screens/compelete_register/complete_register_screen.dart';
+import 'package:fitness/features/auth/presentation/views/screens/compelete_register/screen/complete_register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

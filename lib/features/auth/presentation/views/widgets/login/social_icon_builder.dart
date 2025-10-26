@@ -3,6 +3,7 @@ import 'package:fitness/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+
 class SocialIconBuilder extends StatelessWidget {
   final String icon;
    const SocialIconBuilder ({required this.icon,super.key});

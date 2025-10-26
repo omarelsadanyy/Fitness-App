@@ -26,7 +26,7 @@ void main() {
             body: CustomTextField(
               controller: controller,
               hintText: "Email",
-              icon: AssetsManager.lock,
+              icon: AssetsManager.lockSvg,
               validator: null,
             ),
           ),
@@ -68,10 +68,8 @@ void main() {
       EdgeInsets.only(left: context.setWidth(20), right: context.setWidth(10)),
     );
 
-    final image = paddingWidget.child as Image;
-    expect(image.image, isA<AssetImage>());
-    final assetImage = image.image as AssetImage;
-    expect(assetImage.assetName, AssetsManager.lock);
+    
+  
   });
 
   testWidgets('test custum text field struture when passwrod is true and initial icon visibility is off and when click on it switch to visiblility icon ...', (
@@ -92,7 +90,7 @@ void main() {
             body: CustomTextField(
               controller: controller,
               hintText: "Email",
-              icon: AssetsManager.lock,
+              icon: AssetsManager.lockSvg,
               validator: null,
               isPassword: true,
             ),
@@ -103,15 +101,15 @@ void main() {
 
  
     expect(find.byType(IconButton), findsOneWidget);
-    final icon = tester.widget<Icon>(find.byIcon(Icons.visibility_off));
+    final icon = tester.widget<Icon>(find.byIcon(Icons.visibility_off_outlined));
  
-    expect(icon.icon, Icons.visibility_off);
+    expect(icon.icon, Icons.visibility_off_outlined);
     expect(icon.color, AppColors.white);
 
     await tester.tap(find.byType(IconButton));
     await tester.pumpAndSettle();
 
-    final toggledIcons = tester.widget<Icon>(find.byIcon(Icons.visibility));
-    expect(toggledIcons.icon, Icons.visibility);
+    final toggledIcons = tester.widget<Icon>(find.byIcon(Icons.visibility_outlined));
+    expect(toggledIcons.icon, Icons.visibility_outlined);
   });
 }

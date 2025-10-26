@@ -43,7 +43,7 @@ class RegisterScreenForm extends StatelessWidget {
                 keyboardType: TextInputType.name,
                 textInputAction: TextInputAction.next,
                 hintText: context.loc.firtNameRegister,
-                prefixIcon: SvgPicture.asset(AssetsManager.userIcon),
+                prefixIcon: SvgPicture.asset(AssetsManager.userSvg),
                 validator:(value)=>Validator.validateUsername(context, value),
                 onChanged: (_) {
                   registerCubit.doIntent(intent: const IsTypingIntent());
@@ -56,7 +56,7 @@ class RegisterScreenForm extends StatelessWidget {
                 hintText: context.loc.lastNameRegister,
                 keyboardType: TextInputType.name,
                 textInputAction: TextInputAction.next,
-                prefixIcon: SvgPicture.asset(AssetsManager.userIcon),
+                prefixIcon: SvgPicture.asset(AssetsManager.userSvg),
                 validator: (value)=>Validator.validateUsername(context, value),
                  onChanged: (_) {
                   registerCubit.doIntent(intent: const IsTypingIntent());
@@ -69,7 +69,7 @@ class RegisterScreenForm extends StatelessWidget {
                 hintText: context.loc.emailRegister,
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
-                prefixIcon: SvgPicture.asset(AssetsManager.emailIcon),
+                prefixIcon: SvgPicture.asset(AssetsManager.mailSvg),
                 validator: (value)=>Validator.validateEmail(context, value),
                  onChanged: (_) {
                   registerCubit.doIntent(intent: const IsTypingIntent());
@@ -83,7 +83,7 @@ class RegisterScreenForm extends StatelessWidget {
                 keyboardType: TextInputType.visiblePassword,
                 textInputAction: TextInputAction.done,
                 obscureText: state.isObscure,
-                prefixIcon: SvgPicture.asset(AssetsManager.lockIcon),
+                prefixIcon: SvgPicture.asset(AssetsManager.lockSvg),
                 suffixIcon: IconButton(
                   onPressed: () {
                     registerCubit.doIntent(intent: const ToggleObscurePasswordIntent());
