@@ -10,6 +10,7 @@ import 'config/app_language/app_language_config.dart';
 import 'config/di/di.dart';
 import 'package:device_preview/device_preview.dart';
 import 'core/theme/app_theme.dart';
+import 'core/user/user_session_handler.dart';
 void main() async {
   ///ensure engine is Oky
 //  final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -19,12 +20,15 @@ void main() async {
   final appLanguageConfig = getIt.get<AppLanguageConfig>();
   await appLanguageConfig.setSelectedLocal();
 
+  final userSession = getIt<UserSessionHandler>();
+  final isLoggedIn = await userSession.checkIfUserLoggedIn();
+
   runApp(
     DevicePreview(
       enabled: true,
       builder: (context) => ChangeNotifierProvider.value(
         value: appLanguageConfig, // Use the instance here
-        child: const FitnessApp(isLoggedIn: true),
+        child:  FitnessApp(isLoggedIn: isLoggedIn),
       ),
     ),
   );
@@ -47,8 +51,8 @@ class FitnessApp extends StatelessWidget {
         theme: AppTheme.darkTheme,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: Routes.onGenerate,
-        initialRoute: AppRoutes.onBoarding,
-        // initialRoute: isLoggedIn ? AppRoutes.home : AppRoutes.onBoarding,
+        // initialRoute: AppRoutes.onBoarding,
+        initialRoute: isLoggedIn ? AppRoutes.home : AppRoutes.onBoarding,
         navigatorKey: Routes.navigatorKey,
       ),
     );

@@ -1,5 +1,6 @@
 
 import 'package:fitness/core/enum/levels.dart';
+import 'package:fitness/core/error/response_exception.dart';
 import 'package:fitness/core/result/result.dart';
 import 'package:fitness/features/auth/domain/entity/auth/body_info_entity.dart';
 import 'package:fitness/features/auth/domain/entity/auth/personal_info_entity.dart';
@@ -358,50 +359,49 @@ const userEntity = UserEntity(
       },
     );
 
-    // blocTest<RegisterCubit, RegisterState>(
-    //   'emits failure with error message when register fails with ResponseException',
-    //   build: () {
-    //     when(mockRegisterUseCase.register(any)).thenAnswer(
-    //       (_) async => FailedResult(
-    //      'Email already exists',
-    //       ),
-    //     );
-    //     return registerCubit;
-    //   },
-    //   act: (cubit) {
-    //     // No need to call RegisterInitializationIntent - already done in setUp
-    //     cubit.firstNameController.text = 'omar';
-    //     cubit.lastNameController.text = 'elsadany';
-    //     cubit.emailController.text = 'test@gmail.com';
-    //     cubit.passwordController.text = 'password123';
-    //     cubit.doIntent(intent: const RegisterFormIntent());
-    //   },
-    //   expect: () => [
-    //     isA<RegisterState>().having(
-    //       (state) => state.registerStatus.isLoading,
-    //       'isLoading',
-    //       equals(true),
-    //     ),
-    //     isA<RegisterState>()
-    //         .having(
-    //           (state) => state.registerStatus.isFailure,
-    //           'isFailure',
-    //           equals(true),
-    //         )
-    //         .having(
-    //           (state) => state.error,
-    //           'error message',
-    //           equals('Email already exists'),
-    //         ),
-    //   ],
-    //   verify: (cubit) {
-    //     verify(mockRegisterUseCase.register(any)).called(1);
-    //   },
-    // );
- 
- 
- 
- 
+    blocTest<RegisterCubit, RegisterState>(
+      'emits failure with error message when register fails with ResponseException',
+      build: () {
+        when(mockRegisterUseCase.register(any)).thenAnswer(
+          (_) async => FailedResult(
+         'Email already exists',
+          ),
+        );
+        return registerCubit;
+      },
+      act: (cubit) {
+        // No need to call RegisterInitializationIntent - already done in setUp
+        cubit.firstNameController.text = 'omar';
+        cubit.lastNameController.text = 'elsadany';
+        cubit.emailController.text = 'test@gmail.com';
+        cubit.passwordController.text = 'password123';
+        cubit.doIntent(intent: const RegisterFormIntent());
+      },
+      expect: () => [
+        isA<RegisterState>().having(
+              (state) => state.registerStatus.isLoading,
+          'isLoading',
+          equals(true),
+        ),
+        isA<RegisterState>()
+            .having(
+              (state) => state.registerStatus.isFailure,
+          'isFailure',
+          equals(true),
+        )
+            .having(
+              (state) => state.registerStatus.error is ResponseException
+              ? (state.registerStatus.error as ResponseException).message
+              : state.error,
+          'error message',
+          equals('Email already exists'),
+        ),
+      ],
+
+      verify: (cubit) {
+        verify(mockRegisterUseCase.register(any)).called(1);
+      },
+    );
   });
 
   group('RegisterCubit multiple state changes', () {
