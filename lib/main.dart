@@ -25,7 +25,7 @@ void main() async {
 
   runApp(
     DevicePreview(
-      enabled: false,
+      enabled: true,
       builder: (context) => ChangeNotifierProvider.value(
         value: appLanguageConfig, // Use the instance here
         child:  FitnessApp(isLoggedIn: isLoggedIn),
