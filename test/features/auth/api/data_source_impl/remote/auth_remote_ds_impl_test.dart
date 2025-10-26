@@ -6,8 +6,6 @@ import 'package:fitness/core/storage/secure_storage_service.dart';
 import 'package:fitness/features/auth/api/client/auth_api_services.dart';
 import 'package:fitness/features/auth/api/data_source_impl/remote/auth_remote_ds_impl.dart';
 import 'package:fitness/features/auth/api/models/auth_response/auth_response.dart';
-import 'package:fitness/features/auth/api/models/auth_response/body_info.dart';
-import 'package:fitness/features/auth/api/models/auth_response/personal_info.dart';
 import 'package:fitness/features/auth/api/models/auth_response/user_response.dart';
 import 'package:fitness/features/auth/api/models/register/request/register_request.dart';
 import 'package:fitness/features/auth/api/models/register/request/user_body_info.dart';
@@ -48,7 +46,6 @@ void main() {
     message: "message",
     token: "token",
     user: UserResponse(
-      personalInfo: const PersonalInfo(
         id: "123",
         firstName: "Rana",
         lastName: "Gebril",
@@ -56,35 +53,13 @@ void main() {
         age: 21,
         gender: "female",
         email: email,
-      ),
-      bodyInfo: const BodyInfo(weight: 70, height: 165),
+      weight: 70, height: 165,
       activityLevel: "Level 1",
       goal: "Gain weight",
       createdAt: "",
     ),
   );
-
-  // Register variables
-  final successResponse = AuthResponse(
-    message: "success",
-    user: UserResponse(
-      personalInfo: const PersonalInfo(
-        firstName: "Elevate",
-        lastName: "Tech",
-        email: "mariam2@gmail.com",
-        gender: "female",
-        photo: "default-profile.png",
-        id: "68f664789762f45e2a989bd4",
-        age: 70,
-      ),
-      bodyInfo: const BodyInfo(weight: 70, height: 170),
-      activityLevel: "level1",
-      goal: "Gain weight",
-      createdAt: "2025-10-20T16:34:00.820Z",
-    ),
-    token:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjhmNjY0Nzg5NzYyZjQ1ZTJhOTg5YmQ0IiwiaWF0IjoxNzYwOTc4MDQwfQ.0MZxirgu6bA-9Z1W2iZUY5IwDT3G7tl1KqxI88U72iA",
-  );
+  
   final request = RegisterRequest(
     userBodyInfo: UserBodyInfo(
       height: 170,
@@ -125,10 +100,10 @@ void main() {
   group("Register Remote Data Source", () {
     test("return SuccessResult when api call success", () async {
       when(mockAuthApiServices.register(request))
-          .thenAnswer((_) async => successResponse);
+          .thenAnswer((_) async => fakeAuthResponse);
 
       final result = await authRemoteDsImpl.register(request);
-      final user = successResponse.user!.toEntity();
+      final user = fakeAuthResponse.user!.toEntity();
 
       expect(result, isA<Result<UserEntity>>());
       expect((result as SuccessResult).successResult, user);

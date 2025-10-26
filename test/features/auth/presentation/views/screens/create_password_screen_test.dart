@@ -13,19 +13,18 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 
 import 'forget_password_screen_test.mocks.dart';
+
 @GenerateNiceMocks([MockSpec<ForgetPassCubit>()])
 void main() {
-
-
- setUpAll(() {
-     if (!getIt.isRegistered<ForgetPassCubit>()) {
+  setUpAll(() {
+    if (!getIt.isRegistered<ForgetPassCubit>()) {
       getIt.registerLazySingleton<ForgetPassCubit>(MockForgetPassCubit.new);
     }
   });
   testWidgets('test create password screen structure ...', (
     WidgetTester tester,
   ) async {
-   getIt.get<ForgetPassCubit>();
+    getIt.get<ForgetPassCubit>();
     await tester.pumpWidget(
       const MaterialApp(
         localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -43,7 +42,7 @@ void main() {
     expect(find.byType(AppBackground), findsOneWidget);
     expect(find.byType(SafeArea), findsOneWidget);
     expect(find.byType(Column), findsAtLeast(1));
-    expect(find.byType(Logo), findsOneWidget);
+    expect(find.byType(Row), findsOneWidget);
     expect(find.byType(Spacer), findsNWidgets(3));
     expect(find.byType(TextSection), findsOneWidget);
     expect(find.byType(BlurContainer), findsOneWidget);
