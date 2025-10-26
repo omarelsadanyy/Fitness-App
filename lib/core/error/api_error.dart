@@ -12,7 +12,6 @@ class ServerFailure extends Failure {
 
   factory ServerFailure.fromDioError(DioException dioException) {
     switch (dioException.type) {
-
       case DioExceptionType.connectionTimeout:
         return ServerFailure(ExceptionConstants.connectionTimeout);
       case DioExceptionType.sendTimeout:
@@ -37,11 +36,15 @@ class ServerFailure extends Failure {
     }
   }
 
+  // will modify
+
   factory ServerFailure.fromResponse(int? statusCode, dynamic response) {
     if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
-      return ServerFailure(response['error']['message']);
+      return ServerFailure(response['error']);
     } else if (statusCode == 404) {
-      return ServerFailure(ExceptionConstants.notFound);
+      final errorMessage =
+          response['message'] ?? response['error'] ?? 'Unknown error occurred';
+      return ServerFailure(errorMessage);
     } else if (statusCode == 500) {
       return ServerFailure(ExceptionConstants.internalServer);
     } else {

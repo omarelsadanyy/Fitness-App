@@ -1,5 +1,3 @@
-// app theme 
-
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -66,14 +64,18 @@ class AppTheme {
             const EdgeInsets.symmetric(vertical: 14),
           ),
           shape: WidgetStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadiusGeometry.circular(20),
-            ),
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           ),
           foregroundColor: WidgetStateProperty.all(AppColors.white),
-          backgroundColor: WidgetStateProperty.all(
-            AppColors.orange[AppColors.baseColor],
-          ),
+          backgroundColor: WidgetStateProperty.resolveWith<Color>((states) {
+            if (states.contains(WidgetState.disabled)) {
+              // when onPressed == null
+              return AppColors.orange[AppColors.baseColor]!.withOpacity(0.4);
+              // or use a gray tone like:
+              // return Colors.grey.shade400;
+            }
+            return AppColors.orange[AppColors.baseColor]!;
+          }),
         ),
       ),
     );
