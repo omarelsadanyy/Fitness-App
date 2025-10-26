@@ -17,6 +17,7 @@ import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
 import '../app_language/app_language_config.dart' as _i549;
 import 'modules/dio_modules.dart' as _i288;
+import 'modules/shared_prefrence_module.dart' as _i470;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -30,13 +31,19 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     final dioModule = _$DioModule();
+    final registerModule = _$RegisterModule();
     gh.factory<_i695.CacheOptions>(() => dioModule.cacheOptions);
     gh.lazySingleton<_i528.PrettyDioLogger>(() => dioModule.prettyDioLogger);
     gh.lazySingleton<_i361.Dio>(() => dioModule.provieDio());
-    gh.singleton<_i549.AppLanguageConfig>(() => _i549.AppLanguageConfig(
-        sharedPreferences: gh<_i460.SharedPreferences>()));
+    gh.lazySingletonAsync<_i460.SharedPreferences>(
+        () => registerModule.sharedPreferences);
+    gh.singletonAsync<_i549.AppLanguageConfig>(() async =>
+        _i549.AppLanguageConfig(
+            sharedPreferences: await getAsync<_i460.SharedPreferences>()));
     return this;
   }
 }
 
 class _$DioModule extends _i288.DioModule {}
+
+class _$RegisterModule extends _i470.RegisterModule {}
