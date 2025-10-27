@@ -50,7 +50,7 @@ jobs:
             -Dsonar.dart.analyzer.mode=FLUTTER
             -Dsonar.branch.name=development
             -Dsonar.exclusions=**/*.g.dart,**/*.freezed.dart,**/*.config.dart,lib/feature/auth/presentation/view/**
-            -Dsonar.coverage.exclusions=/.g.dart,/.freezed.dart,/*.config.dart
+            -Dsonar.coverage.exclusions=/.g.dart,/.freezed.dart,/*.config.dart,lib/feature/auth/presentation/view/**
             -Dsonar.dart.lcov.reportPaths=coverage/lcov.info
 
 
