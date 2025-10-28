@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:fitness/core/error/response_exception.dart';
 import 'package:fitness/core/result/result.dart';
 import 'package:fitness/features/food/domain/entities/meals_categories.dart';
+import 'package:fitness/features/food/domain/use_case/get_meals_by_category.dart';
 import 'package:fitness/features/food/domain/use_case/get_meals_categories_use_case.dart';
 import 'package:fitness/features/food/presentaion/view_model/food_cubit.dart';
 import 'package:fitness/features/food/presentaion/view_model/food_intent.dart';
@@ -12,13 +13,15 @@ import 'package:mockito/mockito.dart';
 
 import 'food_cubit_test.mocks.dart';
 
-@GenerateMocks([GetMealsCategoriesUseCase])
+@GenerateMocks([GetMealsCategoriesUseCase,GetMealsByCategoriesUseCase])
 void main() {
   late MockGetMealsCategoriesUseCase mockGetMealsCategoriesUseCase;
+  late MockGetMealsByCategoriesUseCase mockGetMealsByCategoriesUseCase;
   late FoodCubit foodCubit;
   setUp(() {
+    mockGetMealsByCategoriesUseCase=MockGetMealsByCategoriesUseCase();
     mockGetMealsCategoriesUseCase = MockGetMealsCategoriesUseCase();
-    foodCubit = FoodCubit(mockGetMealsCategoriesUseCase);
+    foodCubit = FoodCubit(mockGetMealsCategoriesUseCase,mockGetMealsByCategoriesUseCase);
     provideDummy<Result<List<MealCategoryEntity>>>(
       FailedResult("failed to load data"),
     );

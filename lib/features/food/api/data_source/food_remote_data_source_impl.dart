@@ -1,6 +1,7 @@
 import 'package:fitness/core/result/result.dart';
 import 'package:fitness/core/safe_api_call/safe_api_call.dart';
 import 'package:fitness/features/food/api/client/api_services.dart';
+import 'package:fitness/features/food/domain/entities/meals_by_category.dart';
 
 import 'package:fitness/features/food/domain/entities/meals_categories.dart';
 import 'package:injectable/injectable.dart';
@@ -12,7 +13,7 @@ class FoodRemoteDataSourceImpl implements
   final FoodApiServices _foodApiServices;
   const FoodRemoteDataSourceImpl(this._foodApiServices);
   @override
-  Future<Result<List<MealCategoryEntity>>> getMealsCategories() {
+  Future<Result<List<MealCategoryEntity>>> getMealsCategories()async {
 
  return safeApiCall(()async{
 final response=await _foodApiServices.getMealsCategories();
@@ -20,6 +21,16 @@ final meals=response.categories?.map((e)=>e.toEntity()).toList()??[];
 return meals;
  });
 
+  }
+
+  @override
+  Future<Result<List<MealsByCategory>>>
+  getMealsByCategories(String category)async {
+return safeApiCall(()async{
+  final response=await _foodApiServices.getMealsByCategories(category);
+  final mealsByCategory=response.meals?.map((e)=>e.toEntity()).toList()??[];
+return mealsByCategory;
+});
   }
 
 }

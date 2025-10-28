@@ -11,5 +11,7 @@ abstract class AppRoutes {
   static const String resetPass = "resetPass";
 
   static const String home = '/home';
+  static const String foodDetials = '/foodDetials';
+
   static const String onBoarding = "/onBoarding";
 }
