@@ -18,6 +18,7 @@ import 'food_cubit_test.mocks.dart';
 
 @GenerateMocks([GetMealsCategoriesUseCase, GetMealsByCategoriesUseCase])
 void main() {
+
   late MockGetMealsCategoriesUseCase mockGetMealsCategoriesUseCase;
   late MockGetMealsByCategoriesUseCase mockGetMealsByCategoriesUseCase;
   late FoodCubit foodCubit;
