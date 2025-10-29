@@ -182,6 +182,12 @@ abstract class AppLocalizations {
   /// **'female'**
   String get female;
 
+  /// No description provided for @foodRecommendation.
+  ///
+  /// In en, this message translates to:
+  /// **'Food Recommendation'**
+  String get foodRecommendation;
+
   /// No description provided for @year.
   ///
   /// In en, this message translates to:

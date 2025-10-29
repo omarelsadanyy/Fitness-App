@@ -52,6 +52,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get female => 'أنثى';
 
   @override
+  String get foodRecommendation => ' الاطعمة الموصى بها';
+
+  @override
   String get year => 'عام';
 
   @override

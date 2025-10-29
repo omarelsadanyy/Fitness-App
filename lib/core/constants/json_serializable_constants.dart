@@ -30,7 +30,10 @@ abstract class JsonSerializableConstants{
   static const String strCategory = "strCategory";
   static const String strCategoryThumb = "strCategoryThumb";
   static const String strCategoryDescription = "strCategoryDescription";
+  static const String meals = "meals";
 
-
+  static const String idMeal = "idMeal";
+  static const String strMeal = "strMeal";
+  static const String strMealThumb = "strMealThumb";
 
 }

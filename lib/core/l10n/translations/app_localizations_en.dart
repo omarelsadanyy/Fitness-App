@@ -52,6 +52,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get female => 'female';
 
   @override
+  String get foodRecommendation => 'Food Recommendation';
+
+  @override
   String get year => 'Year';
 
   @override

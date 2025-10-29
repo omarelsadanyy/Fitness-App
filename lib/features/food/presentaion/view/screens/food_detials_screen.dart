@@ -8,10 +8,8 @@ import 'package:fitness/features/food/presentaion/view_model/food_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
-
 import '../../../domain/entities/meals_categories.dart';
 import '../widgets/tab_bar_food.dart';
-
 class FoodDetialsScreen extends StatelessWidget {
   const FoodDetialsScreen({super.key});
 
@@ -40,8 +38,6 @@ class FoodDetialsScreen extends StatelessWidget {
                         enabled:state.mealsCategories.isLoading ||
                             state.mealsCategories.isInitial ||
                             state.mealsCategories.isFailure ,
-
-
                         child: TabBarFood(
 
                           titles: state.mealsCategories.data??_dummyCategories,

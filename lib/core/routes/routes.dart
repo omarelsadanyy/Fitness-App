@@ -4,6 +4,7 @@ import 'package:fitness/features/auth/presentation/view_model/register_view_mode
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_intent.dart';
 import 'package:fitness/features/auth/presentation/views/screens/compelete_register/screen/complete_register_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/register/register_screen.dart';
+import 'package:fitness/features/food/presentaion/view/screens/food_detials_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -33,6 +34,12 @@ abstract class Routes {
         return MaterialPageRoute(
           builder: (context) {
             return const ForgetPasswordScreen();
+          },
+        );
+      case AppRoutes.foodDetials:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const FoodDetialsScreen();
           },
         );
  case AppRoutes.registerScreen:
