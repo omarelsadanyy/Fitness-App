@@ -4,7 +4,8 @@ import 'package:fitness/core/theme/font_style.dart';
 import 'package:flutter/material.dart';
 
 class FoodDetailsSection extends StatelessWidget {
-  const FoodDetailsSection({super.key});
+  final List<String> tags;
+  const FoodDetailsSection({super.key, required this.tags});
 
   @override
   Widget build(BuildContext context) {
@@ -13,25 +14,23 @@ class FoodDetailsSection extends StatelessWidget {
       child: ListView.builder(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        itemCount: 4,
+        itemCount: tags.length,
         itemBuilder: (context, index) {
           return Container(
+            width: context.setWidth(54),
+            height: context.setHight(44),
+            
             margin: EdgeInsets.only(right: context.setWidth(40)),
             decoration: BoxDecoration(
               border: Border.all(color: AppColors.white),
               borderRadius: BorderRadius.circular(context.setWidth(20)),
             ),
-            child: Padding(
-              padding:  EdgeInsets.symmetric(vertical: context.setHight(4), horizontal: context.setWidth(10)),
-              child: Column(
-                children: [
-                  Text("100 k", style: getRegularStyle(color: AppColors.white)), // will be removed when actual data came 
-                  Text(
-                    "Energy",
-                    style: getRegularStyle(color: AppColors.orange), // will be removed when actual data came 
-                  ), 
-                ],
-              ),
+            child: Center(
+              child: Text(
+              overflow: TextOverflow.ellipsis,
+                   tags[index],
+                    style: getRegularStyle(color: AppColors.orange),
+                  ),
             ),
           );
         },

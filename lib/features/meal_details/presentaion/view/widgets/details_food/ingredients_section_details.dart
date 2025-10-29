@@ -5,8 +5,10 @@ import 'package:fitness/core/theme/font_style.dart';
 import 'package:flutter/material.dart';
 
 class IngredientsSectionDetails extends StatelessWidget {
+  final String ingredient;
+  final String measure;
   const IngredientsSectionDetails({
-    super.key,
+    super.key, required this.ingredient, required this.measure,
   });
 
   @override
@@ -25,7 +27,7 @@ class IngredientsSectionDetails extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Meal Breasta", // will be removed when actual data came 
+                 ingredient,
                   style: getBoldStyle(
                     color: AppColors.white,
                     fontSize: FontSize.s16,
@@ -33,7 +35,7 @@ class IngredientsSectionDetails extends StatelessWidget {
                 ),
     
                 Text(
-                  "250g", // will be removed when actual data came 
+                 measure,  
                   style: getBoldStyle(color: AppColors.orange),
                 ),
               ],

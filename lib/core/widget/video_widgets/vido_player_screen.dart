@@ -1,9 +1,9 @@
 import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/widget/cusum_scaffold_messanger.dart';
 import 'package:fitness/core/widget/video_widgets/video_section.dart';
-import 'package:fitness/features/home/presentation/view_models/details_food_view_model/details_food_cubit.dart';
-import 'package:fitness/features/home/presentation/view_models/details_food_view_model/details_food_event.dart';
-import 'package:fitness/features/home/presentation/view_models/details_food_view_model/details_food_state.dart';
+import 'package:fitness/features/meal_details/presentaion/view_model/details_food_view_model/details_food_cubit.dart';
+import 'package:fitness/features/meal_details/presentaion/view_model/details_food_view_model/details_food_event.dart';
+import 'package:fitness/features/meal_details/presentaion/view_model/details_food_view_model/details_food_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
@@ -24,7 +24,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   @override
   void initState() {
     super.initState();
-    _detailsFoodCubit.doIntent(GetYoutubeIdEvnet(videoUrl: widget.videoUrl));
+    _detailsFoodCubit.doIntent(GetYoutubeIdEvent(videoUrl: widget.videoUrl));
   }
 
   @override
@@ -65,4 +65,3 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     );
   }
 }
-

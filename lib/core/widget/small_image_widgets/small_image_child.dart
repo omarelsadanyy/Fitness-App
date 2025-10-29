@@ -29,16 +29,22 @@ class SmallImageChild extends StatelessWidget {
         children: [
           Text(
             txt1,
+             overflow: TextOverflow.ellipsis,
             style: getMediumStyle(
               color: AppColors.white,
               fontSize: context.setSp(FontSize.s24),
             ),
           ),
-          Text(
-            txt2,
-            style: getRegularStyle(
-              color: AppColors.white,
-              fontSize: context.setSp(FontSize.s16),
+          SizedBox(
+            width: context.setWidth(400),
+            child: Text(
+              txt2,
+              maxLines: 2,
+               overflow: TextOverflow.ellipsis,
+              style: getRegularStyle(
+                color: AppColors.white,
+                fontSize: context.setSp(FontSize.s16),
+              ),
             ),
           ),
 
