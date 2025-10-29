@@ -1,7 +1,8 @@
 import 'package:fitness/core/result/result.dart';
-
 import 'package:fitness/features/foods/api/data_source/food_remote_data_source_impl.dart';
 import 'package:fitness/features/foods/data/repo/food_repo_impl.dart';
+
+import 'package:fitness/features/foods/domain/entities/meals_by_category.dart';
 import 'package:fitness/features/foods/domain/entities/meals_categories.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
@@ -16,6 +17,8 @@ void main() {
     mockFoodRemoteDataSourceImpl=MockFoodRemoteDataSourceImpl();
     foodRepoImpl=FoodRepoImpl(mockFoodRemoteDataSourceImpl);
     provideDummy<Result<List<MealCategoryEntity>>>(
+        FailedResult("failed to load data"));
+    provideDummy<Result<List<MealsByCategory>>>(
         FailedResult("failed to load data"));
   });
   group("Get Meals Categories", (){
@@ -54,6 +57,40 @@ void main() {
       expect(result, isA<FailedResult>());
       expect((result as FailedResult).errorMessage, "failed to load data");
       verify(mockFoodRemoteDataSourceImpl.getMealsCategories()).called(1);
+    });
+
+  });
+  group("Get Meals By Category", (){
+    final fakeSuccessResponse=[
+      const MealsByCategory(
+          strMeal: "15-minute chicken & halloumi burgers",
+          strMealThumb: "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg",
+          idMeal: "53085"
+      ),
+      const MealsByCategory (
+          strMeal: "Ayam Percik",
+          strMealThumb: "https://www.themealdb.com/images/media/meals/020z181619788503.jpg",
+          idMeal: "53050"
+      )
+    ];
+    const category="Chicken";
+    test("return SuccessResult when data source success on meals by Category", ()async{
+
+      when(mockFoodRemoteDataSourceImpl.getMealsByCategories(category))
+          .thenAnswer((_)async=>SuccessResult(fakeSuccessResponse));
+      final result=await foodRepoImpl.getMealsByCategories(category);
+      expect(result, isA<SuccessResult>());
+      expect((result as SuccessResult).successResult, fakeSuccessResponse);
+      verify(mockFoodRemoteDataSourceImpl.getMealsByCategories(category)).called(1);
+    });
+    test("return FailedResult when data source success on meals by Category", ()async{
+
+      when(mockFoodRemoteDataSourceImpl.getMealsByCategories(category))
+          .thenAnswer((_)async=>FailedResult("Failed to load data"));
+      final result=await foodRepoImpl.getMealsByCategories(category);
+      expect(result, isA<FailedResult>());
+      expect((result as FailedResult).errorMessage, "Failed to load data");
+      verify(mockFoodRemoteDataSourceImpl.getMealsByCategories(category)).called(1);
     });
 
   });
