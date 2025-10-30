@@ -23,7 +23,7 @@ class CustomCardFitness extends StatelessWidget {
         children: [
           Image.network(
             image,
-            fit: BoxFit.contain,
+            fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,
           ),
@@ -47,7 +47,6 @@ class CustomCardFitness extends StatelessWidget {
             child: Text(
               title,
               maxLines: 2,
-
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
               style: getBoldStyle(
