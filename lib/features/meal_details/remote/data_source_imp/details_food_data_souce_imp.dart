@@ -1,3 +1,4 @@
+import 'package:fitness/core/constants/constants.dart';
 import 'package:fitness/core/result/result.dart';
 import 'package:fitness/core/safe_api_call/safe_api_call.dart';
 
@@ -14,9 +15,12 @@ class DetailsFoodDataSourceImp implements DetailsFoodDataSource {
 
   @override
   Future<Result<String>> convertIdToVideo(String videoUrl) async {
-    final videoId = YoutubePlayer.convertUrlToId(videoUrl)!;
     try {
-      return SuccessResult(videoId);
+    final videoId = YoutubePlayer.convertUrlToId(videoUrl);
+    if (videoId == null) {
+      return FailedResult(Constants.invalidUrl);
+    }
+    return SuccessResult(videoId);
     } catch (e) {
       return FailedResult(e.toString());
     }

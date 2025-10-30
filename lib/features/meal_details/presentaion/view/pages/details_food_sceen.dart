@@ -1,5 +1,4 @@
 import 'package:fitness/config/di/di.dart';
-import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/widget/app_background.dart';
 import 'package:fitness/core/widget/custom_snack_bar.dart';
 import 'package:fitness/core/widget/loading_circle.dart';
@@ -53,29 +52,31 @@ class _DetailsFoodScreenState extends State<DetailsFoodScreen> {
                     state.detailsFoodState.data as MealResponseEntity;
                 final mealInfo = data.meal[0];
           
-                return Column(
-                  children: [
-                   
-                    SmallImage(
-                      videoUrl: mealInfo.media.strYoutube,
-                      imageUrl: mealInfo.media.strMealThumb,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      txt1: mealInfo.strMeal,
-                      txt2: mealInfo.strInstructions,
-                      widget: FoodDetailsSection(
-                        tags: mealInfo.info.strTags,
+                return SingleChildScrollView(
+                  child: Column(
+                    children: [
+                     
+                      SmallImage(
+                        videoUrl: mealInfo.media.strYoutube,
+                        imageUrl: mealInfo.media.strMealThumb,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        txt1: mealInfo.strMeal,
+                        txt2: mealInfo.strInstructions,
+                        widget: FoodDetailsSection(
+                          tags: mealInfo.info.strTags,
+                        ),
                       ),
-                    ),
-          
-                    // ingredients section
-                    IngredientsSection(
-                      ingredients: mealInfo.ingredients,
-                      measures: mealInfo.measures,
-                    ),
-          
-                    // recommendation section
-                    const DetailsFoodRecommendation(),
-                  ],
+                            
+                      // ingredients section
+                      IngredientsSection(
+                        ingredients: mealInfo.ingredients,
+                        measures: mealInfo.measures,
+                      ),
+                            
+                      // recommendation section
+                      const DetailsFoodRecommendation(),
+                    ],
+                  ),
                 );
               }
               if (state.detailsFoodState.isLoading) {

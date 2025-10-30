@@ -41,6 +41,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
         listener: (context, state) {
           if (state.detailsFoodState.isSuccess) {
             _controller = YoutubePlayerController(
+            
+         
               initialVideoId: state.detailsFoodState.data as String,
               flags: const YoutubePlayerFlags(
                 autoPlay: true,

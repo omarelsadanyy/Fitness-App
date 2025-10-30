@@ -26,7 +26,8 @@ class FoodDetailsSection extends StatelessWidget {
               borderRadius: BorderRadius.circular(context.setWidth(20)),
             ),
             child: Center(
-              child: Text(
+              child:
+               Text(
               overflow: TextOverflow.ellipsis,
                    tags[index],
                     style: getRegularStyle(color: AppColors.orange),

@@ -21,6 +21,7 @@ class VideoSection extends StatelessWidget {
             Center(
               child: YoutubePlayer(
                 controller: _controller!,
+                bufferIndicator:const CircularProgressIndicator(color: Colors.transparent),
     
                 onReady: _controller.play,
               ),

@@ -17,6 +17,7 @@ abstract class Constants {
   static const String titleThreeBoarding = "NO MORE EXCUSES \n Do It Now";
   static const String descriptionOnBoarding = "Lorem ipsum dolor sit amet consectetur. Eu urna ut gravida quis id pretium purus. Mauris massa";
  static const String getMealsDetailsQuery = "i";
+ static const String invalidUrl = "Invalid YouTube URL";
 
 
 
