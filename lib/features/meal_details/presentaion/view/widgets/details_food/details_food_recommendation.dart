@@ -1,4 +1,3 @@
-import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
@@ -16,6 +15,8 @@ final List<MealsByCategory>meals;
 
   @override
   Widget build(BuildContext context) {
+    final foodMeadls=List.from(meals)..shuffle();
+
     return Padding(
       padding: EdgeInsets.all(context.setWidth(5)),
       child: Column(
@@ -36,17 +37,19 @@ final List<MealsByCategory>meals;
             height: context.setHight(160),
             width: context.setWidth(343),
             child: ListView.builder(
+
               scrollDirection: Axis.horizontal,
-              itemCount: 8,
+              itemCount: foodMeadls.length,
               itemBuilder: (context, index) {
+
                 return Container(
                   margin: EdgeInsets.only(right: context.setWidth(10)),
                   width: context.setWidth(163),
                   height: context.setHight(160),
                   child:  CustomCardFitness(
-                    image: meals[index].strMealThumb??"",
-                    title: meals[index].strMeal??"Pasta With chicks", // will be removed when actual data came
-                  //  textWidth: context.setWidth(200),
+                    image: foodMeadls[index].strMealThumb??"",
+                    title: foodMeadls[index].strMeal??"Pasta With chicks",
+
                   ),
                 );
               },

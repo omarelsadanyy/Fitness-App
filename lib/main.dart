@@ -24,7 +24,7 @@ void main() async {
   final isLoggedIn = await userSession.checkIfUserLoggedIn();
   runApp(
     DevicePreview(
-      enabled: true,
+      enabled: false,
       builder: (context) => ChangeNotifierProvider.value(
         value: appLanguageConfig, // Use the instance here
         child:  FitnessApp(isLoggedIn: isLoggedIn),
