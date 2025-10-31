@@ -4,10 +4,6 @@ import 'package:fitness/features/auth/presentation/view_model/register_view_mode
 import 'package:fitness/features/auth/presentation/view_model/register_view_model/register_intent.dart';
 import 'package:fitness/features/auth/presentation/views/screens/compelete_register/screen/complete_register_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/register/register_screen.dart';
-import 'package:fitness/features/home/domain/entity/exercises/mover_muscle_entity.dart';
-import 'package:fitness/features/home/presentation/view/screens/exercise_screen/exercises_screen.dart';
-import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_cubit.dart';
-import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_intent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -82,21 +78,21 @@ abstract class Routes {
 
       case AppRoutes.exercises:
         // final primMoverMuscle = setting.arguments as MoverMuscleEntity;
-        return MaterialPageRoute(
-          builder: (context) {
-            return
-              BlocProvider(
-              create: (context) => getIt<ExercisesCubit>()..doIntent(intent: LoadLevelsByMuscleIntent(muscleId: "67c8499726895f87ce0aa9bf")),
-              // create: (context) => getIt<WorkoutCubit>()..loadLevelsByMuscle(primMoverMuscle.id),
-              child:
-              const ExercisesScreen(primMoverMuscle: MoverMuscleEntity(
-                  id: "67c8499726895f87ce0aa9bf",
-                  name: "Posterior Deltoids",
-                  image: "https://iili.io/33p7ene.png"
-              ),),
-            );
-          },
-        );
+        // return MaterialPageRoute(
+        //   builder: (context) {
+        //     return
+        //       BlocProvider(
+        //       create: (context) => getIt<ExercisesCubit>()..doIntent(intent: LoadLevelsByMuscleIntent(muscleId: "67c8499726895f87ce0aa9bf")),
+        //       // create: (context) => getIt<WorkoutCubit>()..loadLevelsByMuscle(primMoverMuscle.id),
+        //       child:
+        //       const ExercisesScreen(primMoverMuscle: MoverMuscleEntity(
+        //           id: "67c8499726895f87ce0aa9bf",
+        //           name: "Posterior Deltoids",
+        //           image: "https://iili.io/33p7ene.png"
+        //       ),),
+        //     );
+        //   },
+        // );
 
 
 
