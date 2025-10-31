@@ -3,6 +3,7 @@ import 'package:fitness/core/widget/app_background.dart';
 import 'package:fitness/core/widget/custom_snack_bar.dart';
 import 'package:fitness/core/widget/loading_circle.dart';
 import 'package:fitness/core/widget/small_image_widgets/small_image.dart';
+import 'package:fitness/features/foods/domain/entities/meals_by_category.dart';
 import 'package:fitness/features/meal_details/domain/entity/details_food/meal_response.dart';
 import 'package:fitness/features/meal_details/presentaion/view/widgets/details_food/details_food_recommendation.dart';
 import 'package:fitness/features/meal_details/presentaion/view/widgets/details_food/food_details_section.dart';
@@ -14,8 +15,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DetailsFoodScreen extends StatefulWidget {
-  final String mealId;
-  const DetailsFoodScreen({super.key, required this.mealId});
+  final List<MealsByCategory> meals;final int index;
+  const DetailsFoodScreen({super.key, required this.meals,required this.index});
 
   @override
   State<DetailsFoodScreen> createState() => _DetailsFoodScreenState();
@@ -27,7 +28,8 @@ class _DetailsFoodScreenState extends State<DetailsFoodScreen> {
   void initState() {
     super.initState();
     _detailsFoodCubit = getIt.get<DetailsFoodCubit>();
-    _detailsFoodCubit.doIntent(GetMealDetailsEvent(mealId: widget.mealId));
+    _detailsFoodCubit.doIntent(GetMealDetailsEvent(mealId:
+    widget.meals[widget.index].idMeal.toString()));
   }
 
   @override
@@ -46,6 +48,7 @@ class _DetailsFoodScreenState extends State<DetailsFoodScreen> {
                 );
               }
             },
+
             builder: (context, state) {
               if (state.detailsFoodState.isSuccess) {
                 final data =
@@ -67,14 +70,14 @@ class _DetailsFoodScreenState extends State<DetailsFoodScreen> {
                         ),
                       ),
                             
-                      // ingredients section
                       IngredientsSection(
                         ingredients: mealInfo.ingredients,
                         measures: mealInfo.measures,
                       ),
                             
-                      // recommendation section
-                      const DetailsFoodRecommendation(),
+                       DetailsFoodRecommendation(
+                         meals: widget.meals,
+                       ),
                     ],
                   ),
                 );

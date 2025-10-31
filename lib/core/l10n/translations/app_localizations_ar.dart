@@ -284,4 +284,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get doNotHaveAccount => 'ليس لديك حساب؟ ';
+
+  @override
+  String get recommendation => 'اقتراحات';
+
+  @override
+  String get ingredients => 'المكونات';
 }

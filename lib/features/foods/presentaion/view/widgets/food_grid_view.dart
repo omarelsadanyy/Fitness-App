@@ -1,4 +1,5 @@
 import 'package:fitness/core/responsive/size_helper.dart';
+import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
@@ -38,10 +39,20 @@ class FoodGridView extends StatelessWidget {
                     state.mealsByCategorieStatus.isLoading ||
                     state.mealsByCategorieStatus.isInitial ||
                     state.mealsByCategorieStatus.isFailure,
-                child: CustomCardFitness(
+                child:
+              GestureDetector(
+                onTap: (){
+                  Navigator.of(context).pushNamed(AppRoutes.detailsFoodPage,
+                  arguments:{
+                    'meal': meals,
+                    'index': index,
+                  } );
+                },
+                child:   CustomCardFitness(
                   image: meals[index].strMealThumb ?? "",
                   title: meals[index].strMeal ?? "",
                 ),
+              )
               );
             },
           ),

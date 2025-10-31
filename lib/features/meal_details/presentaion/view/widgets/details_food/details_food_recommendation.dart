@@ -5,15 +5,14 @@ import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
 import 'package:fitness/core/widget/custom_card_fitness.dart';
+import 'package:fitness/features/foods/domain/entities/meals_by_category.dart';
 import 'package:flutter/material.dart';
 
 class DetailsFoodRecommendation extends StatelessWidget {
-  // will take list of recommdations   recommendtionList
   const DetailsFoodRecommendation({
-    super.key,
+    super.key,required this.meals
   });
-
-  // list<Recommdtion> randomRecommendtionList= List.from(recommendtionList)..shuffle
+final List<MealsByCategory>meals;
 
   @override
   Widget build(BuildContext context) {
@@ -44,10 +43,10 @@ class DetailsFoodRecommendation extends StatelessWidget {
                   margin: EdgeInsets.only(right: context.setWidth(10)),
                   width: context.setWidth(163),
                   height: context.setHight(160),
-                  child: CustomCardFitness(
-                    image: AssetsManager.test,
-                    title: 'Pasta With chicks', // will be removed when actual data came 
-                    textWidth: context.setWidth(200),
+                  child:  CustomCardFitness(
+                    image: meals[index].strMealThumb??"",
+                    title: meals[index].strMeal??"Pasta With chicks", // will be removed when actual data came
+                  //  textWidth: context.setWidth(200),
                   ),
                 );
               },

@@ -283,4 +283,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get doNotHaveAccount => 'Don’t have an account? ';
+
+  @override
+  String get recommendation => 'Recommendation';
+
+  @override
+  String get ingredients => 'Ingredients';
 }

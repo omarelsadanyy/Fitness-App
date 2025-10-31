@@ -21,4 +21,5 @@ class MealsByCategory extends Equatable {
     strMeal,
     strMealThumb,
   ];
+
 }

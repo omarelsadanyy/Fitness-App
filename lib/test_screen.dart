@@ -39,7 +39,8 @@ class TestScreen extends StatelessWidget {
                         ),
                       );
                     },
-                    child: ListTile(
+                    child:
+                    ListTile(
                       title: Text(
                         state.mealsCategories.data![index].strCategory ,
                       ),
