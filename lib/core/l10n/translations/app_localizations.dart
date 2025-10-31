@@ -272,6 +272,12 @@ abstract class AppLocalizations {
   /// **'level5'**
   String get level5;
 
+  /// No description provided for @foodRecommendation.
+  ///
+  /// In en, this message translates to:
+  /// **'Food Recommendation'**
+  String get foodRecommendation;
+
   /// No description provided for @heyThere.
   ///
   /// In en, this message translates to:

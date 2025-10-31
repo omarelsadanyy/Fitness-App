@@ -14,4 +14,6 @@ abstract class AppRoutes {
   static const String onBoarding = "/onBoarding";
   static const String videoPage = "videoPage";
   static const String detailsFoodPage = "detailsFoodPage";
+  static const String food = "/food";
+
 }

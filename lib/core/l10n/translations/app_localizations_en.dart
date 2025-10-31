@@ -97,6 +97,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get level5 => 'level5';
 
   @override
+  String get foodRecommendation => 'Food Recommendation';
+
+  @override
   String get heyThere => 'Hey There';
 
   @override

@@ -97,6 +97,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get level5 => 'level5';
 
   @override
+  String get foodRecommendation => 'الاطعمة الموصى بها';
+
+  @override
   String get heyThere => 'مرحبًا';
 
   @override
