@@ -12,7 +12,7 @@ class VideoSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:Colors.transparent,
+      backgroundColor:const Color.fromARGB(177, 0, 0, 0),
       body: SafeArea(
         child: Stack(
           children: [

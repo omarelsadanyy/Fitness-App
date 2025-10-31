@@ -168,14 +168,13 @@ class ExercisesCubit extends Cubit<ExercisesStates> {
 
     final String cleanedUrl = url.trim();
     final String? videoId = YoutubePlayer.convertUrlToId(cleanedUrl);
-
     if (videoId != null && videoId.isNotEmpty) {
       emit(state.copyWith(youtubeIdStatus: StateStatus.success(videoId)));
     } else {
       emit(
         state.copyWith(
           youtubeIdStatus: const StateStatus.failure(
-            ResponseException(message: "error fetching video id"),
+            ResponseException(message: "error fetching video id , this video is not available."),
           ),
         ),
       );

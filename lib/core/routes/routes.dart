@@ -6,6 +6,7 @@ import 'package:fitness/features/auth/presentation/views/screens/compelete_regis
 import 'package:fitness/features/auth/presentation/views/screens/register/register_screen.dart';
 import 'package:fitness/features/home/domain/entity/exercises/mover_muscle_entity.dart';
 import 'package:fitness/features/home/presentation/view/screens/exercise_screen/exercises_screen.dart';
+import 'package:fitness/features/home/presentation/view/screens/exercise_screen/video_screen.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_intent.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,7 @@ import '../../features/on_boarding/view/on_boarding_view.dart';
 
 abstract class Routes {
   static final GlobalKey<NavigatorState> navigatorKey =
-  GlobalKey<NavigatorState>();
+      GlobalKey<NavigatorState>();
 
   static Route onGenerate(RouteSettings setting) {
     final url = Uri.parse(setting.name ?? "");
@@ -42,13 +43,12 @@ abstract class Routes {
         );
       case AppRoutes.registerScreen:
         return MaterialPageRoute(
-          builder: (context) =>
-              BlocProvider<RegisterCubit>(
-                create: (context) =>
+          builder: (context) => BlocProvider<RegisterCubit>(
+            create: (context) =>
                 getIt.get<RegisterCubit>()
                   ..doIntent(intent: const RegisterInitializationIntent()),
-                child: const RegisterScreen(),
-              ),
+            child: const RegisterScreen(),
+          ),
         );
       case AppRoutes.completeRegisterScreen:
         return MaterialPageRoute(
@@ -63,7 +63,6 @@ abstract class Routes {
             );
           },
         );
-
 
       case AppRoutes.otpScreen:
         final email = setting.arguments as String;
@@ -84,22 +83,33 @@ abstract class Routes {
         // final primMoverMuscle = setting.arguments as MoverMuscleEntity;
         return MaterialPageRoute(
           builder: (context) {
-            return
-              BlocProvider(
-              create: (context) => getIt<ExercisesCubit>()..doIntent(intent: LoadLevelsByMuscleIntent(muscleId: "67c8499726895f87ce0aa9bf")),
+            return BlocProvider(
+              create: (context) => getIt<ExercisesCubit>()
+                ..doIntent(
+                  intent: LoadLevelsByMuscleIntent(
+                    muscleId: "67c8499726895f87ce0aa9bf",
+                  ),
+                ),
               // create: (context) => getIt<WorkoutCubit>()..loadLevelsByMuscle(primMoverMuscle.id),
-              child:
-              const ExercisesScreen(primMoverMuscle: MoverMuscleEntity(
+              child: const ExercisesScreen(
+                primMoverMuscle: MoverMuscleEntity(
                   id: "67c8499726895f87ce0aa9bf",
                   name: "Posterior Deltoids",
-                  image: "https://iili.io/33p7ene.png"
-              ),),
+                  image: "https://iili.io/33p7ene.png",
+                ),
+              ),
             );
           },
         );
 
+      case AppRoutes.exeVideoScreen:
+        final videourl = setting.arguments as String;
+        return PageRouteBuilder(
+          opaque: false,
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              VideoPlayerScreen(videoUrl: videourl),
 
-
+        );
       default:
         return MaterialPageRoute(
           builder: (context) {

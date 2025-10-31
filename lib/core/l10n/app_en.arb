@@ -101,5 +101,7 @@
   "exercise":"exercise",
   "exerciseSlug":"Start today, get stronger tomorrow… every workout brings you closer to your best self!",
   "min":"30 MIN",
-  "cal": "130 Cal"
+  "cal": "130 Cal",
+  "error":"Error",
+  "back":"Back"
 }

@@ -1,7 +1,9 @@
 import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/widget/cusum_scaffold_messanger.dart';
+import 'package:fitness/core/widget/loading_circle.dart';
 import 'package:fitness/core/widget/video_widgets/video_section.dart';
+import 'package:fitness/features/home/presentation/view/widgets/exercises_screen/video_error_dialog.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_intent.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_state.dart';
@@ -36,48 +38,43 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: BlocProvider.value(
-        value: _cubit,
-        child: BlocConsumer<ExercisesCubit, ExercisesStates>(
-          listener: (context, state) {
-            if (state.youtubeIdStatus.isFailure) {
-              showCustomSnackBar(
-                context,
-                state.youtubeIdStatus.error!.message,
-              );
-            }
-          },
-          builder: (context, state) {
-            if (state.youtubeIdStatus.isLoading) {
-              return _buildLoading();
-            }
-            if (state.youtubeIdStatus.isSuccess) {
-              final videoId = state.youtubeIdStatus.data!;
-              _controller = YoutubePlayerController(
-                initialVideoId: videoId,
-                flags: const YoutubePlayerFlags(autoPlay: true),
-              );
-              return VideoSection(controller: _controller);
-            }
-            return _buildError();
-          },
-        ),
+    return BlocProvider.value(
+      value: _cubit,
+      child: BlocConsumer<ExercisesCubit, ExercisesStates>(
+        listener: (context, state) {
+          if (state.youtubeIdStatus.isFailure) {
+            showCustomSnackBar(context, state.youtubeIdStatus.error!.message);
+          }
+        },
+        builder: (context, state) {
+          if (state.youtubeIdStatus.isLoading) {
+            return const LoadingCircle();
+          }
+
+          if (state.youtubeIdStatus.isSuccess) {
+            final videoId = state.youtubeIdStatus.data!;
+            _controller = YoutubePlayerController(
+              initialVideoId: videoId,
+              flags: const YoutubePlayerFlags(autoPlay: true),
+            );
+            return VideoSection(controller: _controller);
+          }
+
+          if (state.youtubeIdStatus.isFailure) {
+            return VideoErrorDialog(message:
+              state.youtubeIdStatus.error?.message ??
+                  context.loc.errorLoadingVideo,
+            );
+          }
+
+          return VideoErrorDialog(message:
+          state.youtubeIdStatus.error?.message ??
+              context.loc.errorLoadingVideo,
+          );
+        },
       ),
     );
   }
 
-  Widget _buildLoading() {
-    return const Center(child: CircularProgressIndicator(color: Colors.orange));
-  }
 
-  Widget _buildError() {
-    return  Center(
-      child: Text(
-        context.loc.errorLoadingVideo,
-        style:const TextStyle(color: Colors.white),
-        textAlign: TextAlign.center,
-      ),
-    );
-  }
 }

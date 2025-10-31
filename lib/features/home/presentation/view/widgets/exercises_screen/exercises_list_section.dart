@@ -70,7 +70,7 @@ class ExercisesListSection extends StatelessWidget {
                         padding: EdgeInsets.all(context.setWidth(8)),
                         child: ExerciseListItem(
                           primeMoverMuscleImage: primeMoverMuscleImage,
-                          exerciseName: exercise.name ?? "exercise",
+                          exerciseName: exercise.name ?? context.loc.exercise,
                           videoLink: exercise.video?.inDepthLink ?? "",
                         ),
                       );

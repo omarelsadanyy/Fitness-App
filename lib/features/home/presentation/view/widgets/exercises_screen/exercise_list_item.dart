@@ -1,10 +1,9 @@
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
+import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
-import 'package:fitness/features/home/presentation/view/screens/exercise_screen/video_screen.dart';
-import 'package:fitness/features/home/presentation/view/widgets/exercises_screen/transparent_route.dart';
 import 'package:flutter/material.dart';
 
 class ExerciseListItem extends StatelessWidget {
@@ -25,11 +24,9 @@ class ExerciseListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          Navigator.of(context).push(
-            TransparentRoute(
-              builder: (_) => VideoPlayerScreen(videoUrl: videoLink),
-            ),
-          );
+          Navigator.pushNamed(context, AppRoutes.exeVideoScreen,
+          arguments: videoLink);
+
 
       },
       child: Row(
