@@ -46,7 +46,7 @@ class SkeletonLoadingExercises extends StatelessWidget {
                           child: Container(
                             height: context.setHight(88),
                             width: context.setWidth(81),
-                            color: Colors.white.withOpacity(0.2),
+                            color: Colors.white.withValues(alpha: 0.2),
                           ),
                         ),
                         SizedBox(width: context.setWidth(10)),
@@ -58,13 +58,13 @@ class SkeletonLoadingExercises extends StatelessWidget {
                               Container(
                                 height: context.setHight(18),
                                 width: context.setWidth(120),
-                                color: Colors.white.withOpacity(0.2),
+                                color: Colors.white.withValues(alpha: 0.2),
                               ),
                               SizedBox(height: context.setHight(8)),
                               Container(
                                 height: context.setHight(14),
                                 width: context.setWidth(80),
-                                color: Colors.white.withOpacity(0.2),
+                                color: Colors.white.withValues(alpha: 0.2),
                               ),
                             ],
                           ),
@@ -75,7 +75,7 @@ class SkeletonLoadingExercises extends StatelessWidget {
                           height: context.setWidth(24),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25),
-                            color: Colors.white.withOpacity(0.2),
+                            color: Colors.white.withValues(alpha: 0.2),
                           ),
                         ),
                       ],
