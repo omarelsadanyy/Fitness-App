@@ -29,7 +29,7 @@ void main() {
     reset(mockExercisestDsImpl);
   });
   group("test get levels by mover muscle impl", () {
-    final List<LevelEntity> fakeLevelsList = [
+    const List<LevelEntity> fakeLevelsList =[
       LevelEntity(id: "1", name: "level1"),
       LevelEntity(id: "2", name: "level2"),
     ];
@@ -106,7 +106,7 @@ void main() {
 
   group("test get exercises by level and muscle", () {
     final List<ExerciseEntity> fakeExercisesList = [
-      ExerciseEntity(
+      const ExerciseEntity(
         id: "1",
         name: "Bodyweight Bird Dog",
         difficultyLevel: "Beginner",

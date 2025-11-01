@@ -148,7 +148,7 @@ void main() {
       'resets page and loads new level exercises',
       seed: () => cubit.state.copyWith(
         selectedLevelId: "1",
-        exercisesByLevelAndMuscleStatus: StateStatus.success(fakeExercises),
+        exercisesByLevelAndMuscleStatus: const StateStatus.success(fakeExercises),
       ),
       build: () {
         when(mockExercisesUseCase("muscle1", "2", page: 1))
@@ -165,7 +165,7 @@ void main() {
         ),
         cubit.state.copyWith(
           selectedLevelId: "2",
-          exercisesByLevelAndMuscleStatus: StateStatus.success(fakeExercises),
+          exercisesByLevelAndMuscleStatus: const StateStatus.success(fakeExercises),
         ),
       ],
       verify: (_) {
@@ -183,7 +183,7 @@ void main() {
       ),
       expect: () => [
         cubit.state.copyWith(youtubeIdStatus: const StateStatus.loading()),
-        cubit.state.copyWith(youtubeIdStatus: StateStatus.success("dQw4w9WgXcQ")),
+        cubit.state.copyWith(youtubeIdStatus: const StateStatus.success("dQw4w9WgXcQ")),
       ],
     );
 

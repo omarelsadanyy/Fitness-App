@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/features/home/presentation/view/widgets/exercises_screen/skeleton_loading_exercises.dart';

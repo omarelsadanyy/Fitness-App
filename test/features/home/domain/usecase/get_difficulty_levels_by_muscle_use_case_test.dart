@@ -20,7 +20,7 @@ void main() {
   });
 
   group("test get difficulty level use case", () {
-    final List<LevelEntity> fakeLevelsList = [
+    const List<LevelEntity> fakeLevelsList = [
       LevelEntity(id: "1", name: "level1"),
       LevelEntity(id: "2", name: "level2"),
     ];

@@ -25,7 +25,7 @@ setUp(() {
 
 group("description", () {
   final List<ExerciseEntity> fakeExercisesList = [
-    ExerciseEntity(
+    const ExerciseEntity(
       id: "1",
       name: "Bodyweight Bird Dog",
       difficultyLevel: "Beginner",
@@ -129,7 +129,7 @@ group("description", () {
   });
 
   test("Should map null fields correctly", () async {
-    final nullExercise = ExerciseEntity(id: "3", name: "Test");
+    const nullExercise = ExerciseEntity(id: "3", name: "Test");
     when(mockExercisesRepoImpl.getExercisesByMuscleAndDifficulty("1", "22"))
         .thenAnswer((_) async => SuccessResult([nullExercise]));
 
