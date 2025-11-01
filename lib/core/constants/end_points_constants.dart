@@ -10,6 +10,9 @@ abstract class EndPointsConstants {
   static const String forgetPassEndPoint = "forgotPassword";
   static const String verifyResetCode = "verifyResetCode";
   static const String resetPass = "resetPassword";
+  static const String musclesRandom = "muscles/random";
+  static const String allMusclesGroups = "muscles";
+  //static const String mealsCategories = "categories.php";
 
   static const String mealsCategories = "1/categories.php";
   static const String mealsByCategories = "1/filter.php?";

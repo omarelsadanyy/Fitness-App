@@ -23,7 +23,7 @@
   "advance": "متقدم",
   "trueBeast": "محترف قوي",
   "yourRegularPhysical": "ما هو مستوى نشاطك البدني المعتاد؟",
-  "next": "التالي",
+
   "foodRecommendation": "الاطعمة الموصى بها",
   "heyThere": "مرحبًا",
   "createAnAccount": "إنشاء حساب",
@@ -99,6 +99,15 @@
     "cal": "130 كالوري",
       "error":"خطأ",
       "back":"رجوع",
+
+   "hiHomeText": "مرحبًا",
+  "letsStartDoingYourDay": "لنبدأ يومك",
+  "categoryHomeText": "الفئات",
+  "recommendationTodyText": "توصيات اليوم",
+  "upcomingWorkOutsText": "التمارين القادمة",
+  "seeAllHomeText": "عرض الكل",
+  "recommendationForYouText": "توصيات لك",
+  "popularTrainingText": "التمارين الشائعة",
   "recommendation":"اقتراحات",
   "ingredients":"المكونات"
 }
