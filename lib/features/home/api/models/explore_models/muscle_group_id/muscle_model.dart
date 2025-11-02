@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_by_id_entity/muscle_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'muscle_model.g.dart';
@@ -28,13 +29,13 @@ class MuscleModel extends Equatable {
     return _$MuscleModelToJson(this);
   }
 
-  // MuscleEntity toEntity() {
-  //   return MuscleEntity(
-  //     id: id,
-  //     name: name,
-  //     image: image,
-  //   );
-  // }
+  MuscleEntity toEntity() {
+    return MuscleEntity(
+      id: id,
+      name: name,
+      image: image,
+    );
+  }
 
   @override
   List<Object?> get props => [id, name, image];

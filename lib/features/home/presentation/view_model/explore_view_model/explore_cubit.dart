@@ -1,7 +1,9 @@
 import 'package:fitness/core/enum/request_state.dart';
 import 'package:fitness/core/error/response_exception.dart';
 import 'package:fitness/core/result/result.dart';
+import 'package:fitness/features/home/api/responses/explore_response/muscle_group_by_id/muscle_group_id_response.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/meals_categories_entity/meals_categories_entity.dart';
+import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_by_id_entity/muscles_group_id_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_entity/muscles_group_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscles_random_entity/muscles_random_entity.dart';
 import 'package:fitness/features/home/domain/use_case/explore_use_case/explore_use_case.dart';
@@ -22,6 +24,9 @@ class ExploreCubit extends Cubit<ExploreState> {
       
       case GetHomeData():
        _getHomeData();
+       break;
+      case GetMusclesGroupByIdIntent():
+        _getMusclesGroupById(intent.id);
        break;
     }
   }
@@ -78,6 +83,23 @@ Future<void> _getHomeData() async{
     
          emit(state.copyWith(mealsCategorysState: StateStatus.failure(
            ResponseException(message: mealsCategoriesData.errorMessage)
+         )));
+       break;
+    }
+  }
+
+  Future<void> _getMusclesGroupById(String? id) async{
+    emit(state.copyWith(musclesGroupById: const StateStatus.loading()));
+    final musclesGroupById = await _exploreUseCase.getAllMusclesGroupById(id);
+    switch(musclesGroupById){
+      case SuccessResult<MusclesGroupIdEntity>():
+       
+        emit(state.copyWith(musclesGroupById: StateStatus.success(musclesGroupById.successResult)));
+        break;
+      case FailedResult<MusclesGroupIdEntity>():
+    
+         emit(state.copyWith(musclesGroupById: StateStatus.failure(
+           ResponseException(message: musclesGroupById.errorMessage)
          )));
        break;
     }

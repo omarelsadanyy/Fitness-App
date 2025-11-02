@@ -17,6 +17,7 @@ abstract class EndPointsConstants {
 
   static const String mealsCategories = "1/categories.php";
   static const String mealsByCategories = "1/filter.php?";
+  static const String musclesGroupById = "/musclesGroup/{id}";
 
 
 }

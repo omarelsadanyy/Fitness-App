@@ -1,15 +1,19 @@
+import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
 import 'package:fitness/core/widget/tab_bar_widget.dart';
+import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_by_id_entity/muscle_entity.dart';
 import 'package:fitness/features/home/presentation/view/widgets/explore/explore_recommendation_list_item.dart';
 import 'package:fitness/features/home/presentation/view/widgets/explore/explore_upcoming_list_item.dart';
 import 'package:fitness/features/home/presentation/view_model/explore_view_model/explore_cubit.dart';
+import 'package:fitness/features/home/presentation/view_model/explore_view_model/explore_intents.dart';
 import 'package:fitness/features/home/presentation/view_model/explore_view_model/explore_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class ExploreUpcomingListView extends StatelessWidget {
  const ExploreUpcomingListView({super.key});
@@ -17,6 +21,8 @@ class ExploreUpcomingListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ExploreCubit,ExploreState>(
       builder: (context, state) {
+        final cubit = getIt.get<ExploreCubit>();
+        final items = state.musclesGroupState.data;
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -48,9 +54,12 @@ class ExploreUpcomingListView extends StatelessWidget {
             SizedBox(height: context.setHight(8)),
             SizedBox(
               height: context.setHight(30),
-              child: TabBarWidget(titles:state.musclesGroupState.data
+              child: TabBarWidget(titles:items
     ?.map((muscle) => muscle.name ?? '')
-    .toList() ?? []),
+    .toList() ?? [],onTabSelected:(value) {
+      final selectedId = items![value].id;
+     cubit.doIntent(intent: GetMusclesGroupByIdIntent(id:selectedId));
+    },),
             ),
             SizedBox(height: context.setHight(8)),
             SizedBox(
@@ -59,7 +68,11 @@ class ExploreUpcomingListView extends StatelessWidget {
                 itemCount: state.musclesGroupState.data?.length ?? 0,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return const  ExploreUpcomingListItem();
+                  return   ExploreUpcomingListItem( musclesentity: state.musclesGroupById.data?.muscles?[index] ?? MuscleEntity(
+                    name: "",
+                    image: "",
+                    id: ""
+                  ));
                 },
               ),
             ),

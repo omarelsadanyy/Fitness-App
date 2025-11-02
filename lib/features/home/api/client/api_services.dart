@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:fitness/core/constants/end_points_constants.dart';
 import 'package:fitness/features/home/api/responses/explore_response/meals_categories/meals_categories_response.dart';
+import 'package:fitness/features/home/api/responses/explore_response/muscle_group_by_id/muscle_group_id_response.dart';
 import 'package:fitness/features/home/api/responses/explore_response/muscles_group_response/muscles_group_response.dart';
 import 'package:fitness/features/home/api/responses/explore_response/muscles_random_response/muscles_random_response.dart';
 import 'package:injectable/injectable.dart';
@@ -22,5 +23,10 @@ abstract class ApiServices {
 
    @GET(EndPointsConstants.mealsCategories)
   Future<MealsCategoriesResponse> getAllMealsCategories();
+
+  @GET(EndPointsConstants.musclesGroupById)
+  Future<MuscleGroupIdResponse> getAllMusclesGroupById(
+    @Path("id")String? id);
+
 
 }

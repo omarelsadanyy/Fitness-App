@@ -5,13 +5,16 @@ import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
+import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_by_id_entity/muscle_entity.dart';
+import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_by_id_entity/muscles_group_id_entity.dart';
 import 'package:flutter/material.dart';
 
 class ExploreUpcomingListItem extends StatelessWidget {
-  const ExploreUpcomingListItem({super.key});
-
+  const ExploreUpcomingListItem({super.key, required this.musclesentity});
+ final MuscleEntity musclesentity;
   @override
   Widget build(BuildContext context) {
+
     return Padding(
       padding: EdgeInsets.only(right: context.setWidth(16)),
       child: Stack(
@@ -25,7 +28,7 @@ class ExploreUpcomingListItem extends StatelessWidget {
                 Radius.circular(context.setMinSize(20)),
               ),
               image: DecorationImage(
-                image: const AssetImage(AssetsManager.homeImageTest),
+                image:  NetworkImage(musclesentity.image ?? ''),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
                   AppColors.black.withValues(alpha: 0.2),
@@ -62,7 +65,7 @@ class ExploreUpcomingListItem extends StatelessWidget {
                   ),
                   child: Text(
                     textAlign: TextAlign.center,
-                    "Chest",
+                   musclesentity.name ?? '',
                     style: getRegularStyle(
                       color: AppColors.white,
                     ).copyWith(fontFamily: "BalooThambi2",

@@ -1,6 +1,7 @@
 import 'package:fitness/core/result/result.dart';
 import 'package:fitness/features/home/data/repositories/explore_repositories_impl/explore_repositories_impl.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/meals_categories_entity/meals_categories_entity.dart';
+import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_by_id_entity/muscles_group_id_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_entity/muscles_group_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscles_random_entity/muscles_random_entity.dart';
 import 'package:fitness/features/home/domain/repositories/explore_repositories/explore_repositories.dart';
@@ -25,4 +26,7 @@ class ExploreUseCase {
        return _exploreRepositories.getRandomMuscles();
   }
 
+       Future<Result<MusclesGroupIdEntity>> getAllMusclesGroupById(String? id) {
+       return _exploreRepositories.getAllMusclesGroupById(id);
+  }
 }

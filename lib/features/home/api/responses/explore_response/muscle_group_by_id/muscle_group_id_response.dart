@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
-import 'package:fitness/features/home/api/models/explore_models/muscle_group_id/muscle_group_model.dart';
 import 'package:fitness/features/home/api/models/explore_models/muscle_group_id/muscle_model.dart';
+import 'package:fitness/features/home/api/models/explore_models/muscles_group_model/muscles_group_model.dart';
+import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_by_id_entity/muscles_group_id_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'muscle_group_id_response.g.dart';
@@ -11,14 +12,14 @@ class MuscleGroupIdResponse extends Equatable {
   final String? message;
   
   @JsonKey(name: "muscleGroup")
-  final MuscleGroupModel? muscleGroup;
+  final MusclesGroupModel? musclesGroup;
   
   @JsonKey(name: "muscles")
   final List<MuscleModel>? muscles;
 
   const MuscleGroupIdResponse({
     this.message,
-    this.muscleGroup,
+    this.musclesGroup,
     this.muscles,
   });
 
@@ -31,5 +32,13 @@ class MuscleGroupIdResponse extends Equatable {
   }
 
   @override
-  List<Object?> get props => [message, muscleGroup, muscles];
+  List<Object?> get props => [message, musclesGroup, muscles];
+
+   MusclesGroupIdEntity toEntity() {
+    return MusclesGroupIdEntity(
+      message: message,
+      musclesGroup: musclesGroup?.toEntity(),
+      muscles: muscles?.map((muscle) => muscle.toEntity()).toList(),
+    );
+  }
 }
