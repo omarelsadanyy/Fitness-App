@@ -99,5 +99,6 @@
   "recommendationForYouText": "توصيات لك",
   "popularTrainingText": "التمارين الشائعة",
   "recommendation":"اقتراحات",
-  "ingredients":"المكونات"
+  "ingredients":"المكونات",
+  "not": "غير متوفر"
 }

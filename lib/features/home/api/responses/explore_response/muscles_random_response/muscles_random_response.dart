@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:fitness/features/home/api/models/explore_models/muscles_random_model/muscles_random_model.dart';
+import 'package:fitness/features/home/api/models/explore_models/muscle_model/muscle_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'muscles_random_response.g.dart';
@@ -13,7 +13,7 @@ class MusclesRandomResponse extends Equatable {
   final int? totalMuscles;
   
   @JsonKey(name: "muscles")
-  final List<MusclesRandomModel>? muscles;
+  final List<MuscleModel>? muscles;
 
   const MusclesRandomResponse({
     this.message,

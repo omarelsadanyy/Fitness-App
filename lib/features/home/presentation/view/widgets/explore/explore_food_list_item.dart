@@ -1,12 +1,11 @@
 import 'dart:ui';
 
-import 'package:fitness/core/constants/assets_manager.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
 import 'package:fitness/features/foods/domain/entities/meals_categories.dart';
-import 'package:fitness/features/home/domain/entities/explore_entity/meals_categories_entity/meals_categories_entity.dart';
 import 'package:flutter/material.dart';
 
 class ExploreFoodListItem extends StatelessWidget {
@@ -22,21 +21,30 @@ class ExploreFoodListItem extends StatelessWidget {
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          Container(
+          SizedBox(
             width: context.setMinSize(104),
             height: context.setMinSize(104),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(context.setMinSize(20)),
-              ),
-              image: DecorationImage(
-                image: NetworkImage(mealCategoryEntity.strCategoryThumb ?? ""),
-                fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                  AppColors.black.withValues(alpha: 0.2),
-                  BlendMode.darken,
+            child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(context.setMinSize(20))),
+                child: ColorFiltered(
+                colorFilter: ColorFilter.mode(AppColors.black.withValues(alpha: 0.2)
+                , BlendMode.darken),
+                child: CachedNetworkImage(imageUrl:mealCategoryEntity.strCategoryThumb ?? ""
+                ,fit: BoxFit.cover,
+                errorWidget: (context, url, error) {
+                  return Container(
+        color: AppColors.gray.withValues(alpha: 0.2),
+        alignment: Alignment.center,
+        padding: EdgeInsets.only(bottom: context.setHight(25)),
+        child: Icon(
+          Icons.image_not_supported,
+          color: AppColors.gray,
+          size: context.setMinSize(50),
+        ),
+      );
+                },
                 ),
-              ),
+              )
             ),
           ),
           Positioned(

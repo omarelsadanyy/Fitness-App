@@ -1,15 +1,8 @@
-import 'package:fitness/core/constants/assets_manager.dart';
-import 'package:fitness/core/error/api_error.dart';
 import 'package:fitness/core/loaders/loaders.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
-import 'package:fitness/core/theme/app_colors.dart';
-import 'package:fitness/core/theme/font_manager.dart';
-import 'package:fitness/core/theme/font_style.dart';
 import 'package:fitness/core/widget/home_back_ground.dart';
-import 'package:fitness/core/widget/tab_bar_widget.dart';
 import 'package:fitness/features/home/presentation/view/widgets/explore/explore_categories_list_view.dart';
 import 'package:fitness/features/home/presentation/view/widgets/explore/explore_food_list_view.dart';
-import 'package:fitness/features/home/presentation/view/widgets/explore/explore_popular_list_item.dart';
 import 'package:fitness/features/home/presentation/view/widgets/explore/explore_popular_training_list_view.dart';
 import 'package:fitness/features/home/presentation/view/widgets/explore/explore_screen_profile_section.dart';
 import 'package:fitness/features/home/presentation/view/widgets/explore/explore_recommendation_list_view.dart';
@@ -26,9 +19,12 @@ class ExploreScreenViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<ExploreCubit, ExploreState>(
       listenWhen: (previous, current) { 
-       return (current.mealsCategorysState.isSuccess || current.mealsCategorysState.isFailure) ||
-         (current.musclesGroupState.isSuccess || current.musclesGroupState.isFailure) ||
-         (current.randomMusclesState.isSuccess || current.randomMusclesState.isFailure);
+       return current.mealsCategorysState.isFailure ||
+           current.musclesGroupState.isFailure ||
+           current.randomMusclesState.isFailure||
+           current.musclesGroupById.isFailure ||
+           current.userData.isFailure ||
+           current.exersicesState.isFailure;
         },
       listener: (context, state) {
        if (state.randomMusclesState.isFailure) {
@@ -44,6 +40,21 @@ class ExploreScreenViewBody extends StatelessWidget {
         } else if (state.mealsCategorysState.isFailure) {
           Loaders.showErrorMessage(
             message: state.mealsCategorysState.error?.message ?? "",
+            context: context,
+          );
+        }else if (state.musclesGroupById.isFailure) {
+          Loaders.showErrorMessage(
+            message: state.musclesGroupById.error?.message ?? "",
+            context: context,
+          );
+        }else if (state.userData.isFailure) {
+          Loaders.showErrorMessage(
+            message: state.userData.error?.message ?? "",
+            context: context,
+          );
+        }else if (state.exersicesState.isFailure) {
+          Loaders.showErrorMessage(
+            message: state.exersicesState.error?.message ?? "",
             context: context,
           );
         }
@@ -67,7 +78,7 @@ class ExploreScreenViewBody extends StatelessWidget {
                       SizedBox(height: context.setHight(24)),
                       const ExploreRecommendationListView(),
                       SizedBox(height: context.setHight(24)),
-                      ExploreUpcomingListView(),
+                      const ExploreUpcomingListView(),
                       SizedBox(height: context.setHight(24)),
                       const ExploreFoodListView(),
                       SizedBox(height: context.setHight(24)),

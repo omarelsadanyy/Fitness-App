@@ -1,13 +1,13 @@
 import 'package:equatable/equatable.dart';
-import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_by_id_entity/muscle_entity.dart';
+import 'package:fitness/features/home/domain/entities/explore_entity/muscle_entity/muscle_entity.dart';
 import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_entity/muscles_group_entity.dart';
 
-class MusclesGroupIdEntity extends Equatable {
+class MusclesGroupIdResponseEntity extends Equatable {
   final String? message;
   final MusclesGroupEntity? musclesGroup;
   final List<MuscleEntity>? muscles;
 
-  const MusclesGroupIdEntity({
+  const MusclesGroupIdResponseEntity({
     this.message,
     this.musclesGroup,
     this.muscles,

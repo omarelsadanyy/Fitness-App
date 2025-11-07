@@ -104,5 +104,6 @@
   "recommendationForYouText": "Recommendation For You",
   "popularTrainingText": "Popular Training",
   "recommendation":"Recommendation",
-  "ingredients":"Ingredients"
+  "ingredients":"Ingredients",
+  "notAvailable": "Not Available"
 }

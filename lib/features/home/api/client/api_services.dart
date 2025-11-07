@@ -27,6 +27,4 @@ abstract class ApiServices {
   @GET(EndPointsConstants.musclesGroupById)
   Future<MuscleGroupIdResponse> getAllMusclesGroupById(
     @Path("id")String? id);
-
-
 }

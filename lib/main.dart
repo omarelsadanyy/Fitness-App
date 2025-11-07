@@ -2,9 +2,9 @@
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
+import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/core/routes/routes.dart';
 import 'package:fitness/features/home/presentation/view/screens/home_tab.dart';
-import 'package:fitness/test_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'config/app_language/app_language_config.dart';
@@ -25,7 +25,7 @@ void main() async {
   final isLoggedIn = await userSession.checkIfUserLoggedIn();
   runApp(
     DevicePreview(
-      enabled: false,
+      enabled: true,
       builder: (context) => ChangeNotifierProvider.value(
         value: appLanguageConfig, // Use the instance here
         child:  FitnessApp(isLoggedIn: isLoggedIn),
@@ -50,9 +50,9 @@ class FitnessApp extends StatelessWidget {
         theme: AppTheme.darkTheme,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: Routes.onGenerate,
-        home: const HomeTab(),
-       //  initialRoute: AppRoutes.food,
-       // initialRoute: isLoggedIn ? AppRoutes.home : AppRoutes.onBoarding,
+        //home: const HomeTab(),
+        // initialRoute: AppRoutes.food,
+       initialRoute: isLoggedIn ? AppRoutes.home : AppRoutes.onBoarding,
         navigatorKey: Routes.navigatorKey,
       ),
     );

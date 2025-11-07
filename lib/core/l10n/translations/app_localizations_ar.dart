@@ -314,4 +314,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get ingredients => 'المكونات';
+
+  @override
+  String get notAvailable => 'Not Available';
 }

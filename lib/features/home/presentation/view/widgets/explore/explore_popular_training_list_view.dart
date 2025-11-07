@@ -4,7 +4,6 @@ import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
 import 'package:fitness/features/home/presentation/view/widgets/explore/explore_popular_list_item.dart';
-import 'package:fitness/features/home/presentation/view/widgets/explore/explore_recommendation_list_item.dart';
 import 'package:flutter/material.dart';
 
 class ExplorePopularTrainingListView extends StatelessWidget {

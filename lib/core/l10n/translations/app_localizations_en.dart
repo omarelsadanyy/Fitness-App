@@ -313,4 +313,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get ingredients => 'Ingredients';
+
+  @override
+  String get notAvailable => 'Not Available';
 }

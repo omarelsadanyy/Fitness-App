@@ -5,11 +5,11 @@ import 'package:fitness/features/auth/presentation/view_model/register_view_mode
 import 'package:fitness/features/auth/presentation/views/screens/compelete_register/screen/complete_register_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/register/register_screen.dart';
 import 'package:fitness/features/foods/domain/entities/meals_by_category.dart';
+import 'package:fitness/features/home/presentation/view/screens/view_model/bottom_navigation_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fitness/core/widget/video_widgets/vido_player_screen.dart';
 import 'package:fitness/features/meal_details/presentaion/view/pages/details_food_sceen.dart';
-
 
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/features/auth/presentation/views/screens/forget_pass/create_password_screen.dart';
@@ -21,8 +21,6 @@ import 'package:fitness/features/auth/presentation/views/screens/login/login_scr
 import '../../features/foods/presentaion/view/screens/food_detials_screen.dart';
 import '../../features/on_boarding/view/on_boarding_view.dart';
 
-
-
 abstract class Routes {
   static final GlobalKey<NavigatorState> navigatorKey =
       GlobalKey<NavigatorState>();
@@ -33,7 +31,12 @@ abstract class Routes {
         return MaterialPageRoute(builder: (context) => const OnBoardingView());
 
       case AppRoutes.home:
-        return MaterialPageRoute(builder: (context) => const HomeTab());
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => getIt.get<BottomNavigationCubit>() ,
+            child: const HomeTab(),
+          ),
+        );
 
       case AppRoutes.forgetPassScreen:
         return MaterialPageRoute(
@@ -45,18 +48,16 @@ abstract class Routes {
         final index = setting.arguments as int;
 
         return MaterialPageRoute(
-
           builder: (context) {
-            return
-              FoodDetialsScreen(index: index,
-
-              );
+            return FoodDetialsScreen(index: index);
           },
         );
- case AppRoutes.registerScreen:
+      case AppRoutes.registerScreen:
         return MaterialPageRoute(
           builder: (context) => BlocProvider<RegisterCubit>(
-            create: (context) => getIt.get<RegisterCubit>()..doIntent(intent: const RegisterInitializationIntent()),
+            create: (context) =>
+                getIt.get<RegisterCubit>()
+                  ..doIntent(intent: const RegisterInitializationIntent()),
             child: const RegisterScreen(),
           ),
         );
@@ -73,8 +74,6 @@ abstract class Routes {
             );
           },
         );
-
-   
 
       case AppRoutes.otpScreen:
         final email = setting.arguments as String;
@@ -96,7 +95,6 @@ abstract class Routes {
           opaque: false,
           pageBuilder: (context, animation, secondaryAnimation) =>
               VideoPlayerScreen(videoUrl: videourl),
-
         );
       case AppRoutes.detailsFoodPage:
         final args = setting.arguments as Map<String, dynamic>;
@@ -104,10 +102,7 @@ abstract class Routes {
         final index = args['index'] as int;
         return MaterialPageRoute(
           builder: (context) {
-            return DetailsFoodScreen(
-              meals: meals,
-              index: index,
-            );
+            return DetailsFoodScreen(meals: meals, index: index);
           },
         );
 

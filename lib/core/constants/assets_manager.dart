@@ -30,5 +30,7 @@ abstract class AssetsManager {
   static const String profileTestImage="assets/images/profile_test_image.png";
   static const String homeImageTest="assets/images/home_image_test.png";
   static const String test="assets/images/test.jpg";
+  static const String notFound="assets/images/not_found.png";
+  static const String popularTrainingImg="assets/images/popular_training_img.jpg";
 
 }

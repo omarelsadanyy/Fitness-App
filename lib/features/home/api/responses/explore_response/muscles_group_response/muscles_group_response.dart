@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:fitness/features/home/api/models/explore_models/muscles_group_model/muscles_group_model.dart';
+import 'package:fitness/features/home/api/models/explore_models/muscle_group_model/muscle_group_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'muscles_group_response.g.dart';
@@ -10,7 +10,7 @@ class MusclesGroupResponse extends Equatable {
   final String? message;
   
   @JsonKey(name: "musclesGroup")
-  final List<MusclesGroupModel>? musclesGroup;
+  final List<MuscleGroupModel>? musclesGroup;
 
   const MusclesGroupResponse({
     this.message,
