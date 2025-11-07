@@ -51,7 +51,7 @@ void main() {
             widget is Container &&
             widget.child is ListView &&
             widget.constraints!.maxWidth == double.infinity &&
-            widget.constraints!.maxHeight == context.setHight(150) &&
+   
             widget.decoration ==
                 BoxDecoration(
                   borderRadius: BorderRadius.circular(context.setWidth(25)),

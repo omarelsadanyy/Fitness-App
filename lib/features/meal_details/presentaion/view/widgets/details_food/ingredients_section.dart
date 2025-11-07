@@ -54,6 +54,7 @@ class IngredientsSection extends StatelessWidget {
                     measure: measures[index],
                   );
                 }
+                return null;
               },
             ),
           ),
