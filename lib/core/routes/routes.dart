@@ -10,6 +10,7 @@ import 'package:fitness/features/home/presentation/view/screens/exercise_screen/
 import 'package:fitness/features/home/presentation/view/screens/exercise_screen/video_screen.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_intent.dart';
+import 'package:fitness/features/smart_coach/presentation/view/screens/smart_coach_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fitness/core/widget/video_widgets/vido_player_screen.dart';
@@ -53,6 +54,15 @@ abstract class Routes {
               FoodDetialsScreen(index: index,
 
               );
+          },
+        );
+      case AppRoutes.smartCoach:
+
+        return MaterialPageRoute(
+
+          builder: (context) {
+            return
+              const SmartCoachScreen();
           },
         );
  case AppRoutes.registerScreen:

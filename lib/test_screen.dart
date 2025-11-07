@@ -28,8 +28,6 @@ class TestScreen extends StatelessWidget {
                   return GestureDetector(
                     onTap: () async {
 
-
-
                       await Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (_) => BlocProvider.value(

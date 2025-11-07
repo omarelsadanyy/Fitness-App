@@ -3,7 +3,7 @@ import 'package:fitness/features/auth/domain/entity/auth/user_entity.dart';
 class UserManager {
   static final UserManager _instance = UserManager._internal();
   factory UserManager() => _instance;
-  UserManager._internal();
+ UserManager._internal();
 
   UserEntity? _currentUser;
 
