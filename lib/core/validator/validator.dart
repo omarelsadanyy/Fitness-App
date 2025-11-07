@@ -16,23 +16,36 @@ class Validator {
   }
 
   static String? validatePassword(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return context.loc.passwordRequired;
-    }
-
-    if (val.length < 6) {
-      return context.loc.passwordMinLength;
-    }
-
-    if (!RegExp(Constants.uppercasePattern).hasMatch(val)) {
-      return context.loc.passwordUppercase;
-    }
-
-    if (!RegExp(Constants.numberPattern).hasMatch(val)) {
-      return context.loc.passwordNumber;
-    }
-    return null;
+  if (val == null || val.isEmpty) {
+    return context.loc.passwordRequired;
   }
+
+  if (val.length < 8) {
+    return context.loc.passwordMinLength; 
+  }
+
+  
+  if (!RegExp(r'[A-Z]').hasMatch(val)) {
+    return context.loc.passwordUppercase; 
+  }
+
+ 
+  if (!RegExp(r'[a-z]').hasMatch(val)) {
+    return context.loc.passwordMustContainLowerCase; 
+  }
+
+
+  if (!RegExp(r'[0-9]').hasMatch(val)) {
+    return context.loc.passwordNumber; 
+  }
+
+
+  if (!RegExp(r'[#?!@$%^&*-]').hasMatch(val)) {
+    return context.loc.passwordMustContainSpecialChar; 
+  }
+
+  return null; 
+}
 
   static String? validateConfirmPassword(
       BuildContext context, String? val, String? password) {

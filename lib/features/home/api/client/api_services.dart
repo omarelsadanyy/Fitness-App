@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:fitness/core/constants/end_points_constants.dart';
+import 'package:fitness/features/home/api/models/change_pass/change_pass_request_model.dart';
+import 'package:fitness/features/home/api/models/change_pass/change_pass_response.dart';
 import 'package:fitness/features/home/api/models/exercises/all_exercises_response.dart';
 import 'package:fitness/features/home/api/models/exercises/difficulty_by_prime_mover_muscles_response.dart';
 import 'package:injectable/injectable.dart';
@@ -25,5 +27,10 @@ abstract class ApiServices {
     @Query(EndPointsConstants.difficultyLevelId) required String difficultyLevelId,
     @Query(EndPointsConstants.page) int page = 1,
     @Query(EndPointsConstants.limit) int limit = 10,
+  });
+
+  @PATCH(EndPointsConstants.changePassword)
+  Future<ChangePassResponse> changePassword({
+    @Body() required ChangePassRequestModel changePasswordRequest,
   });
 }

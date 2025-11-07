@@ -21,4 +21,7 @@ abstract class EndPointsConstants {
   static const String primeMoverMuscleId = "primeMoverMuscleId";
   static const String page = "page";
   static const String limit = "limit";
+
+  //change password
+  static const String changePassword = "auth/change-password";
 }

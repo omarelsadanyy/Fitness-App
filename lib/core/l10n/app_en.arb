@@ -57,8 +57,6 @@
   "password": "Password",
   "confirmPass": "Confirm Password",
   "done": "Done",
-  "next": "Next",
-  "back": "Back",
   "doIt": "Do IT",
   "skip": "Skip",
   "onBoardingtitleOne": "The Price of Excellence\nis Discipline",
@@ -71,7 +69,7 @@
   "emailRequired": "Email is required",
   "emailNotValid": "This email is not valid",
   "passwordRequired": "Password is required",
-  "passwordMinLength": "Password must be at least 6 characters",
+  "passwordMinLength": "Password must be at least 8 characters",
   "passwordUppercase": "Password must contain at least one uppercase letter",
   "passwordNumber": "Password must contain at least one number",
   "passwordsNotMatch": "Passwords do not match",
@@ -96,7 +94,7 @@
   "doNotHaveAccount": "Don’t have an account? ",
   "recommendation":"Recommendation",
   "ingredients":"Ingredients",
-  "doNotHaveAccount": "Don’t have an account? ",
+ 
   "errorLoadingVideo":"Error when loading the video",
   "exerciseGroup":"3 groups * 15 times",
   "errorLoadingExercises":"Failed to load exercises",
@@ -106,5 +104,12 @@
   "min":"30 MIN",
   "cal": "130 Cal",
   "error":"Error",
-  "back":"Back"
+  "back":"Back",
+  "oldPassword":"Old Password",
+  "passNotMatch":"Password not correct",
+  "passwordMustContainLowerCase":"Password must contain at least one lowercase letter",
+  "passwordMustContainUpperCase":"Password must contain at least one uppercase letter",
+  "passwordMustContainNumber":"Password must contain at least one number",
+  "passwordMustContainSpecialChar":"Password must contain at least one special character"
+
 }
