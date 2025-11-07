@@ -52,8 +52,7 @@
   "password": "كلمة المرور",
   "confirmPass": "تأكيد كلمة المرور",
   "done": "تأكيد",
-  "next": "التالي",
-  "back": "رجوع",
+
   "doIt": "ابدأ الآن",
   "skip": "تخطي",
   "onBoardingtitleOne": "ثمن التميز\nهو الانضباط",
@@ -100,5 +99,18 @@
       "error":"خطأ",
       "back":"رجوع",
   "recommendation":"اقتراحات",
-  "ingredients":"المكونات"
+  "ingredients":"المكونات",
+  "oldPassword": "كلمة المرور القديمة",
+"passNotMatch": "كلمة المرور غير صحيحة",
+"passwordMustContainLowerCase": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل",
+"passwordMustContainUpperCase": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل",
+"passwordMustContainNumber": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+"passwordMustContainSpecialChar": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل",
+"level1": "المستوى الأول",
+"level2": "المستوى الثاني",
+"level3": "المستوى الثالث",
+"level4": "المستوى الرابع",
+"level5": "المستوى الخامس"
+
+
 }

@@ -15,8 +15,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DetailsFoodScreen extends StatefulWidget {
-  final List<MealsByCategory> meals;final int index;
-  const DetailsFoodScreen({super.key, required this.meals,required this.index});
+  final List<MealsByCategory> meals;
+  final int index;
+  const DetailsFoodScreen({
+    super.key,
+    required this.meals,
+    required this.index,
+  });
 
   @override
   State<DetailsFoodScreen> createState() => _DetailsFoodScreenState();
@@ -25,11 +30,24 @@ class DetailsFoodScreen extends StatefulWidget {
 class _DetailsFoodScreenState extends State<DetailsFoodScreen> {
   late DetailsFoodCubit _detailsFoodCubit;
   @override
+  // void initState() {
+  //   super.initState();
+  //   _detailsFoodCubit = getIt.get<DetailsFoodCubit>();
+  //   _detailsFoodCubit.doIntent(GetMealDetailsEvent(mealId:
+  //   widget.meals[widget.index].idMeal.toString()));
+  // }
+  @override
   void initState() {
     super.initState();
     _detailsFoodCubit = getIt.get<DetailsFoodCubit>();
-    _detailsFoodCubit.doIntent(GetMealDetailsEvent(mealId:
-    widget.meals[widget.index].idMeal.toString()));
+
+    if (widget.meals.isNotEmpty && widget.index < widget.meals.length) {
+      _detailsFoodCubit.doIntent(
+        GetMealDetailsEvent(
+          mealId: widget.meals[widget.index].idMeal.toString(),
+        ),
+      );
+    }
   }
 
   @override
@@ -51,33 +69,27 @@ class _DetailsFoodScreenState extends State<DetailsFoodScreen> {
 
             builder: (context, state) {
               if (state.detailsFoodState.isSuccess) {
-                final data =
-                    state.detailsFoodState.data as MealResponseEntity;
+                final data = state.detailsFoodState.data as MealResponseEntity;
                 final mealInfo = data.meal[0];
-          
+
                 return SingleChildScrollView(
                   child: Column(
                     children: [
-                     
                       SmallImage(
                         videoUrl: mealInfo.media.strYoutube,
                         imageUrl: mealInfo.media.strMealThumb,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         txt1: mealInfo.strMeal,
                         txt2: mealInfo.strInstructions,
-                        widget: FoodDetailsSection(
-                          tags: mealInfo.info.strTags,
-                        ),
+                        widget: FoodDetailsSection(tags: mealInfo.info.strTags),
                       ),
-                            
+
                       IngredientsSection(
                         ingredients: mealInfo.ingredients,
                         measures: mealInfo.measures,
                       ),
-                            
-                       DetailsFoodRecommendation(
-                         meals: widget.meals,
-                       ),
+
+                      DetailsFoodRecommendation(meals: widget.meals),
                     ],
                   ),
                 );
