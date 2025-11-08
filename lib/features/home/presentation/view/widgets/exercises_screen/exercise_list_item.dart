@@ -5,12 +5,14 @@ import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
+import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ExerciseListItem extends StatelessWidget {
   final String primeMoverMuscleImage;
   final String exerciseName;
-  final String videoLink;
+  final String? videoLink;
 
   const ExerciseListItem({
     required this.primeMoverMuscleImage,
@@ -19,28 +21,35 @@ class ExerciseListItem extends StatelessWidget {
     super.key,
   });
 
-
-
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<ExercisesCubit>();
+    final thumbnail = cubit.getYoutubeThumbnail(videoLink ?? "");
     return InkWell(
       key: const Key(WidgetKey.exerciseListItemTapKey),
-        onTap: () {
-          Navigator.pushNamed(context, AppRoutes.exeVideoScreen,
-          arguments: videoLink);
-
-
-      },
+      onTap: videoLink == ""
+          ? null
+          : () {
+              Navigator.pushNamed(
+                context,
+                AppRoutes.exeVideoScreen,
+                arguments: videoLink,
+              );
+            },
       child: Row(
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(context.setWidth(30)),
             child: Image.network(
               key: const Key(WidgetKey.exerciseImageKey),
-              primeMoverMuscleImage,
+              thumbnail ?? primeMoverMuscleImage,
               height: context.setHight(88),
               width: context.setWidth(81),
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
+              errorBuilder: (context, error, stackTrace) =>
+                 Image.network(primeMoverMuscleImage,
+                   height: context.setHight(88),
+                   width: context.setWidth(81),),
             ),
           ),
           SizedBox(width: context.setWidth(10)),
@@ -61,7 +70,7 @@ class ExerciseListItem extends StatelessWidget {
                 ),
                 Text(
                   key: const Key(WidgetKey.exerciseGroupLabelKey),
-                 context.loc.exerciseGroup,
+                  context.loc.exerciseGroup,
                   style: getRegularStyle(
                     color: AppColors.white,
                     fontSize: context.setSp(FontSize.s14),
@@ -71,21 +80,23 @@ class ExerciseListItem extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          Container(
-            key: const Key(WidgetKey.playIconContainerKey),
-            width: context.setWidth(24),
-            height: context.setWidth(24),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(context.setWidth(25)),
-              color: AppColors.orange,
-            ),
-            child: Icon(
-              key: const Key(WidgetKey.playIconKey),
-              Icons.play_arrow,
-              size: context.setWidth(20),
-              color: AppColors.gray[90],
-            ),
-          ),
+          thumbnail != null
+              ? Container(
+                  key: const Key(WidgetKey.playIconContainerKey),
+                  width: context.setWidth(24),
+                  height: context.setWidth(24),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(context.setWidth(25)),
+                    color: AppColors.orange,
+                  ),
+                  child: Icon(
+                    key: const Key(WidgetKey.playIconKey),
+                    Icons.play_arrow,
+                    size: context.setWidth(20),
+                    color: AppColors.gray[90],
+                  ),
+                )
+              : const SizedBox(),
           SizedBox(width: context.setWidth(10)),
         ],
       ),

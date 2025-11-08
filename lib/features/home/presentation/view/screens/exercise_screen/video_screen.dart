@@ -1,9 +1,6 @@
 import 'package:fitness/config/di/di.dart';
-import 'package:fitness/core/extension/app_localization_extension.dart';
-import 'package:fitness/core/widget/cusum_scaffold_messanger.dart';
 import 'package:fitness/core/widget/loading_circle.dart';
 import 'package:fitness/core/widget/video_widgets/video_section.dart';
-import 'package:fitness/features/home/presentation/view/widgets/exercises_screen/video_error_dialog.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_intent.dart';
 import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_state.dart';
@@ -17,10 +14,12 @@ class ExercisesVideoPlayerScreen extends StatefulWidget {
   const ExercisesVideoPlayerScreen({super.key, required this.videoUrl});
 
   @override
-  State<ExercisesVideoPlayerScreen> createState() => _VideoPlayerScreenState();
+  State<ExercisesVideoPlayerScreen> createState() =>
+      _ExercisesVideoPlayerScreenState();
 }
 
-class _VideoPlayerScreenState extends State<ExercisesVideoPlayerScreen> {
+class _ExercisesVideoPlayerScreenState
+    extends State<ExercisesVideoPlayerScreen> {
   YoutubePlayerController? _controller;
   final ExercisesCubit _cubit = getIt<ExercisesCubit>();
 
@@ -40,12 +39,7 @@ class _VideoPlayerScreenState extends State<ExercisesVideoPlayerScreen> {
   Widget build(BuildContext context) {
     return BlocProvider.value(
       value: _cubit,
-      child: BlocConsumer<ExercisesCubit, ExercisesStates>(
-        listener: (context, state) {
-          if (state.youtubeIdStatus.isFailure) {
-            showCustomSnackBar(context, state.youtubeIdStatus.error!.message);
-          }
-        },
+      child: BlocBuilder<ExercisesCubit, ExercisesStates>(
         builder: (context, state) {
           if (state.youtubeIdStatus.isLoading) {
             return const LoadingCircle();
@@ -60,21 +54,9 @@ class _VideoPlayerScreenState extends State<ExercisesVideoPlayerScreen> {
             return VideoSection(controller: _controller);
           }
 
-          if (state.youtubeIdStatus.isFailure) {
-            return VideoErrorDialog(message:
-              state.youtubeIdStatus.error?.message ??
-                  context.loc.errorLoadingVideo,
-            );
-          }
-
-          return VideoErrorDialog(message:
-          state.youtubeIdStatus.error?.message ??
-              context.loc.errorLoadingVideo,
-          );
+          return const SizedBox.shrink();
         },
       ),
     );
   }
-
-
 }

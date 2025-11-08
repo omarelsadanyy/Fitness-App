@@ -25,6 +25,10 @@ void main() {
 
     when(mockCubit.stream).thenAnswer((_) => const Stream<ExercisesStates>.empty());
     when(mockCubit.state).thenReturn(const ExercisesStates());
+    when(
+      mockCubit.getYoutubeThumbnail(any),
+    ).thenReturn('https://img.youtube.com/vi/fake_thumbnail/0.jpg');
+
   });
 
   Widget prepareWidget(ExercisesStates state) {

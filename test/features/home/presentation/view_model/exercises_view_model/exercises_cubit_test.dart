@@ -129,14 +129,19 @@ void main() {
     blocTest<ExercisesCubit, ExercisesStates>(
       'Load levels empty list',
       build: () {
-        when(mockDifficultyLevelsUseCase("muscle1"))
-            .thenAnswer((_) async => SuccessResult(<LevelEntity>[]));
+        when(
+          mockDifficultyLevelsUseCase("muscle1"),
+        ).thenAnswer((_) async => SuccessResult(<LevelEntity>[]));
         return cubit;
       },
-      act: (c) => c.doIntent(intent: LoadLevelsByMuscleIntent(muscleId: "muscle1")),
+      act: (c) =>
+          c.doIntent(intent: LoadLevelsByMuscleIntent(muscleId: "muscle1")),
       expect: () => [
-        isA<ExercisesStates>()
-            .having((s) => s.levelsByMuscleStatus.isLoading, 'loading', true),
+        isA<ExercisesStates>().having(
+          (s) => s.levelsByMuscleStatus.isLoading,
+          'loading',
+          true,
+        ),
         isA<ExercisesStates>()
             .having((s) => s.levelsByMuscleStatus.isSuccess, 'success', true)
             .having((s) => s.levelsByMuscleStatus.data, 'empty list', isEmpty),
@@ -148,11 +153,14 @@ void main() {
       'resets page and loads new level exercises',
       seed: () => cubit.state.copyWith(
         selectedLevelId: "1",
-        exercisesByLevelAndMuscleStatus: const StateStatus.success(fakeExercises),
+        exercisesByLevelAndMuscleStatus: const StateStatus.success(
+          fakeExercises,
+        ),
       ),
       build: () {
-        when(mockExercisesUseCase("muscle1", "2", page: 1))
-            .thenAnswer((_) async => SuccessResult(fakeExercises));
+        when(
+          mockExercisesUseCase("muscle1", "2", page: 1),
+        ).thenAnswer((_) async => SuccessResult(fakeExercises));
         return cubit;
       },
       act: (cubit) => cubit.doIntent(
@@ -165,7 +173,9 @@ void main() {
         ),
         cubit.state.copyWith(
           selectedLevelId: "2",
-          exercisesByLevelAndMuscleStatus: const StateStatus.success(fakeExercises),
+          exercisesByLevelAndMuscleStatus: const StateStatus.success(
+            fakeExercises,
+          ),
         ),
       ],
       verify: (_) {
@@ -183,7 +193,9 @@ void main() {
       ),
       expect: () => [
         cubit.state.copyWith(youtubeIdStatus: const StateStatus.loading()),
-        cubit.state.copyWith(youtubeIdStatus: const StateStatus.success("dQw4w9WgXcQ")),
+        cubit.state.copyWith(
+          youtubeIdStatus: const StateStatus.success("dQw4w9WgXcQ"),
+        ),
       ],
     );
 
@@ -197,13 +209,42 @@ void main() {
         cubit.state.copyWith(youtubeIdStatus: const StateStatus.loading()),
         cubit.state.copyWith(
           youtubeIdStatus: const StateStatus.failure(
-            ResponseException(message: "error fetching video id , this video is not available."),
+            ResponseException(
+              message: "error fetching video id , this video is not available.",
+            ),
           ),
         ),
       ],
     );
 
+    test(
+      'getYoutubeThumbnail returns correct thumbnail for youtube.com URL',
+      () {
+        final result = cubit.getYoutubeThumbnail(
+          'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        );
+        expect(result, 'https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg');
+      },
+    );
+
+    test('getYoutubeThumbnail returns correct thumbnail for youtu.be URL', () {
+      final result = cubit.getYoutubeThumbnail('https://youtu.be/dQw4w9WgXcQ');
+      expect(result, 'https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg');
+    });
+
+    test('getYoutubeThumbnail returns null for invalid URL', () {
+      final result = cubit.getYoutubeThumbnail('https://example.com/video');
+      expect(result, isNull);
+    });
+
+    test('getYoutubeThumbnail returns null for empty URL', () {
+      final result = cubit.getYoutubeThumbnail('');
+      expect(result, isNull);
+    });
+
+    test('getYoutubeThumbnail returns null for null URL', () {
+      final result = cubit.getYoutubeThumbnail(null);
+      expect(result, isNull);
+    });
   });
-
-
 }
