@@ -1,14 +1,10 @@
 import 'package:fitness/config/di/di.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
-import 'package:fitness/core/widget/blur_container.dart';
-import 'package:fitness/core/widget/custom_elevated_button.dart';
 import 'package:fitness/core/widget/custom_pop_icon.dart';
 import 'package:fitness/core/widget/logo.dart';
 import 'package:fitness/features/auth/domain/entity/auth/user_entity.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/compelete_register/animate_text.dart';
-import 'package:fitness/features/auth/presentation/views/widgets/compelete_register/select_widget_item.dart';
-import 'package:fitness/features/home/presentation/view/widgets/edit_profile/edit_activity_level_screen/edit_activity_level_body.dart';
 import 'package:fitness/features/home/presentation/view/widgets/edit_profile/edit_weight_screen/edit_weight_body.dart';
 import 'package:fitness/features/home/presentation/view/widgets/edit_profile/edit_weight_screen/weight_picker_section.dart';
 import 'package:fitness/features/home/presentation/view_model/edit_profile/edit_profile_cubit.dart';
