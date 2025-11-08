@@ -105,5 +105,6 @@
   "yourGoal": "هدفك",
   "yourLevel": "مستوى نشاطك",
   "edit": "تعديل",
-  "tabToEdit": "اضغط للتعديل"
+  "tabToEdit": "اضغط للتعديل",
+  "profileEditedSuccessfully":"تم التعديل بنجاح"
 }
