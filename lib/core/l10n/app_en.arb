@@ -116,4 +116,23 @@
   "privacyPolicy":"Privacy Policy",
   "help": "Help",
   "logoutProfile":"Logut"
+  "ingredients":"Ingredients",
+
+  "errorLoadingVideo":"Error when loading the video",
+  "exerciseGroup":"3 groups * 15 times",
+  "errorLoadingExercises":"Failed to load exercises",
+  "noExercises":"No exercises found",
+  "exercise":"exercise",
+  "exerciseSlug":"Start today, get stronger tomorrow… every workout brings you closer to your best self!",
+  "min":"30 MIN",
+  "cal": "130 Cal",
+  "error":"Error",
+  "back":"Back",
+  "oldPassword":"Old Password",
+  "passNotMatch":"Password not correct",
+  "passwordMustContainLowerCase":"Password must contain at least one lowercase letter",
+  "passwordMustContainUpperCase":"Password must contain at least one uppercase letter",
+  "passwordMustContainNumber":"Password must contain at least one number",
+  "passwordMustContainSpecialChar":"Password must contain at least one special character"
+
 }

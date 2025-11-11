@@ -3,6 +3,11 @@ import 'package:fitness/core/constants/end_points_constants.dart';
 import 'package:fitness/features/home/api/responses/explore_response/muscle_group_by_id/muscle_group_id_response.dart';
 import 'package:fitness/features/home/api/responses/explore_response/muscles_group_response/muscles_group_response.dart';
 import 'package:fitness/features/home/api/responses/explore_response/muscles_random_response/muscles_random_response.dart';
+import 'package:fitness/features/home/api/models/change_pass/change_pass_request_model.dart';
+import 'package:fitness/features/home/api/models/change_pass/change_pass_response.dart';
+import 'package:fitness/features/home/api/models/exercises/all_exercises_response.dart';
+import 'package:fitness/features/home/api/models/exercises/difficulty_by_prime_mover_muscles_response.dart';
+import 'package:fitness/features/home/api/models/logout/logout_response.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -14,13 +19,32 @@ abstract class ApiServices {
   @factoryMethod
   factory ApiServices(Dio dio) = _ApiServices;
 
+  @GET(EndPointsConstants.difficultyByPrimeMoverMuscle)
+  Future<DifficultyByPrimeMoverMusclesResponse>
+  getDifficultyLevelsByPrimeMoverMuscles({
+    @Query(EndPointsConstants.primeMoverMuscleId) required String primeMoverMuscleId,
+  });
+
+  @GET(EndPointsConstants.exercisesByMuscleAndDifficulty)
+  Future<AllExercisesResponse> getExercisesByMuscleAndDifficulty({
+    @Query(EndPointsConstants.primeMoverMuscleId) required String primeMoverMuscleId,
+    @Query(EndPointsConstants.difficultyLevelId) required String difficultyLevelId,
+    @Query(EndPointsConstants.page) int page = 1,
+    @Query(EndPointsConstants.limit) int limit = 10,
+  });
   @GET(EndPointsConstants.musclesRandom)
   Future<MusclesRandomResponse> getAllRandomMuscles();
 
    @GET(EndPointsConstants.allMusclesGroups)
   Future<MusclesGroupResponse> getAllMusclesGroup();
+  @PATCH(EndPointsConstants.changePassword)
+  Future<ChangePassResponse> changePassword({
+    @Body() required ChangePassRequestModel changePasswordRequest,
+  });
 
   @GET(EndPointsConstants.musclesGroupById)
   Future<MuscleGroupIdResponse> getAllMusclesGroupById(
     @Path("id")String? id);
+  @GET(EndPointsConstants.logout)
+  Future<LogoutResponse>logout();
 }

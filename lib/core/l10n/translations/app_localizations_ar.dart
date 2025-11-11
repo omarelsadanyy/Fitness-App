@@ -286,62 +286,36 @@ class AppLocalizationsAr extends AppLocalizations {
   String get doNotHaveAccount => 'ليس لديك حساب؟ ';
 
   @override
-  String get hiHomeText => 'مرحبًا';
-
-  @override
-  String get letsStartDoingYourDay => 'لنبدأ يومك';
-
-  @override
-  String get categoryHomeText => 'الفئات';
-
-  @override
-  String get recommendationTodyText => 'توصيات اليوم';
-
-  @override
-  String get upcomingWorkOutsText => 'التمارين القادمة';
-
-  @override
-  String get seeAllHomeText => 'عرض الكل';
-
-  @override
-  String get recommendationForYouText => 'توصيات لك';
-
-  @override
-  String get popularTrainingText => 'التمارين الشائعة';
-
-  @override
   String get recommendation => 'اقتراحات';
 
   @override
   String get ingredients => 'المكونات';
 
   @override
-  String get notAvailable => 'Not Available';
+  String get errorLoadingVideo => 'فشل تحميل الفيديو';
 
   @override
-  String get profileText => 'الملف الشخصي';
+  String get exerciseGroup => 'مجموعات 15 مره3 ';
 
   @override
-  String get editProfile => 'تعديل الملف الشخصي';
+  String get errorLoadingExercises => 'خطأ اثناء تحميل التدريبات';
 
   @override
-  String get changePassword => 'تغيير كلمةالمرور';
+  String get noExercises => 'لا يوجد تدريبات';
 
   @override
-  String get selectLanguage => 'إختيار اللغة';
+  String get exercise => 'تدريب';
 
   @override
-  String get security => 'الأمن';
+  String get exerciseSlug =>
+      'ابدأ اليوم، وكن أقوى غدًا… كل تمرين يقربك أكثر من أفضل نسخة من نفسك!';
 
   @override
-  String get language => 'العربية';
+  String get min => '30 دقيقه';
 
   @override
-  String get privacyPolicy => 'سياسة الخصوصية';
+  String get cal => '130 كالوري';
 
   @override
-  String get help => 'مساعدة';
-
-  @override
-  String get logoutProfile => 'تسجيل الخروج';
+  String get error => 'خطأ';
 }

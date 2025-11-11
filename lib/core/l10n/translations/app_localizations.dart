@@ -638,54 +638,6 @@ abstract class AppLocalizations {
   /// **'Don’t have an account? '**
   String get doNotHaveAccount;
 
-  /// No description provided for @hiHomeText.
-  ///
-  /// In en, this message translates to:
-  /// **'Hi'**
-  String get hiHomeText;
-
-  /// No description provided for @letsStartDoingYourDay.
-  ///
-  /// In en, this message translates to:
-  /// **'Let\'s Start Your Day'**
-  String get letsStartDoingYourDay;
-
-  /// No description provided for @categoryHomeText.
-  ///
-  /// In en, this message translates to:
-  /// **'Category'**
-  String get categoryHomeText;
-
-  /// No description provided for @recommendationTodyText.
-  ///
-  /// In en, this message translates to:
-  /// **'Recommendation To Day'**
-  String get recommendationTodyText;
-
-  /// No description provided for @upcomingWorkOutsText.
-  ///
-  /// In en, this message translates to:
-  /// **'Upcoming Workouts'**
-  String get upcomingWorkOutsText;
-
-  /// No description provided for @seeAllHomeText.
-  ///
-  /// In en, this message translates to:
-  /// **'See All'**
-  String get seeAllHomeText;
-
-  /// No description provided for @recommendationForYouText.
-  ///
-  /// In en, this message translates to:
-  /// **'Recommendation For You'**
-  String get recommendationForYouText;
-
-  /// No description provided for @popularTrainingText.
-  ///
-  /// In en, this message translates to:
-  /// **'Popular Training'**
-  String get popularTrainingText;
-
   /// No description provided for @recommendation.
   ///
   /// In en, this message translates to:
@@ -698,65 +650,59 @@ abstract class AppLocalizations {
   /// **'Ingredients'**
   String get ingredients;
 
-  /// No description provided for @notAvailable.
+  /// No description provided for @errorLoadingVideo.
   ///
   /// In en, this message translates to:
-  /// **'Not Available'**
-  String get notAvailable;
+  /// **'Error when loading the video'**
+  String get errorLoadingVideo;
 
-  /// No description provided for @profileText.
+  /// No description provided for @exerciseGroup.
   ///
   /// In en, this message translates to:
-  /// **'Profile'**
-  String get profileText;
+  /// **'3 groups * 15 times'**
+  String get exerciseGroup;
 
-  /// No description provided for @editProfile.
+  /// No description provided for @errorLoadingExercises.
   ///
   /// In en, this message translates to:
-  /// **'Edit Profile'**
-  String get editProfile;
+  /// **'Failed to load exercises'**
+  String get errorLoadingExercises;
 
-  /// No description provided for @changePassword.
+  /// No description provided for @noExercises.
   ///
   /// In en, this message translates to:
-  /// **'Change Password'**
-  String get changePassword;
+  /// **'No exercises found'**
+  String get noExercises;
 
-  /// No description provided for @selectLanguage.
+  /// No description provided for @exercise.
   ///
   /// In en, this message translates to:
-  /// **'Select Language'**
-  String get selectLanguage;
+  /// **'exercise'**
+  String get exercise;
 
-  /// No description provided for @security.
+  /// No description provided for @exerciseSlug.
   ///
   /// In en, this message translates to:
-  /// **'Security'**
-  String get security;
+  /// **'Start today, get stronger tomorrow… every workout brings you closer to your best self!'**
+  String get exerciseSlug;
 
-  /// No description provided for @language.
+  /// No description provided for @min.
   ///
   /// In en, this message translates to:
-  /// **'English'**
-  String get language;
+  /// **'30 MIN'**
+  String get min;
 
-  /// No description provided for @privacyPolicy.
+  /// No description provided for @cal.
   ///
   /// In en, this message translates to:
-  /// **'Privacy Policy'**
-  String get privacyPolicy;
+  /// **'130 Cal'**
+  String get cal;
 
-  /// No description provided for @help.
+  /// No description provided for @error.
   ///
   /// In en, this message translates to:
-  /// **'Help'**
-  String get help;
-
-  /// No description provided for @logoutProfile.
-  ///
-  /// In en, this message translates to:
-  /// **'Logut'**
-  String get logoutProfile;
+  /// **'Error'**
+  String get error;
 }
 
 class _AppLocalizationsDelegate

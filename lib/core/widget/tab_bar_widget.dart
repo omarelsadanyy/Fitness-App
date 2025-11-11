@@ -39,13 +39,14 @@ class _TabBarWidgetState extends State<TabBarWidget> {
           onTap: () {
             setState(() => selectedIndex = index);
             widget.onTabSelected?.call(index);
-            widget.onTabChanged?.call(index);
+            widget.onTabChanged!(index);
           },
         );
       },
-      separatorBuilder: (context, index) =>
-          SizedBox(width: context.setWidth(10)),
+      separatorBuilder: (context, index) {
+        return SizedBox(width: context.setWidth(10));
+      },
       itemCount: widget.titles.length,
-   );
+    );
   }
 }

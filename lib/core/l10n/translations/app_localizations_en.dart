@@ -285,62 +285,36 @@ class AppLocalizationsEn extends AppLocalizations {
   String get doNotHaveAccount => 'Don’t have an account? ';
 
   @override
-  String get hiHomeText => 'Hi';
-
-  @override
-  String get letsStartDoingYourDay => 'Let\'s Start Your Day';
-
-  @override
-  String get categoryHomeText => 'Category';
-
-  @override
-  String get recommendationTodyText => 'Recommendation To Day';
-
-  @override
-  String get upcomingWorkOutsText => 'Upcoming Workouts';
-
-  @override
-  String get seeAllHomeText => 'See All';
-
-  @override
-  String get recommendationForYouText => 'Recommendation For You';
-
-  @override
-  String get popularTrainingText => 'Popular Training';
-
-  @override
   String get recommendation => 'Recommendation';
 
   @override
   String get ingredients => 'Ingredients';
 
   @override
-  String get notAvailable => 'Not Available';
+  String get errorLoadingVideo => 'Error when loading the video';
 
   @override
-  String get profileText => 'Profile';
+  String get exerciseGroup => '3 groups * 15 times';
 
   @override
-  String get editProfile => 'Edit Profile';
+  String get errorLoadingExercises => 'Failed to load exercises';
 
   @override
-  String get changePassword => 'Change Password';
+  String get noExercises => 'No exercises found';
 
   @override
-  String get selectLanguage => 'Select Language';
+  String get exercise => 'exercise';
 
   @override
-  String get security => 'Security';
+  String get exerciseSlug =>
+      'Start today, get stronger tomorrow… every workout brings you closer to your best self!';
 
   @override
-  String get language => 'English';
+  String get min => '30 MIN';
 
   @override
-  String get privacyPolicy => 'Privacy Policy';
+  String get cal => '130 Cal';
 
   @override
-  String get help => 'Help';
-
-  @override
-  String get logoutProfile => 'Logut';
+  String get error => 'Error';
 }
