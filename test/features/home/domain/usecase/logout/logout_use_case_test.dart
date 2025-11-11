@@ -22,7 +22,7 @@ void main() {
     test(
       'should return SuccessResult when repository logout succeeds',
       () async {
-        // arrange
+        //  arrange
         final successResult = SuccessResult<void>(null);
         when(mockLogoutRepo.logout()).thenAnswer((_) async => successResult);
 
