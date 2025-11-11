@@ -98,9 +98,6 @@
    "min":"30 دقيقه",
     "cal": "130 كالوري",
       "error":"خطأ",
-      "back":"رجوع",
-
-   "hiHomeText": "مرحبًا",
   "letsStartDoingYourDay": "لنبدأ يومك",
   "categoryHomeText": "الفئات",
   "recommendationTodyText": "توصيات اليوم",
@@ -109,5 +106,13 @@
   "recommendationForYouText": "توصيات لك",
   "popularTrainingText": "التمارين الشائعة",
   "recommendation":"اقتراحات",
-  "ingredients":"المكونات"
+  "ingredients":"المكونات",
+  "iAmYourSmartCoach": "أنا مدربك الذكي",
+  "howCanIAssistYouToday": "كيف يمكنني مساعدتك اليوم؟",
+  "getStarted": "ابدأ الآن",
+  "smartCoach": "المدرب الذكي",
+  "typeYourMessage": "اكتب رسالتك",
+  "previousConversations": "المحادثات السابقة",
+  "hiHomeText": "مرحبًا",
+  "delete": "حذف"
 }

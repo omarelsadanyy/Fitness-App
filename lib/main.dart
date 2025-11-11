@@ -9,6 +9,7 @@ import 'package:provider/provider.dart';
 import 'config/app_language/app_language_config.dart';
 import 'config/di/di.dart';
 import 'package:device_preview/device_preview.dart';
+import 'core/routes/app_routes.dart';
 import 'core/theme/app_theme.dart';
 import 'core/user/user_session_handler.dart';
 void main() async {
@@ -50,7 +51,7 @@ class FitnessApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         onGenerateRoute: Routes.onGenerate,
         home: const TestScreen(),
-       //  initialRoute: AppRoutes.food,
+       initialRoute: AppRoutes.home,
        // initialRoute: isLoggedIn ? AppRoutes.home : AppRoutes.onBoarding,
         navigatorKey: Routes.navigatorKey,
       ),

@@ -23,6 +23,7 @@ import 'package:fitness/features/auth/presentation/view_model/login_view_model/l
 import 'package:fitness/features/auth/presentation/views/screens/login/login_screen.dart';
 import '../../features/foods/presentaion/view/screens/food_detials_screen.dart';
 import '../../features/on_boarding/view/on_boarding_view.dart';
+import '../../features/smart_coach/presentation/view/screens/smart_coach_screen.dart';
 
 abstract class Routes {
   static final GlobalKey<NavigatorState> navigatorKey =
@@ -53,6 +54,15 @@ abstract class Routes {
               FoodDetialsScreen(index: index,
 
               );
+          },
+        );
+      case AppRoutes.smartCoach:
+
+        return MaterialPageRoute(
+
+          builder: (context) {
+            return
+              const SmartCoachScreen();
           },
         );
  case AppRoutes.registerScreen:

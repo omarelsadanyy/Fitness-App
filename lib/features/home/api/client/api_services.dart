@@ -4,6 +4,8 @@ import 'package:fitness/features/home/api/models/exercises/all_exercises_respons
 import 'package:fitness/features/home/api/models/exercises/difficulty_by_prime_mover_muscles_response.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
+import '../responses/explore_response/muscles_group_response/muscles_group_response.dart';
+import '../responses/explore_response/muscles_random_response/muscles_random_response.dart';
 
 part 'api_services.g.dart';
 
@@ -26,4 +28,11 @@ abstract class ApiServices {
     @Query(EndPointsConstants.page) int page = 1,
     @Query(EndPointsConstants.limit) int limit = 10,
   });
+  @GET(EndPointsConstants.musclesRandom)
+  Future<MusclesRandomResponse> getAllRandomMuscles();
+
+  @GET(EndPointsConstants.allMusclesGroups)
+  Future<MusclesGroupResponse> getAllMusclesGroup();
+
+
 }
