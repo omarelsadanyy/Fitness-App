@@ -1,13 +1,10 @@
-import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_provider.dart';
 import 'package:fitness/core/theme/app_colors.dart';
-import 'package:fitness/core/user/user_manager.dart';
 import 'package:fitness/core/widget/custom_pop_icon.dart';
 import 'package:fitness/features/smart_coach/presentation/view/widgets/user_profile_section.dart';
 import 'package:fitness/features/smart_coach/presentation/view_model/smart_coach_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:flutter/material.dart';

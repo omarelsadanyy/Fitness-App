@@ -55,8 +55,11 @@ void main() {
     when(cubit.name).thenReturn('Mariam');
 
     // Act
-    await tester.pumpWidget(createWidgetUnderTest());
+    await tester.pumpWidget(
+      TickerMode(enabled: true, child: createWidgetUnderTest()),
+    );
     await tester.pumpAndSettle();
+    await tester.pump(const Duration(milliseconds: 900));
 
     // Assert
     // The widget should still render without crashing

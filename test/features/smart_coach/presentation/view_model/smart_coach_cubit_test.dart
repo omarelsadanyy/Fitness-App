@@ -215,35 +215,8 @@ verify: (_)=>verify(mockGetMessages.call(testConversationId)).called(1)
   group("delete Conversation", (){
 
     const error="some thing went wrong";
-    final mockData = [
-      {'id': '123', 'startedAt': DateTime.now(),
-        'text': 'Hello there'},
-    ];
-    // blocTest<SmartCoachCubit, SmartCoachChatState>(
-    //   "emit [success] when delete conversation succeeds",
-    //   build: () {
-    //     when(mockDeleteConversation.call(testConversationId))
-    //         .thenAnswer((_) async => SuccessResult(null));
-    //
-    //     when(mockGetSummaries.call())
-    //         .thenAnswer((_) async => SuccessResult([]));
-    //
-    //     return cubit;
-    //   },
-    //   act: (bloc) => bloc.deleteConversation(testConversationId),
-    //   expect: () => [
-    //     const SmartCoachChatState(
-    //       stateStatus: StateStatus.success({}),
-    //     ),
-    //   ],
-    //   skip: 2,
-    //
-    //
-    //   verify: (_) {
-    //     verify(mockDeleteConversation.call(testConversationId)).called(1);
-    //     verify(mockGetSummaries.call()).called(1);
-    //   },
-    // );
+
+
     blocTest<SmartCoachCubit, SmartCoachChatState>(
       "emit success only (skip loading) when delete succeeds",
       build: () {
@@ -296,11 +269,7 @@ verify: (_)=>verify(mockGetMessages.call(testConversationId)).called(1)
     );
 
   });
-  group("Send Message", () {
-    const testPrompt = "fitness";
 
-
-  });
 
 
 

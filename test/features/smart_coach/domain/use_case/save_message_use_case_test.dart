@@ -1,10 +1,8 @@
 import 'package:fitness/core/enum/sender.dart';
 import 'package:fitness/features/smart_coach/domain/entity/message_entity.dart';
-import 'package:fitness/features/smart_coach/domain/use_case/get_message_use_case.dart';
 import 'package:fitness/features/smart_coach/domain/use_case/save_message_use_case.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fitness/core/result/result.dart';
-import 'package:fitness/features/smart_coach/domain/repo/smart_coach_repo.dart';
 
 import 'package:mockito/mockito.dart';
 

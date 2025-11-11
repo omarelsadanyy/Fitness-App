@@ -21,26 +21,29 @@ final String firstName;
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           CustomPopIcon(onTap: () {}),
-          Text.rich(
-            textAlign: TextAlign.center,
-            TextSpan(
-              children: [
-                TextSpan(
-                  text: "${context.loc.hiHomeText} $firstName\n",
-
-                  style: getMediumStyle(
-                    color: AppColors.white,
-                    fontSize: context.setSp(16),
+          Expanded(
+            child: Text.rich(
+              TextSpan(
+                children: [
+                  TextSpan(
+                    text: "${context.loc.hiHomeText} $firstName\n",
+                    style: getMediumStyle(
+                      color: AppColors.white,
+                      fontSize: context.setSp(16),
+                    ),
                   ),
-                ),
-                TextSpan(
-                  text: context.loc.iAmYourSmartCoach,
-                  style: getBoldStyle(
-                    color: AppColors.white,
-                    fontSize: context.setSp(16),
+                  TextSpan(
+                    text: context.loc.iAmYourSmartCoach,
+                    style: getBoldStyle(
+                      color: AppColors.white,
+                      fontSize: context.setSp(16),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
             ),
           ),
           ImageIcon(
