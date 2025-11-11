@@ -1,4 +1,4 @@
-// main file
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fitness/core/l10n/translations/app_localizations.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
