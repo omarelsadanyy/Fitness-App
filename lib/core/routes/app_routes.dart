@@ -23,4 +23,5 @@ abstract class AppRoutes {
   static const String editWeight = "editWeight";
   static const String editGoal = "editGoal";
   static const String editLevel = "editLevel";
+   static const String changePassword = "changePassword";
 }

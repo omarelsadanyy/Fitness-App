@@ -2,6 +2,7 @@ import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_style.dart';
+import 'package:fitness/core/widget/home_back_ground.dart';
 import 'package:fitness/features/home/presentation/view/screens/tabs/chat_ai_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/tabs/explore_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/tabs/gym_screen.dart';
@@ -10,6 +11,7 @@ import 'package:fitness/features/home/presentation/view/screens/view_model/botto
 import 'package:fitness/features/home/presentation/view/screens/view_model/bottom_navigation_intents.dart';
 import 'package:fitness/features/home/presentation/view/screens/view_model/bottom_navigation_state.dart';
 import 'package:fitness/features/home/presentation/view/widgets/app_section_widget.dart';
+import 'package:fitness/features/smart_coach/presentation/view/screens/on_boarding_chat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -26,7 +28,7 @@ class HomeTab extends StatefulWidget {
 class _HomeTabState extends State<HomeTab> {
   List<Widget> screens = [
     const ExploreScreen(),
-    const ChatAiScreen(),
+    const OnBoardingChat(),
     const GymScreen(),
     const ProfileScreen(),
   ];
@@ -37,14 +39,22 @@ class _HomeTabState extends State<HomeTab> {
     return BlocBuilder<BottomNavigationCubit, BottomNavigationState>(
       builder: (context, state) {
         return Scaffold(
-          body: screens[state.index],
+          body: HomeBackground(
+            image: state.index == 1
+                ? AssetsManager.chatBg
+                : AssetsManager.homeBackground,
+            alpha: 0.12,
+            child: screens[state.index],
+          ),
           extendBody: true,
           backgroundColor: Colors.transparent,
           bottomNavigationBar: AppSectionWidget(
             child: BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
               onTap: (index) {
-               context.read<BottomNavigationCubit>().doIntent(GoToTab(index: index));
+                context.read<BottomNavigationCubit>().doIntent(
+                  GoToTab(index: index),
+                );
               },
               currentIndex: state.index,
               iconSize: context.setMinSize(30),

@@ -100,12 +100,13 @@ class GymScreen extends StatelessWidget {
                   Expanded(
                     child: selectedMuscles.isNotEmpty
                         ? GridviewWidget(
-                            images: selectedMuscles
-                                .map((m) => m.image ?? '')
-                                .toList(),
-                            titles: selectedMuscles
-                                .map((m) => m.name ?? '')
-                                .toList(),
+                          randomMusclesData:selectedMuscles,
+                            // images: selectedMuscles
+                            //     .map((m) => m.image ?? '')
+                            //     .toList(),
+                            // titles: selectedMuscles
+                            //     .map((m) => m.name ?? '')
+                            //     .toList(),
                           )
                         : Center(
                             child: Text(

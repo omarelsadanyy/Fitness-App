@@ -18,6 +18,7 @@ import 'package:fitness/features/home/presentation/view_model/help_view_model/he
 import 'package:fitness/features/home/presentation/view_model/privacy_policy_view_model/privacy_policy_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/privacy_policy_view_model/privacy_policy_intent.dart';
 import 'package:fitness/features/home/presentation/view_model/profile_view_model/profile_cubit.dart';
+import 'package:fitness/features/home/presentation/view_model/profile_view_model/profile_intents.dart';
 import 'package:fitness/features/home/presentation/view_model/profile_view_model/profile_state.dart';
 import 'package:fitness/features/home/presentation/view_model/security_view_model/security_cubit.dart';
 import 'package:fitness/features/home/presentation/view_model/security_view_model/security_intent.dart';
@@ -68,12 +69,22 @@ class ProfileScreenSettingsSection extends StatelessWidget {
                   SettingsItem(
                     iconPath: AssetsManager.profileUserIcon,
                     title: context.loc.editProfile,
-                    onTap: () {},
+                    onTap: ()async {
+                      {
+                        final result =await  Navigator.pushNamed(context, AppRoutes.editProfile);
+                        if(result == true){
+                          context.read<ProfileCubit>().doIntent(GetLoggedUserIntent());
+                          }
+                       
+                      }
+                    },
                   ),
                   SettingsItem(
                     iconPath: AssetsManager.changePasswordProfileIcon,
                     title: context.loc.changePassword,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, AppRoutes.changePassword);
+                    },
                   ),
                   SettingsItem(
                     iconPath: AssetsManager.selectLanguageSvg,

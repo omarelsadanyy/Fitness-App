@@ -722,6 +722,12 @@ abstract class AppLocalizations {
   /// **'Change Password'**
   String get changePassword;
 
+  /// No description provided for @passwordChangedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Password Changed Successfully!'**
+  String get passwordChangedSuccess;
+
   /// No description provided for @selectLanguage.
   ///
   /// In en, this message translates to:

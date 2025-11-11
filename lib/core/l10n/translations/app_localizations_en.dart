@@ -327,6 +327,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get changePassword => 'Change Password';
 
   @override
+  String get passwordChangedSuccess => 'Password Changed Successfully!';
+
+  @override
   String get selectLanguage => 'Select Language';
 
   @override

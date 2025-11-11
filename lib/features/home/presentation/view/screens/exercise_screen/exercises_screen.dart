@@ -1,3 +1,5 @@
+import 'package:fitness/features/home/domain/entities/explore_entity/muscle_entity/muscle_entity.dart';
+import 'package:fitness/features/home/domain/entities/explore_entity/muscles_group_entity/muscles_group_entity.dart';
 import 'package:fitness/features/home/domain/entity/exercises/mover_muscle_entity.dart';
 import 'package:fitness/features/home/presentation/view/widgets/exercises_screen/exercises_list_section.dart';
 import 'package:fitness/features/home/presentation/view/widgets/exercises_screen/header_section.dart';
@@ -10,7 +12,7 @@ import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ExercisesScreen extends StatefulWidget {
-  final MoverMuscleEntity? primMoverMuscle;
+  final MuscleEntity? primMoverMuscle;
   const ExercisesScreen({this.primMoverMuscle, super.key});
 
   @override
@@ -27,14 +29,14 @@ class _ExercisesScreenState extends State<ExercisesScreen>
     super.initState();
     if (widget.primMoverMuscle != null) {
       context.read<ExercisesCubit>().doIntent(
-        intent: LoadLevelsByMuscleIntent(muscleId: widget.primMoverMuscle!.id),
+        intent: LoadLevelsByMuscleIntent(muscleId: widget.primMoverMuscle!.id ?? ''),
       );
       _scrollController.addListener(() {
         if (_scrollController.position.pixels ==
             _scrollController.position.maxScrollExtent) {
           context.read<ExercisesCubit>().doIntent(
             intent: LoadMoreExercisesByMuscleAndLevelIntent(
-              muscleId: widget.primMoverMuscle!.id,
+              muscleId: widget.primMoverMuscle!.id ??'',
               levelId: context.read<ExercisesCubit>().state.selectedLevelId ?? '',
             ),
           );
@@ -77,18 +79,18 @@ class _ExercisesScreenState extends State<ExercisesScreen>
             return Column(
               children: [
                 HeaderSection(
-                  primeMoverMuscleName: widget.primMoverMuscle!.name,
-                  primeMoverMuscleImage: widget.primMoverMuscle!.image,
+                  primeMoverMuscleName: widget.primMoverMuscle!.name ?? '',
+                  primeMoverMuscleImage: widget.primMoverMuscle!.image ?? '',
                 ),
 
                 LevelTabsSection(
-                  muscleId: widget.primMoverMuscle!.id,
+                  muscleId: widget.primMoverMuscle!.id ?? '',
                   tabController: _tabController,
                 ),
 
                 Expanded(
                   child: ExercisesListSection(
-                    primeMoverMuscleImage: widget.primMoverMuscle!.image,
+                    primeMoverMuscleImage: widget.primMoverMuscle!.image?? '',
                     scrollController: _scrollController,
                   ),
                 ),

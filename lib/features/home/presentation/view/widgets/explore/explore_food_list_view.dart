@@ -1,9 +1,11 @@
 import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/core/responsive/size_helper.dart';
+import 'package:fitness/core/routes/app_routes.dart';
 import 'package:fitness/core/theme/app_colors.dart';
 import 'package:fitness/core/theme/font_manager.dart';
 import 'package:fitness/core/theme/font_style.dart';
 import 'package:fitness/features/foods/domain/entities/meals_categories.dart';
+import 'package:fitness/features/foods/presentaion/view/screens/food_detials_screen.dart';
 import 'package:fitness/features/foods/presentaion/view_model/food_cubit.dart';
 import 'package:fitness/features/foods/presentaion/view_model/food_states.dart';
 import 'package:fitness/features/home/presentation/view/widgets/explore/explore_food_list_item.dart';
@@ -31,14 +33,26 @@ class ExploreFoodListView extends StatelessWidget {
                 ).copyWith(fontSize: FontSize.s16, fontFamily: 'BalooThambi2'),
               ),
             ),
-            FittedBox(
-              child: Text(
-                context.loc.seeAllHomeText,
-                style: getRegularStyle(color: AppColors.orange).copyWith(
-                  fontSize: FontSize.s14,
-                  fontFamily: 'BalooThambi2',
-                  decoration: TextDecoration.underline,
-                  decorationColor: AppColors.orange,
+            GestureDetector(
+              onTap: ()async {
+             await Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => BlocProvider.value(
+                      value: context.read<FoodCubit>(),
+                      child: const FoodDetialsScreen(index: 0),
+                    ),
+                  ),
+             );
+              },
+              child: FittedBox(
+                child: Text(
+                  context.loc.seeAllHomeText,
+                  style: getRegularStyle(color: AppColors.orange).copyWith(
+                    fontSize: FontSize.s14,
+                    fontFamily: 'BalooThambi2',
+                    decoration: TextDecoration.underline,
+                    decorationColor: AppColors.orange,
+                  ),
                 ),
               ),
             ),
@@ -59,14 +73,26 @@ class ExploreFoodListView extends StatelessWidget {
                   itemCount: state.mealsCategories.isLoading ? 6: state.mealsCategories.data?.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return ExploreFoodListItem(
-                      mealCategoryEntity:
-                          state.mealsCategories.isLoading ?
-                           const MealCategoryEntity(idCategory: ""
-                           , strCategory: ""
-                           , strCategoryThumb: "", 
-                           strCategoryDescription: ""):
-                          state.mealsCategories.data![index],
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => BlocProvider.value(
+                              value: context.read<FoodCubit>(),
+                              child: FoodDetialsScreen(index: index),
+                            ),
+                          ),
+                        );
+                      },
+                      child: ExploreFoodListItem(
+                        mealCategoryEntity:
+                            state.mealsCategories.isLoading ?
+                             const MealCategoryEntity(idCategory: ""
+                             , strCategory: ""
+                             , strCategoryThumb: "", 
+                             strCategoryDescription: ""):
+                            state.mealsCategories.data![index],
+                      ),
                     );
                   },
                 ),

@@ -1,16 +1,16 @@
 import 'package:fitness/core/responsive/size_helper.dart';
+import 'package:fitness/core/routes/app_routes.dart';
+import 'package:fitness/features/home/domain/entities/explore_entity/muscle_entity/muscle_entity.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../core/widget/custom_card_fitness.dart';
 
 class GridviewWidget extends StatelessWidget {
-  final List<String> images;
-  final List<String> titles;
+  final List<MuscleEntity> randomMusclesData;
 
   const GridviewWidget({
     super.key,
-    required this.images,
-    required this.titles,
+    required this.randomMusclesData
   });
 
   @override
@@ -26,11 +26,17 @@ class GridviewWidget extends StatelessWidget {
         mainAxisSpacing: 10,
         childAspectRatio: 0.9,
       ),
-      itemCount: images.length, // safer than hardcoding 20
+      itemCount:  randomMusclesData.length,
       itemBuilder: (context, index) {
-        return CustomCardFitness(
-          image: images[index],
-          title: titles[index],
+        return GestureDetector(
+          onTap: () {
+             Navigator.pushNamed(context, AppRoutes.exercises,
+      arguments:randomMusclesData[index]);
+          },
+          child: CustomCardFitness(
+            image: randomMusclesData[index].image ??'',
+            title: randomMusclesData[index].name ?? '',
+          ),
         );
       },
     );

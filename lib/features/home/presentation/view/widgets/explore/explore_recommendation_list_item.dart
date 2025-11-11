@@ -19,7 +19,7 @@ class ExploreRecommendationListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Navigator.pushNamed(context, AppRoutes.exercises,
-      arguments:randomMusclesData ),
+      arguments:randomMusclesData),
       child: Padding(
         padding:  EdgeInsets.only(right: context.setWidth(16)),
         child: Stack(

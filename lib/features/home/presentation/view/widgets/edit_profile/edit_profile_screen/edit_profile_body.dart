@@ -45,7 +45,7 @@ class EditProfileBody extends StatelessWidget {
                 Row(
                   children: [
                     SizedBox(width: context.setWidth(22)),
-                    CustomPopIcon(onTap: Navigator.of(context).pop),
+                    CustomPopIcon(onTap: ()=>Navigator.pop(context,true)),
                     SizedBox(width: context.setWidth(88)),
                     Text(
                       "Edit profile",

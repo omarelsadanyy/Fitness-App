@@ -8,7 +8,7 @@ import '../../../../../core/widget/home_back_ground.dart';
 
 class FoodDetialsScreen extends StatelessWidget {
   final int index;
-  const FoodDetialsScreen({super.key, required this.index});
+  const FoodDetialsScreen({super.key, this.index =0});
 
   @override
   Widget build(BuildContext context) {

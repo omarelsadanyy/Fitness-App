@@ -56,7 +56,8 @@ class _ChangePassSectionState extends State<ChangePassSection> {
         listener: (context, state) {
           if (state.changePassStatus.isSuccess) {
             isLoading.value = false;
-            Navigator.of(context).pushReplacementNamed(AppRoutes.loginRoute);
+           // Navigator.of(context).pushReplacementNamed(AppRoutes.loginRoute);
+           showCustomSnackBar(context, context.loc.passwordChangedSuccess);
         
           } else if (state.changePassStatus.isFailure) {
             isLoading.value = false;

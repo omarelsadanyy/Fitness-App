@@ -5,7 +5,9 @@ import 'package:fitness/features/auth/presentation/view_model/register_view_mode
 import 'package:fitness/features/auth/presentation/views/screens/compelete_register/screen/complete_register_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/register/register_screen.dart';
 import 'package:fitness/features/foods/domain/entities/meals_by_category.dart';
+import 'package:fitness/features/home/domain/entities/explore_entity/muscle_entity/muscle_entity.dart';
 import 'package:fitness/features/home/domain/entity/exercises/mover_muscle_entity.dart';
+import 'package:fitness/features/home/presentation/view/screens/change_pass_screen/change_pass_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/edit_profile/edit_activity_level_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/edit_profile/edit_goal_screen.dart';
 import 'package:fitness/features/home/presentation/view/screens/edit_profile/edit_profile_screen.dart';
@@ -56,6 +58,13 @@ abstract class Routes {
         return MaterialPageRoute(
           builder: (context) {
             return const ForgetPasswordScreen();
+          },
+        );
+
+        case AppRoutes.changePassword:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const ChangePassScreen();
           },
         );
       case AppRoutes.food:
@@ -109,23 +118,19 @@ abstract class Routes {
         );
 
       case AppRoutes.exercises:
-        // final primMoverMuscle = setting.arguments as MoverMuscleEntity;
+        final primMoverMuscle = setting.arguments as MuscleEntity;
         return MaterialPageRoute(
           builder: (context) {
             return BlocProvider(
               create: (context) => getIt<ExercisesCubit>()
                 ..doIntent(
                   intent: LoadLevelsByMuscleIntent(
-                    muscleId: "67c8499726895f87ce0aa9bf",
+                    muscleId: primMoverMuscle.id ?? '',
                   ),
                 ),
               // create: (context) => getIt<WorkoutCubit>()..loadLevelsByMuscle(primMoverMuscle.id),
-              child: const ExercisesScreen(
-                primMoverMuscle: MoverMuscleEntity(
-                  id: "67c8499726895f87ce0aa9bf",
-                  name: "Posterior Deltoids",
-                  image: "https://iili.io/33p7ene.png",
-                ),
+              child:  ExercisesScreen(
+                primMoverMuscle: primMoverMuscle,
               ),
             );
           },

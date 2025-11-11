@@ -1,6 +1,8 @@
 import 'package:fitness/core/extension/app_localization_extension.dart';
+import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/widget/app_background.dart';
 import 'package:fitness/core/widget/blur_container.dart';
+import 'package:fitness/core/widget/custom_pop_icon.dart';
 import 'package:fitness/core/widget/logo.dart';
 import 'package:fitness/features/auth/presentation/views/widgets/forget_pass/text_section.dart';
 import 'package:fitness/features/home/presentation/view/widgets/change_pass/change_pass_section.dart';
@@ -17,7 +19,18 @@ class ChangePassScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Logo(),
+            Row(
+                children: [
+                  SizedBox(width: context.setWidth(16)),
+                  CustomPopIcon(
+                    onTap: () {
+                      Navigator.pop(context,true);
+                    },
+                  ),
+                  SizedBox(width: context.setWidth(100)),
+                  const Logo(),
+                ],
+              ),
               const Spacer(),
               TextSection(
                 text1: context.loc.makeSure8Char,

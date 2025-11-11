@@ -146,6 +146,7 @@
   "profileText": "الملف الشخصي",
   "editProfile":"تعديل الملف الشخصي",
   "changePassword":"تغيير كلمةالمرور",
+  "passwordChangedSuccess":"تم تغيير كلمة المرور بنجاح !",
   "selectLanguage":"إختيار اللغة",
   "language":"العربية",
   "security":"الأمن",

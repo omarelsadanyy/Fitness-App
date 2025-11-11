@@ -328,6 +328,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get changePassword => 'تغيير كلمةالمرور';
 
   @override
+  String get passwordChangedSuccess => 'تم تغيير كلمة المرور بنجاح !';
+
+  @override
   String get selectLanguage => 'إختيار اللغة';
 
   @override

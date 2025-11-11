@@ -112,6 +112,7 @@
   "profileText":"Profile",
   "editProfile":"Edit Profile",
   "changePassword":"Change Password",
+  "passwordChangedSuccess":"Password Changed Successfully!",
   "selectLanguage":"Select Language",
   "security":"Security",
   "language":"English",
