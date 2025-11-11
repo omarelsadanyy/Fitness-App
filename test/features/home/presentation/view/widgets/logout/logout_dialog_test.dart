@@ -134,7 +134,7 @@ void main() {
     ) async {
       await tester.pumpWidget(prepareWidget());
 
-      // Tap outside the dialog (on the barrier)
+      //  Tap outside the dialog (on the barrier)
       await tester.tapAt(const Offset(10, 10));
       await tester.pumpAndSettle();
 

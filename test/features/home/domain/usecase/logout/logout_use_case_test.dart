@@ -26,6 +26,7 @@ void main() {
         final successResult = SuccessResult<void>(null);
         when(mockLogoutRepo.logout()).thenAnswer((_) async => successResult);
 
+
         // act
         final result = await logoutUseCase.call();
 

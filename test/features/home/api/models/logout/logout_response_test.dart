@@ -49,6 +49,7 @@ void main() {
       // arrange
       final json = {'message': null};
 
+
       // act & assert
       expect(() => LogoutResponse.fromJson(json), throwsA(isA<TypeError>()));
     });

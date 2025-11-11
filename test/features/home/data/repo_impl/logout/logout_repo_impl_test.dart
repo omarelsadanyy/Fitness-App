@@ -12,6 +12,7 @@ void main() {
   late MockLogoutDs mockLogoutDs;
   late LogoutRepoImpl logoutRepoImpl;
 
+
   setUp(() {
     provideDummy<Result<void>>(FailedResult("Dummy"));
     mockLogoutDs = MockLogoutDs();

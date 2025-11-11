@@ -55,6 +55,7 @@ void main() {
       // act
       final result = await logoutDsImp.logout();
 
+
       // assert
       verify(mockApiServices.logout()).called(1);
       expect(result, isA<FailedResult<void>>());
