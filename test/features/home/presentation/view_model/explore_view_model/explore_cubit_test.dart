@@ -37,7 +37,7 @@ void main() {
   late FailedResult<List<MusclesGroupEntity>> expectedMusclesGroupFailureResult;
   late FailedResult<List<MuscleEntity>> expectedRandomMusclesFailureResult;
   late FailedResult<MusclesGroupIdResponseEntity> expectedMusclesGroupByIdFailureResult;
-  late FailedResult<AuthEntity> expectedUserDataFailureResult;
+  // late FailedResult<AuthEntity> expectedUserDataFailureResult;
 
   setUpAll(() {
     mockExploreUseCase = MockExploreUseCase();
@@ -112,7 +112,7 @@ void main() {
     expectedMusclesGroupFailureResult = FailedResult("Failed to fetch muscle groups");
     expectedRandomMusclesFailureResult = FailedResult("Failed to fetch random muscles");
     expectedMusclesGroupByIdFailureResult = FailedResult("Failed to fetch muscle group by id");
-    expectedUserDataFailureResult = FailedResult("Failed to fetch user data");
+    // expectedUserDataFailureResult = FailedResult("Failed to fetch user data");
 
     provideDummy<Result<List<MusclesGroupEntity>>>(expectedMusclesGroupSuccessResult);
     provideDummy<Result<List<MuscleEntity>>>(expectedRandomMusclesSuccessResult);
