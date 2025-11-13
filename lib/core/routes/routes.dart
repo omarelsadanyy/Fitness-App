@@ -5,11 +5,6 @@ import 'package:fitness/features/auth/presentation/view_model/register_view_mode
 import 'package:fitness/features/auth/presentation/views/screens/compelete_register/screen/complete_register_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/register/register_screen.dart';
 import 'package:fitness/features/foods/domain/entities/meals_by_category.dart';
-import 'package:fitness/features/home/domain/entity/exercises/mover_muscle_entity.dart';
-import 'package:fitness/features/home/presentation/view/screens/exercise_screen/exercises_screen.dart';
-import 'package:fitness/features/home/presentation/view/screens/exercise_screen/video_screen.dart';
-import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_cubit.dart';
-import 'package:fitness/features/home/presentation/view_model/exercises_view_model/exercises_intent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fitness/core/widget/video_widgets/vido_player_screen.dart';
@@ -18,7 +13,7 @@ import 'package:fitness/core/extension/app_localization_extension.dart';
 import 'package:fitness/features/auth/presentation/views/screens/forget_pass/create_password_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/forget_pass/forget_password_screen.dart';
 import 'package:fitness/features/auth/presentation/views/screens/forget_pass/otp_screen.dart';
-import 'package:fitness/features/home/presentation/view/screens/home_tab.dart';
+import 'package:fitness/features/home/home_tab.dart';
 import 'package:fitness/features/auth/presentation/view_model/login_view_model/login_cubit.dart';
 import 'package:fitness/features/auth/presentation/views/screens/login/login_screen.dart';
 import '../../features/foods/presentaion/view/screens/food_detials_screen.dart';
@@ -92,36 +87,36 @@ abstract class Routes {
           },
         );
 
-      case AppRoutes.exercises:
-        // final primMoverMuscle = setting.arguments as MoverMuscleEntity;
-        return MaterialPageRoute(
-          builder: (context) {
-            return BlocProvider(
-              create: (context) => getIt<ExercisesCubit>()
-                ..doIntent(
-                  intent: LoadLevelsByMuscleIntent(
-                    muscleId: "67c8499726895f87ce0aa9bf",
-                  ),
-                ),
-              // create: (context) => getIt<WorkoutCubit>()..loadLevelsByMuscle(primMoverMuscle.id),
-              child: const ExercisesScreen(
-                primMoverMuscle: MoverMuscleEntity(
-                  id: "67c8499726895f87ce0aa9bf",
-                  name: "Posterior Deltoids",
-                  image: "https://iili.io/33p7ene.png",
-                ),
-              ),
-            );
-          },
-        );
+      // case AppRoutes.exercises:
+      //   // final primMoverMuscle = setting.arguments as MoverMuscleEntity;
+      //   return MaterialPageRoute(
+      //     builder: (context) {
+      //       return BlocProvider(
+      //         create: (context) => getIt<ExercisesCubit>()
+      //           ..doIntent(
+      //             intent: LoadLevelsByMuscleIntent(
+      //               muscleId: "67c8499726895f87ce0aa9bf",
+      //             ),
+      //           ),
+      //         // create: (context) => getIt<WorkoutCubit>()..loadLevelsByMuscle(primMoverMuscle.id),
+      //         child: const ExercisesScreen(
+      //           primMoverMuscle: MoverMuscleEntity(
+      //             id: "67c8499726895f87ce0aa9bf",
+      //             name: "Posterior Deltoids",
+      //             image: "https://iili.io/33p7ene.png",
+      //           ),
+      //         ),
+      //       );
+      //     },
+      //   );
 
-      case AppRoutes.exeVideoScreen:
-        final videourl = setting.arguments as String;
-        return PageRouteBuilder(
-          opaque: false,
-          pageBuilder: (context, animation, secondaryAnimation) =>
-              ExercisesVideoPlayerScreen(videoUrl: videourl),
-    );
+    //   case AppRoutes.exeVideoScreen:
+    //     final videourl = setting.arguments as String;
+    //     return PageRouteBuilder(
+    //       opaque: false,
+    //       pageBuilder: (context, animation, secondaryAnimation) =>
+    //           ExercisesVideoPlayerScreen(videoUrl: videourl),
+    // );
 
       case AppRoutes.videoPage:
         final videourl = setting.arguments as String;
