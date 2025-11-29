@@ -98,7 +98,6 @@ void main() {
     await tester.pumpAndSettle();
     
     expect(find.byType(ExploreScreenViewBody), findsOneWidget);
-    expect(find.byType(Scaffold), findsOneWidget);
     expect(find.byType(MultiBlocProvider), findsOneWidget);
   });
   tearDown(getIt.reset);

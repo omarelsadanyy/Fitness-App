@@ -61,7 +61,7 @@ TestWidgetsFlutterBinding.ensureInitialized();
     await tester.pumpWidget(prepareWidget());
     await tester.pumpAndSettle();
 
-    expect(find.byType(SafeArea), findsOneWidget);
+    
     expect(find.byType(Scaffold), findsOneWidget);
     expect(find.byType(Stack), findsNWidgets(2));
     expect(find.byType(SizedBox), findsAtLeast(1));

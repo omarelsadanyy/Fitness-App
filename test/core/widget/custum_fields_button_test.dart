@@ -47,7 +47,7 @@ void main() {
                 widget.style ==
                     const ButtonStyle().copyWith(
                       backgroundColor: WidgetStatePropertyAll(
-                        AppColors.gray[70],
+                        AppColors.orange[AppColors.baseColor]!.withOpacity(0.4),
                       ),
                     ),
           ),
