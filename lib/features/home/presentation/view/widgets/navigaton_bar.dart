@@ -1,9 +1,8 @@
 import 'package:fitness/core/constants/assets_manager.dart';
 import 'package:fitness/core/extension/app_localization_extension.dart';
-import 'package:fitness/core/responsive/size_helper.dart';
 import 'package:fitness/core/theme/app_colors.dart';
+import 'package:fitness/features/home/presentation/view/widgets/nav_item.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CustomNavBar extends StatelessWidget {
   final int currentIndex;
@@ -29,63 +28,29 @@ class CustomNavBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          navItem(
-            index: 0,
+          NavItem(
             icon: AssetsManager.homeSvg,
             label: context.loc.explore,
-            context: context,
+            isSelected: currentIndex == 0,
+            onTap: () => onTap(0),
           ),
-          navItem(
-            index: 1,
+          NavItem(
             icon: AssetsManager.chatSvg,
             label: context.loc.chatAi,
-             context: context,
+            isSelected: currentIndex == 1,
+            onTap: () => onTap(1),
           ),
-          navItem(
-            index: 2,
+          NavItem(
             icon: AssetsManager.gymSvg,
             label: context.loc.gym,
-             context: context,
+            isSelected: currentIndex == 2,
+            onTap: () => onTap(2),
           ),
-          navItem(
-            index: 3,
+          NavItem(
             icon: AssetsManager.profileSvg,
             label: context.loc.profile,
-             context: context,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget navItem({
-    required int index,
-    required String icon,
-    required String label,
-    required BuildContext context,
-  }) {
-    final isSelected = index == currentIndex;
-    return GestureDetector(
-      onTap: () => onTap(index),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SvgPicture.asset(
-            icon,
-            height: context.setHight(26),
-            color: isSelected
-                ? AppColors.orange[AppColors.baseColor]!
-                : AppColors.white,
-          ),
-           SizedBox(height: context.setHight(4)),
-          Text(
-            label,
-            style: TextStyle(
-              fontSize:context.setSp(12) ,
-              color: isSelected
-                  ? AppColors.orange[AppColors.baseColor]
-                  : AppColors.white,
-            ),
+            isSelected: currentIndex == 3,
+            onTap: () => onTap(3),
           ),
         ],
       ),
