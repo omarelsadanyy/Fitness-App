@@ -11,7 +11,7 @@ import 'package:fitness/features/home/presentation/view/screens/view_model/botto
 import 'package:fitness/features/home/presentation/view/screens/view_model/bottom_navigation_intents.dart';
 import 'package:fitness/features/home/presentation/view/screens/view_model/bottom_navigation_state.dart';
 import 'package:fitness/features/home/presentation/view/widgets/app_section_widget.dart';
-import 'package:fitness/features/home/presentation/view/widgets/test.dart';
+import 'package:fitness/features/home/presentation/view/widgets/navigaton_bar.dart';
 import 'package:fitness/features/smart_coach/presentation/view/screens/on_boarding_chat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
